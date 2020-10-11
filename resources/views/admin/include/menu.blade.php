@@ -109,9 +109,9 @@
 	                    </a>
 	                  </li>
 	                  <li class="single-nav-wrapper">
-	                    <a href="blank_page.html" class="menu-item">
+	                    <a href="{{route('admin.category.index')}}" class="menu-item">
 	                        <span class="left-icon"><i class="fas fa-file"></i></span>
-	                        <span class="menu-text">Blank Page</span>
+	                        <span class="menu-text">Category</span>
 	                    </a>
 	                  </li>
 	                </ul>

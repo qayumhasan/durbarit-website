@@ -31,7 +31,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
    Route::post('/logout','AdminController@logout')->name('admin.logout');
 
    Route::get('/forgot/password','AdminController@showForgotPassword')->name('admin.forgot.passowrd');
-   
+
    Route::post('/reset_password_without_token','AdminController@validatePasswordRequest')->name('admin.validate.password');
 });
 
@@ -40,3 +40,12 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get(md5('/category/create'),'CategoryController@create')->name('admin.category.create');
+  Route::post('/category/submit','CategoryController@store')->name('admin.category.store');
+  Route::get(md5('/category/index'),'CategoryController@index')->name('admin.category.index');
+  Route::get('/category/destroy/{id}','CategoryController@destroy');
+  Route::get('/category/edit/{id}','CategoryController@edit');
+  Route::post('/category/update/{id}','CategoryController@update')->name('admin.category.update');
+});
