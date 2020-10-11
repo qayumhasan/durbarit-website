@@ -90,6 +90,9 @@
 		<!-- chart -->
 		<script src="{{asset('public/assets/plugins/chartjs-bar-chart/Chart.min.js')}}"></script>
 		<script src="{{asset('public/assets/plugins/chartjs-bar-chart/chart.js')}}"></script>
+
+		<script src="{{asset('public/assets/plugins/ckeditor/ckeditor.js')}}"></script>
+        <script src="{{asset('public/assets/plugins/ckeditor/ckeditor-active.js')}}"></script>
 	
 		
 		<!-- pie chart -->
