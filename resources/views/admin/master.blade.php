@@ -96,6 +96,13 @@
 		<script src="{{asset('public/assets/plugins/chartjs-bar-chart/chart.js')}}"></script>
 
 
+
+
+		<script src="{{asset('public/assets/plugins/ckeditor/ckeditor.js')}}"></script>
+        <script src="{{asset('public/assets/plugins/ckeditor/ckeditor-active.js')}}"></script>
+	
+		
+
 		<!-- pie chart -->
 		<!-- <script src="assets/plugins/pie_chart/chart.loader.js"></script> -->
 		<!-- <script src="assets/plugins/pie_chart/pie.active.js"></script> -->

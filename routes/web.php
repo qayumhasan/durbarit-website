@@ -37,6 +37,13 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 
 
 
+Route::resource('admin/slider', Admin\SliderController::class);
+Route::prefix('slider')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@slider');
+});
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
