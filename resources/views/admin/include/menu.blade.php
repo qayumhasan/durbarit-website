@@ -24,7 +24,14 @@
 	                          <li><a href="data_table.html">data table</a></li>
 	                        </ul>
 	                  </li>
-	          
+
+	                  <li class="single-nav-wrapper">
+	                    <a href="{{route('admin.category.index')}}" class="menu-item">
+	                        <span class="left-icon"><i class="fas fa-file"></i></span>
+	                        <span class="menu-text">Category</span>
+	                    </a>
+	                  </li>
+
 	                </ul>
               </nav>
             </aside><!-- /sidebar Area-->
