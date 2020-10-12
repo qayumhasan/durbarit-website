@@ -2,15 +2,38 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
+use App\Logo;
 use Illuminate\Http\Request;
 use App\Slider;
+use App\Service;
+use App\Partner;
 
-class FrontendController extends Controller
+class FrontendController extends ApiController
 {
     public function slider()
     {
         $slider = Slider::select(['id','heading','paragraph','image','link'])->get();
-        return response()->json($slider);
+        return $this->showAll($slider);
     }
+
+    public function searvices()
+    {
+        $services = Service::select(['id','name','image','details'])->get();
+        return $this->showAll($services);
+    }
+
+    public function partners()
+    {
+        $partners = Partner::select(['id','image','link'])->get();
+        return $this->showAll($partners);
+    }
+
+    public function logos()
+    {
+        $logos = Logo::all();
+        return $this->showAll($logos);
+    }
+
+    
 }

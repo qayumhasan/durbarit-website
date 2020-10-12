@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('/category','Admin\CategoryController');
 Route::apiResource('/whychoseus','Admin\WhyChoseUsController');
+
+Route::prefix('slider')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@slider');
+});
+
+Route::prefix('service')->namespace('Frontend')->group(function () {
+  Route::get('/','FrontendController@searvices');
+});
+
+Route::prefix('partners')->namespace('Frontend')->group(function () {
+  Route::get('/','FrontendController@partners');
+});
+
+Route::prefix('logos')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@logos');
+  });
