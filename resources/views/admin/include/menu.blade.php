@@ -8,20 +8,23 @@
 	                        <span class="menu-text">home</span>
 	                    </a>
 	                  </li>
-	                <li class="single-nav-wrapper">
+	                <!-- <li class="single-nav-wrapper">
 	                      <a class="menu-item" href="{{route('slider.index')}}" aria-expanded="false">
 	                        <span class="left-icon"><i class="far fa-edit"></i></span>
 	                          <span class="menu-text">Slider/Banner</span>
 	                      </a>
-	                  </li>
+	                  </li> -->
 	                  <li class="single-nav-wrapper">
 	                      <a class="has-arrow menu-item" href="#" aria-expanded="false">
 	                        <span class="left-icon"><i class="fas fa-table"></i></span>
-	                          <span class="menu-text">table</span>
+	                          <span class="menu-text">SYSTEM SETTING</span>
 	                      </a>
 	                        <ul class="dashboard-menu">
-	                          <li><a href="basic_table.html">Basic table</a></li>
-	                          <li><a href="data_table.html">data table</a></li>
+	                          <li><a href="{{route('slider.index')}}">Slider/Banner</a></li>
+	                          <li><a href="{{route('admin.service.index')}}">Our Services</a></li>
+	                          <li><a href="{{route('admin.partner.index')}}">Our Partners</a></li>
+	                          <li><a href="{{route('admin.logo.index')}}">Site Logo</a></li>
+	                          <li><a href="{{route('admin.logo.index')}}">Subscriber</a></li>
 	                        </ul>
 	                  </li>
 
