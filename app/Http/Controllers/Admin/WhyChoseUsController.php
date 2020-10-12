@@ -16,8 +16,8 @@ class WhyChoseUsController extends Controller
     public function index()
     {
       $wchoseus=Whychoseus::get();
-      return response()->json($wchoseus);
-      //return view('admin.whychoseus.index',compact('category'));
+      //return response()->json($wchoseus);
+      return view('admin.whychoseus.index',compact('wchoseus'));
     }
 
     /**
@@ -27,7 +27,7 @@ class WhyChoseUsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.whychoseus.create');
     }
 
     /**
@@ -45,24 +45,20 @@ class WhyChoseUsController extends Controller
         $data = new Whychoseus;
         $data->title = $request->title;
         $data->details = $request->details;
-        if($data->save()){
-          return response('ok');
-        }else{
-          return response('lol hoyni');
+
+        if ($data->save()) {
+            $notification = array(
+                'messege' => 'Insert Success',
+                'alert-type' => 'success'
+            );
+            return Redirect()->back()->with($notification);
+        } else {
+            $notification = array(
+                'messege' => 'Insert Faild',
+                'alert-type' => 'error'
+            );
+            return Redirect()->back()->with($notification);
         }
-        // if ($data->save()) {
-        //     $notification = array(
-        //         'messege' => 'Banner Insert Successfully',
-        //         'alert-type' => 'success'
-        //     );
-        //     return Redirect()->back()->with($notification);
-        // } else {
-        //     $notification = array(
-        //         'messege' => 'Banner Insert Faild',
-        //         'alert-type' => 'error'
-        //     );
-        //     return Redirect()->back()->with($notification);
-        // }
 
     }
 
@@ -74,7 +70,8 @@ class WhyChoseUsController extends Controller
      */
     public function show($id)
     {
-        //
+      $data=Whychoseus::where('id',$id)->first();
+      return response()->json($data);
     }
 
     /**
@@ -85,7 +82,9 @@ class WhyChoseUsController extends Controller
      */
     public function edit($id)
     {
-        //
+      $data=Whychoseus::where('id',$id)->first();
+      return view('admin.whychoseus.edit',compact('data'));
+      // return response()->json($data);
     }
 
     /**
@@ -97,7 +96,26 @@ class WhyChoseUsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validatedData = $request->validate([
+          'title' => 'required|max:255',
+      ]);
+      $data =  Whychoseus::findOrFail($id);
+      $data->title = $request->title;
+      $data->details = $request->details;
+      if ($data->save()) {
+          $notification = array(
+              'messege' => 'Update Success',
+              'alert-type' => 'success'
+          );
+          return Redirect()->back()->with($notification);
+      } else {
+          $notification = array(
+              'messege' => 'Update Faild',
+              'alert-type' => 'error'
+          );
+          return Redirect()->back()->with($notification);
+      }
+
     }
 
     /**
@@ -108,6 +126,20 @@ class WhyChoseUsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $data=Whychoseus::where('id',$id)->delete();
+      // return response('delete');
+      if ($data) {
+          $notification = array(
+              'messege' => 'Delete Success',
+              'alert-type' => 'success'
+          );
+          return Redirect()->back()->with($notification);
+      } else {
+          $notification = array(
+              'messege' => 'Delete Faild',
+              'alert-type' => 'error'
+          );
+          return Redirect()->back()->with($notification);
+      }
     }
 }

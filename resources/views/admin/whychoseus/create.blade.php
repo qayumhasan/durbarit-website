@@ -7,31 +7,34 @@
 						<div class="panel_header">
 							<div class="row">
 								<div class="col-md-6">
-									<div class="panel_title"><span class="panel_icon"><i class="fas fa-plus-square"></i></span><span>Add Category</span></div>
+									<div class="panel_title"><span class="panel_icon"><i class="fas fa-plus-square"></i></span><span>Add Whychoseus</span></div>
 								</div>
 								<div class="col-md-6 text-right">
 
-									<button type="button"  style="margin: 5px;" class="btn btn-success" ><i class="fas fa-award"></i> <a href="{{route('admin.category.index')}}" style="color: #fff;">All Category</a></button>
+									<button type="button"  style="margin: 5px;" class="btn btn-success" ><i class="fas fa-award"></i> <a href="{{route('admin.whychoseus.index')}}" style="color: #fff;">All Whychoseus</a></button>
 								</div>
 							</div>
 						</div>
 						<div class="panel_body">
-						<form class="form-horizontal" action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data" >
+						<form class="form-horizontal" action="{{route('admin.whychoseus.store')}}" method="POST" enctype="multipart/form-data" >
 						          	@csrf
 									 <div class="form-group row">
-									    <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Category Name:</label>
+									    <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Title<span>*</span></label>
 									    <div class="col-sm-6">
-									      <input type="text" class="form-control" name="name" required>
+									      <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" >
+                        @error('title')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                         @enderror
 									    </div>
 									  </div>
 									  <div class="form-group row">
-									    <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Meta Tag:</label>
+									    <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Details:</label>
 									    <div class="col-sm-6">
-									      <input type="text" name="meta_tag" class="form-control" data-role="tagsinput">
+									      <textarea  name="details" class="form-control"></textarea>
 									    </div>
 									  </div>
 								    <div class="form-group text-center">
-								    	<button type="submit" class="btn btn-blue">Add Category</button>
+								    	<button type="submit" class="btn btn-blue">Add Whychoseus</button>
 								    </div>
 
 							</form>
