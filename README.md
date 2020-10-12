@@ -34,7 +34,7 @@
 4.Review Text
 5.image
 
-     *our Partnar*qyayum
+     *our Partnar*DONE
 1.image
 2.link
 
