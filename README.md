@@ -22,7 +22,7 @@
 1.title
 2.Paragraph
 
-     *our Service* Quayum
+     *our Service* done
 1.Service Name
 2.image
 3.Service Details
