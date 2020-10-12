@@ -47,7 +47,7 @@ Route::prefix('slider')->namespace('Frontend')->group(function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+// category
 Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get(md5('/category/create'),'CategoryController@create')->name('admin.category.create');
   Route::post('/category/submit','CategoryController@store')->name('admin.category.store');
@@ -55,4 +55,13 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get('/category/destroy/{id}','CategoryController@destroy');
   Route::get('/category/edit/{id}','CategoryController@edit');
   Route::post('/category/update/{id}','CategoryController@update')->name('admin.category.update');
+});
+// whychoseus
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get(md5('/whychoseus/create'),'WhyChoseUsController@create')->name('admin.whychoseus.create');
+  Route::post('/whychoseus/submit','WhyChoseUsController@store')->name('admin.whychoseus.store');
+  Route::get(md5('/whychoseus/index'),'WhyChoseUsController@index')->name('admin.whychoseus.index');
+  Route::get('/whychoseus/destroy/{id}','WhyChoseUsController@destroy');
+  Route::get('/whychoseus/edit/{id}','WhyChoseUsController@edit');
+  Route::post('/whychoseus/update/{id}','WhyChoseUsController@update')->name('admin.whychoseus.update');
 });
