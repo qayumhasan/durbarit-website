@@ -533,20 +533,31 @@ class ComposerStaticInitdf453bd97a560f1c4c3ce4cf7726529f
 
     public static $classMap = array (
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
+        'App\\Career' => __DIR__ . '/../..' . '/app/Career.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Client' => __DIR__ . '/../..' . '/app/Client.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\ContactInformation' => __DIR__ . '/../..' . '/app/ContactInformation.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminController.php',
+        'App\\Http\\Controllers\\Admin\\CareerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CareerController.php',
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
+
         'App\\Http\\Controllers\\Admin\\ContactInformationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ContactInformationController.php',
+
+        'App\\Http\\Controllers\\Admin\\ClientController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ClientController.php',
+
         'App\\Http\\Controllers\\Admin\\LogoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LogoController.php',
+        'App\\Http\\Controllers\\Admin\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PageController.php',
         'App\\Http\\Controllers\\Admin\\PartnerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PartnerController.php',
         'App\\Http\\Controllers\\Admin\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductController.php',
         'App\\Http\\Controllers\\Admin\\SeoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SeoController.php',
         'App\\Http\\Controllers\\Admin\\ServiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ServiceController.php',
         'App\\Http\\Controllers\\Admin\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SliderController.php',
         'App\\Http\\Controllers\\Admin\\SubscriberController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SubscriberController.php',
+
+        'App\\Http\\Controllers\\Admin\\TeamController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TeamController.php',
+
         'App\\Http\\Controllers\\Admin\\WhyChoseUsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/WhyChoseUsController.php',
         'App\\Http\\Controllers\\ApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -569,6 +580,7 @@ class ComposerStaticInitdf453bd97a560f1c4c3ce4cf7726529f
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Logo' => __DIR__ . '/../..' . '/app/Logo.php',
         'App\\Notifications\\sendEmail' => __DIR__ . '/../..' . '/app/Notifications/sendEmail.php',
+        'App\\Page' => __DIR__ . '/../..' . '/app/Page.php',
         'App\\PasswordReset' => __DIR__ . '/../..' . '/app/PasswordReset.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -578,6 +590,10 @@ class ComposerStaticInitdf453bd97a560f1c4c3ce4cf7726529f
         'App\\Seo' => __DIR__ . '/../..' . '/app/Seo.php',
         'App\\Service' => __DIR__ . '/../..' . '/app/Service.php',
         'App\\Slider' => __DIR__ . '/../..' . '/app/Slider.php',
+
+        'App\\Subscriber' => __DIR__ . '/../..' . '/app/Subscriber.php',
+        'App\\Team' => __DIR__ . '/../..' . '/app/Team.php',
+
         'App\\Traits\\ApiResponser' => __DIR__ . '/../..' . '/app/Traits/ApiResponser.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\Whychoseus' => __DIR__ . '/../..' . '/app/Whychoseus.php',

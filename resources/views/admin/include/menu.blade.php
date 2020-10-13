@@ -24,8 +24,15 @@
 	                          <li><a href="{{route('admin.service.index')}}">Our Services</a></li>
 	                          <li><a href="{{route('admin.partner.index')}}">Our Partners</a></li>
 	                          <li><a href="{{route('admin.logo.index')}}">Site Logo</a></li>
-	                          <li><a href="{{route('admin.logo.index')}}">Subscriber</a></li>
+
 	                          <li><a href="{{route('admin.seo.edit')}}">Seo</a></li>
+
+	                          <li><a href="{{route('admin.subscriber.index')}}">Subscriber</a></li>
+	                          <li><a href="{{route('admin.career.index')}}">Career</a></li>
+	                          <li><a href="{{route('admin.team.index')}}">Our Teams</a></li>
+	                          <li><a href="{{route('admin.page.index')}}">Pages</a></li>
+	                          <li><a href="{{route('admin.client.index')}}">Our Client Say</a></li>
+
 	                        </ul>
 	                  </li>
                     <li class="single-nav-wrapper">
