@@ -25,15 +25,27 @@
 	                          <li><a href="{{route('admin.partner.index')}}">Our Partners</a></li>
 	                          <li><a href="{{route('admin.logo.index')}}">Site Logo</a></li>
 	                          <li><a href="{{route('admin.logo.index')}}">Subscriber</a></li>
+	                          <li><a href="{{route('admin.seo.edit')}}">Seo</a></li>
 	                        </ul>
 	                  </li>
-
+                    <li class="single-nav-wrapper">
+                      <a href="{{route('admin.product.create')}}" class="menu-item">
+                          <span class="left-icon"><i class="fas fa-file"></i></span>
+                          <span class="menu-text">Product</span>
+                      </a>
+                    </li>
 	                  <li class="single-nav-wrapper">
 	                    <a href="{{route('admin.category.index')}}" class="menu-item">
 	                        <span class="left-icon"><i class="fas fa-file"></i></span>
 	                        <span class="menu-text">Category</span>
 	                    </a>
 	                  </li>
+                    <li class="single-nav-wrapper">
+                     <a href="{{route('admin.contactinformation')}}" class="menu-item">
+                         <span class="left-icon"><i class="fas fa-file"></i></span>
+                         <span class="menu-text">ContactInformation</span>
+                     </a>
+                   </li>
                     <li class="single-nav-wrapper">
 	                    <a href="{{route('admin.whychoseus.index')}}" class="menu-item">
 	                        <span class="left-icon"><i class="fas fa-file"></i></span>

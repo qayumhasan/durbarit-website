@@ -51,13 +51,13 @@ class CategoryController extends Controller
 
         if ($data->save()) {
             $notification = array(
-                'messege' => 'Banner Insert Successfully',
+                'messege' => 'Category Insert Successfully',
                 'alert-type' => 'success'
             );
             return Redirect()->back()->with($notification);
         } else {
             $notification = array(
-                'messege' => 'Banner Insert Faild',
+                'messege' => 'Category Insert Faild',
                 'alert-type' => 'error'
             );
             return Redirect()->back()->with($notification);

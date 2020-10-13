@@ -102,3 +102,24 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get('/whychoseus/edit/{id}','WhyChoseUsController@edit');
   Route::post('/whychoseus/update/{id}','WhyChoseUsController@update')->name('admin.whychoseus.update');
 });
+// ContactInformation
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get('/contactinformation/edit','ContactInformationController@edit')->name('admin.contactinformation');
+  Route::post('/contactinformation/update/{id}','ContactInformationController@update')->name('admin.contactinformation.update');
+});
+
+
+// seo
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get('/seo/edit','SeoController@edit')->name('admin.seo.edit');
+  Route::post('/seo/update/{id}','SeoController@update')->name('admin.seo.update');
+});
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get(md5('/product/create'),'ProductController@create')->name('admin.product.create');
+  // Route::post('/whychoseus/submit','ProductController@store')->name('admin.whychoseus.store');
+  // Route::get(md5('/whychoseus/index'),'ProductController@index')->name('admin.whychoseus.index');
+  // Route::get('/whychoseus/destroy/{id}','ProductController@destroy');
+  // Route::get('/whychoseus/edit/{id}','ProductController@edit');
+  // Route::post('/whychoseus/update/{id}','ProductController@update')->name('admin.whychoseus.update');
+});
