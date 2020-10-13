@@ -11,18 +11,27 @@ return array(
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Client' => $baseDir . '/app/Client.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\ContactInformation' => $baseDir . '/app/ContactInformation.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Admin\\AdminController' => $baseDir . '/app/Http/Controllers/Admin/AdminController.php',
     'App\\Http\\Controllers\\Admin\\CareerController' => $baseDir . '/app/Http/Controllers/Admin/CareerController.php',
     'App\\Http\\Controllers\\Admin\\CategoryController' => $baseDir . '/app/Http/Controllers/Admin/CategoryController.php',
+
+    'App\\Http\\Controllers\\Admin\\ContactInformationController' => $baseDir . '/app/Http/Controllers/Admin/ContactInformationController.php',
+
     'App\\Http\\Controllers\\Admin\\ClientController' => $baseDir . '/app/Http/Controllers/Admin/ClientController.php',
+
     'App\\Http\\Controllers\\Admin\\LogoController' => $baseDir . '/app/Http/Controllers/Admin/LogoController.php',
     'App\\Http\\Controllers\\Admin\\PageController' => $baseDir . '/app/Http/Controllers/Admin/PageController.php',
     'App\\Http\\Controllers\\Admin\\PartnerController' => $baseDir . '/app/Http/Controllers/Admin/PartnerController.php',
+    'App\\Http\\Controllers\\Admin\\ProductController' => $baseDir . '/app/Http/Controllers/Admin/ProductController.php',
+    'App\\Http\\Controllers\\Admin\\SeoController' => $baseDir . '/app/Http/Controllers/Admin/SeoController.php',
     'App\\Http\\Controllers\\Admin\\ServiceController' => $baseDir . '/app/Http/Controllers/Admin/ServiceController.php',
     'App\\Http\\Controllers\\Admin\\SliderController' => $baseDir . '/app/Http/Controllers/Admin/SliderController.php',
     'App\\Http\\Controllers\\Admin\\SubscriberController' => $baseDir . '/app/Http/Controllers/Admin/SubscriberController.php',
+
     'App\\Http\\Controllers\\Admin\\TeamController' => $baseDir . '/app/Http/Controllers/Admin/TeamController.php',
+
     'App\\Http\\Controllers\\Admin\\WhyChoseUsController' => $baseDir . '/app/Http/Controllers/Admin/WhyChoseUsController.php',
     'App\\Http\\Controllers\\ApiController' => $baseDir . '/app/Http/Controllers/ApiController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -52,10 +61,13 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Seo' => $baseDir . '/app/Seo.php',
     'App\\Service' => $baseDir . '/app/Service.php',
     'App\\Slider' => $baseDir . '/app/Slider.php',
+
     'App\\Subscriber' => $baseDir . '/app/Subscriber.php',
     'App\\Team' => $baseDir . '/app/Team.php',
+
     'App\\Traits\\ApiResponser' => $baseDir . '/app/Traits/ApiResponser.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Whychoseus' => $baseDir . '/app/Whychoseus.php',

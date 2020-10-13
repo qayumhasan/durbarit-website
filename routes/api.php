@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('/category','Admin\CategoryController');
 Route::apiResource('/whychoseus','Admin\WhyChoseUsController');
+Route::apiResource('/companyinformation','Admin\ContactInformationController');
 
 Route::prefix('slider')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@slider');

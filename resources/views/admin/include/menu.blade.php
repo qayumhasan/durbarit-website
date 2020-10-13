@@ -24,20 +24,35 @@
 	                          <li><a href="{{route('admin.service.index')}}">Our Services</a></li>
 	                          <li><a href="{{route('admin.partner.index')}}">Our Partners</a></li>
 	                          <li><a href="{{route('admin.logo.index')}}">Site Logo</a></li>
+
+	                          <li><a href="{{route('admin.seo.edit')}}">Seo</a></li>
+
 	                          <li><a href="{{route('admin.subscriber.index')}}">Subscriber</a></li>
 	                          <li><a href="{{route('admin.career.index')}}">Career</a></li>
 	                          <li><a href="{{route('admin.team.index')}}">Our Teams</a></li>
 	                          <li><a href="{{route('admin.page.index')}}">Pages</a></li>
 	                          <li><a href="{{route('admin.client.index')}}">Our Client Say</a></li>
+
 	                        </ul>
 	                  </li>
-
+                    <li class="single-nav-wrapper">
+                      <a href="{{route('admin.product.create')}}" class="menu-item">
+                          <span class="left-icon"><i class="fas fa-file"></i></span>
+                          <span class="menu-text">Product</span>
+                      </a>
+                    </li>
 	                  <li class="single-nav-wrapper">
 	                    <a href="{{route('admin.category.index')}}" class="menu-item">
 	                        <span class="left-icon"><i class="fas fa-file"></i></span>
 	                        <span class="menu-text">Category</span>
 	                    </a>
 	                  </li>
+                    <li class="single-nav-wrapper">
+                     <a href="{{route('admin.contactinformation')}}" class="menu-item">
+                         <span class="left-icon"><i class="fas fa-file"></i></span>
+                         <span class="menu-text">ContactInformation</span>
+                     </a>
+                   </li>
                     <li class="single-nav-wrapper">
 	                    <a href="{{route('admin.whychoseus.index')}}" class="menu-item">
 	                        <span class="left-icon"><i class="fas fa-file"></i></span>
