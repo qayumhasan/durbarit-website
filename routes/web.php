@@ -72,11 +72,49 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
 Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get('/subscriber','SubscriberController@index')->name('admin.subscriber.index');
   Route::get('/subscriber/create','SubscriberController@create')->name('admin.subscriber.create');
-  Route::post('/subscriber/create','SubscriberController@store')->name('admin.subscriber.store');
-  Route::get('/subscriber/edit/{id}','SubscriberController@edit')->name('admin.subscriber.edit');
-  Route::post('/subscriber/update','SubscriberController@update')->name('admin.subscriber.update');
   Route::get('/subscriber/status/{id}','SubscriberController@status')->name('admin.subscriber.status');
   Route::get('/subscriber/delete/{id}','SubscriberController@delete')->name('admin.subscriber.delete');
+});
+
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get('/career','CareerController@index')->name('admin.career.index');
+  Route::get('/career/create','CareerController@create')->name('admin.career.create');
+  Route::post('/career/create','CareerController@store')->name('admin.career.store');
+  Route::get('/career/edit/{id}','CareerController@edit')->name('admin.career.edit');
+  Route::post('/career/update','CareerController@update')->name('admin.career.update');
+  Route::get('/career/status/{id}','CareerController@status')->name('admin.career.status');
+  Route::get('/career/delete/{id}','CareerController@delete')->name('admin.career.delete');
+});
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get('/team','TeamController@index')->name('admin.team.index');
+  Route::get('/team/create','TeamController@create')->name('admin.team.create');
+  Route::post('/team/create','TeamController@store')->name('admin.team.store');
+  Route::get('/team/edit/{id}','TeamController@edit')->name('admin.team.edit');
+  Route::post('/team/update','TeamController@update')->name('admin.team.update');
+  Route::get('/team/status/{id}','TeamController@status')->name('admin.team.status');
+  Route::get('/team/delete/{id}','TeamController@delete')->name('admin.team.delete');
+});
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get('/page','PageController@index')->name('admin.page.index');
+  Route::get('/page/create','PageController@create')->name('admin.page.create');
+  Route::post('/page/create','PageController@store')->name('admin.page.store');
+  Route::get('/page/edit/{id}','PageController@edit')->name('admin.page.edit');
+  Route::post('/page/update','PageController@update')->name('admin.page.update');
+  Route::get('/page/status/{id}','PageController@status')->name('admin.page.status');
+  Route::get('/page/delete/{id}','PageController@delete')->name('admin.page.delete');
+});
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get('/client/say','ClientController@index')->name('admin.client.index');
+  Route::get('/client/say/create','ClientController@create')->name('admin.client.create');
+  Route::post('/client/say/create','ClientController@store')->name('admin.client.store');
+  Route::get('/client/say/edit/{id}','ClientController@edit')->name('admin.client.edit');
+  Route::post('/client/say/update','ClientController@update')->name('admin.client.update');
+  Route::get('/client/say/status/{id}','ClientController@status')->name('admin.client.status');
+  Route::get('/client/say/delete/{id}','ClientController@delete')->name('admin.client.delete');
 });
 
 
