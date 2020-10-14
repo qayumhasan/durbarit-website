@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -24,8 +25,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        
-        return view('admin.product.create');
+        $category=Category::where('status',1)->get();
+        return view('admin.product.create',compact('category'));
     }
 
     /**
@@ -36,7 +37,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**

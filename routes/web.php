@@ -189,6 +189,7 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
 
 Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get(md5('/product/create'),'ProductController@create')->name('admin.product.create');
+  Route::post(md5('/product/create/submit'),'ProductController@store')->name('admin.product.store');
   // Route::post('/whychoseus/submit','ProductController@store')->name('admin.whychoseus.store');
   // Route::get(md5('/whychoseus/index'),'ProductController@index')->name('admin.whychoseus.index');
   // Route::get('/whychoseus/destroy/{id}','ProductController@destroy');
