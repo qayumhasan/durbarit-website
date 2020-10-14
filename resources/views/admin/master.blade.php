@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}">
 		<!--font awesome-->
 		<link rel="stylesheet" href="{{asset('public/assets/css/all.css')}}">
+		<link href="{{asset('public/assets/plugins/icheck/skins/all.css')}}" rel="stylesheet">
 		<!-- metis menu -->
 		<link rel="stylesheet" href="{{asset('public/assets/plugins/metismenu-3.0.4/assets/css/metisMenu.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/assets/plugins/metismenu-3.0.4/assets/css/mm-vertical-hover.css')}}">
@@ -22,11 +23,13 @@
 		<!--Custom CSS-->
 		<!-- datatable -->
 		<link href="{{asset('public')}}/assets/plugins/datatables/dataTables.min.css" rel="stylesheet" type="text/css">
+
 		<!-- enddatatable -->
 		<link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 		<link rel="stylesheet" href="{{asset('public')}}/assets/plugins/Bootstrap-4-Tag-Input-Plugin-jQuery/tagsinput.css">
+
 
 
 	</head>
@@ -87,44 +90,27 @@
 		<script src="{{asset('public/assets/plugins/metismenu-3.0.4/assets/js/metismenu.js')}}"></script>
         <script src="{{asset('public/assets/plugins/metismenu-3.0.4/assets/js/mm-vertical-hover.js')}}"></script>
 		<!-- nice scroll bar -->
-		<script src='{{asset('public/assets/plugins/scrollbar/jquery.nicescroll.min.js')}}'></script>
+		<script src="{{asset('public/assets/plugins/scrollbar/jquery.nicescroll.min.js')}}"></script>
 		<script src="{{asset('public/assets/plugins/scrollbar/scroll.active.js')}}"></script>
 		<!-- counter -->
 		<script src="{{asset('public/assets/plugins/counter/js/counter.js')}}"></script>
 		<!-- chart -->
 		<script src="{{asset('public/assets/plugins/chartjs-bar-chart/Chart.min.js')}}"></script>
 		<script src="{{asset('public/assets/plugins/chartjs-bar-chart/chart.js')}}"></script>
-
-
-
-
 		<script src="{{asset('public/assets/plugins/ckeditor/ckeditor.js')}}"></script>
-        <script src="{{asset('public/assets/plugins/ckeditor/ckeditor-active.js')}}"></script>
-	
-		
-
+    <script src="{{asset('public/assets/plugins/ckeditor/ckeditor-active.js')}}"></script>
 		<!-- pie chart -->
 		<!-- <script src="assets/plugins/pie_chart/chart.loader.js"></script> -->
 		<!-- <script src="assets/plugins/pie_chart/pie.active.js"></script> -->
+		<script src="{{asset('public/assets/plugins/spartan-multi-images/dist/js/spartan-multi-image-picker.js')}}"></script>
 		<!-- basic-donut-chart -->
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
-		  <script  src="{{asset('public/assets/plugins/basic-donut-chart/dist/script.js')}}"></script>
-		  <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-
+		<script  src="{{asset('public/assets/plugins/basic-donut-chart/dist/script.js')}}"></script>
+		<link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-
-
-  		<!-- <script  src="assets/plugins/donut-chart/dist/script.js"></script> -->
-
-
-
-
-
-
+  	<!-- <script  src="assets/plugins/donut-chart/dist/script.js"></script> -->
 		<!-- Main js -->
 		<script src="{{asset('public/assets/js/main.js')}}"></script>
-
 		<script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 		    <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
   <script>
@@ -167,7 +153,88 @@
 						});
 		});
 </script>
-		<script src="{{asset('public')}}/assets/plugins/Bootstrap-4-Tag-Input-Plugin-jQuery/tagsinput.js"></script>
+<script>
+		 $(function() {
+
+				 $("#coba").spartanMultiImagePicker({
+						 fieldName: 'fileUpload[]',
+						 directUpload: {
+								 status: true,
+								 loaderIcon: '<i class="fas fa-sync fa-spin"></i>',
+								 url: '../c.php',
+								 additionalParam: {
+										 name: 'My Name'
+								 },
+								 success: function(data, textStatus, jqXHR) {},
+								 error: function(jqXHR, textStatus, errorThrown) {}
+						 }
+				 });
+		 });
+
+		 $('#container').removeClass('mainnav-lg').addClass('mainnav-sm');
+
+		 $("#photos").spartanMultiImagePicker({
+				 fieldName: 'photos[]',
+				 maxCount: 10,
+				 rowHeight: '200px',
+				 groupClassName: 'col-lg-3 col-md-4 col-sm-4 col-xs-6',
+				 maxFileSize: '',
+				 dropFileLabel: "Drop Here",
+				 onExtensionErr: function(index, file) {
+						 console.log(index, file, 'extension err');
+						 alert('Please only input png or jpg type file')
+				 },
+				 onSizeErr: function(index, file) {
+						 console.log(index, file, 'file size too big');
+						 alert('File size too big');
+				 }
+		 });
+
+
+		 var i = 0;
+
+
+		 $(document).ready(function() {
+				 $('#container').removeClass('mainnav-lg').addClass('mainnav-sm');
+
+
+				 $("#thumbnail_img").spartanMultiImagePicker({
+						 fieldName: 'thumbnail_img',
+						 maxCount: 1,
+						 rowHeight: '200px',
+						 groupClassName: 'col-lg-3 col-md-4 col-sm-4 col-xs-6',
+						 maxFileSize: '',
+						 dropFileLabel: "Drop Here",
+						 onExtensionErr: function(index, file) {
+								 console.log(index, file, 'extension err');
+								 alert('Please only input png or jpg type file')
+						 },
+						 onSizeErr: function(index, file) {
+								 console.log(index, file, 'file size too big');
+								 alert('File size too big');
+						 }
+				 });
+
+
+				 $("#t_img").spartanMultiImagePicker({
+						 fieldName: 't_img',
+						 maxCount: 1,
+						 rowHeight: '200px',
+						 groupClassName: 'col-xl-2 col-lg-3 col-md-4 col-sm-4 col-xs-6',
+						 maxFileSize: '',
+						 dropFileLabel: "Drop Here",
+						 onExtensionErr: function(index, file) {
+								 console.log(index, file, 'extension err');
+								 alert('Please only input png or jpg type file')
+						 },
+						 onSizeErr: function(index, file) {
+								 console.log(index, file, 'file size too big');
+								 alert('File size too big');
+						 }
+				 });
+		 });
+ </script>
+<script src="{{asset('public')}}/assets/plugins/Bootstrap-4-Tag-Input-Plugin-jQuery/tagsinput.js"></script>
 
 
 
