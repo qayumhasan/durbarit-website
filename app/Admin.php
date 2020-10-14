@@ -41,4 +41,10 @@ class Admin extends Authenticatable
         {
             return 'username';
         }
+
+
+    public function usertype()
+    {
+        return 'admin';
+    }
 }

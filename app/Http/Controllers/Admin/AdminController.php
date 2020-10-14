@@ -76,6 +76,7 @@ class AdminController extends Controller
             'password'=>Hash::make($request->password),
             'role'=>1,
             'username'=>$request->username,
+            'created_at'=>Carbon::now(),
         ]);
 
         $notification=array(

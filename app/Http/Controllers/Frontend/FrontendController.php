@@ -8,19 +8,21 @@ use Illuminate\Http\Request;
 use App\Slider;
 use App\Service;
 use App\Partner;
+use App\Http\Resources\ServiceResources;
 
 class FrontendController extends ApiController
 {
     public function slider()
     {
-        $slider = Slider::select(['id','heading','paragraph','image','link'])->get();
+        $slider =Slider::select(['id','heading','paragraph','image','link'])->get();
+        
         return $this->showAll($slider);
     }
 
     public function searvices()
     {
-        $services = Service::select(['id','name','image','details'])->get();
-        return $this->showAll($services);
+        return $services =ServiceResources::collection(Service::select(['id','name','image','details'])->get());
+        // return $this->showAll($services);
     }
 
     public function partners()

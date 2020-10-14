@@ -43,6 +43,7 @@
                             </td>
                             
                             <td> {{$row->name}} </td>
+                           
                             <td> {!!Str::limit($row->details,80)!!} </td>
 
                             <td>
