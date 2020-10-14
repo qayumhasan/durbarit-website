@@ -43,80 +43,114 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 
 Route::resource('admin/slider', Admin\SliderController::class);
 
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/service','ServiceController@index')->name('admin.service.index');
-  Route::get('/service/create','ServiceController@create')->name('admin.service.create');
-  Route::post('/service/create','ServiceController@store')->name('admin.service.store');
-  Route::get('/service/edit/{id}','ServiceController@edit')->name('admin.service.edit');
-  Route::post('/service/update','ServiceController@update')->name('admin.service.update');
-  Route::get('/service/status/{id}','ServiceController@status')->name('admin.service.status');
-  Route::get('/service/delete/{id}','ServiceController@delete')->name('admin.service.delete');
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
+
+  Route::prefix('service')->group(function(){
+    Route::get('/','ServiceController@index')->name('admin.service.index');
+    Route::get('/create','ServiceController@create')->name('admin.service.create');
+    Route::post('/create','ServiceController@store')->name('admin.service.store');
+    Route::get('/edit/{id}','ServiceController@edit')->name('admin.service.edit');
+    Route::post('/update','ServiceController@update')->name('admin.service.update');
+    Route::get('/status/{id}','ServiceController@status')->name('admin.service.status');
+    Route::get('/delete/{id}','ServiceController@delete')->name('admin.service.delete');
+  });
+
+  Route::prefix('partner')->group(function(){
+    Route::get('/','PartnerController@index')->name('admin.partner.index');
+    Route::get('/create','PartnerController@create')->name('admin.partner.create');
+    Route::post('/create','PartnerController@store')->name('admin.partner.store');
+    Route::get('/edit/{id}','PartnerController@edit')->name('admin.partner.edit');
+    Route::post('/update','PartnerController@update')->name('admin.partner.update');
+    Route::get('/status/{id}','PartnerController@status')->name('admin.partner.status');
+    Route::get('/delete/{id}','PartnerController@delete')->name('admin.partner.delete');
+  });
+
+  Route::prefix('logo')->group(function(){
+    Route::get('/','LogoController@index')->name('admin.logo.index');
+    Route::post('/update','LogoController@update')->name('admin.logo.update');
+  });
+
+    
+  Route::prefix('subscriber')->group(function(){
+    Route::get('/','SubscriberController@index')->name('admin.subscriber.index');
+    Route::get('/create','SubscriberController@create')->name('admin.subscriber.create');
+    Route::get('/status/{id}','SubscriberController@status')->name('admin.subscriber.status');
+    Route::get('/delete/{id}','SubscriberController@delete')->name('admin.subscriber.delete');
+  });
+
+  Route::prefix('career')->group(function(){
+    Route::get('/','CareerController@index')->name('admin.career.index');
+    Route::get('/create','CareerController@create')->name('admin.career.create');
+    Route::post('/create','CareerController@store')->name('admin.career.store');
+    Route::get('/edit/{id}','CareerController@edit')->name('admin.career.edit');
+    Route::post('/update','CareerController@update')->name('admin.career.update');
+    Route::get('/status/{id}','CareerController@status')->name('admin.career.status');
+    Route::get('/delete/{id}','CareerController@delete')->name('admin.career.delete');
+  });
+
+  Route::prefix('career')->group(function(){
+    Route::get('/','CareerController@index')->name('admin.career.index');
+    Route::get('/create','CareerController@create')->name('admin.career.create');
+    Route::post('/create','CareerController@store')->name('admin.career.store');
+    Route::get('/edit/{id}','CareerController@edit')->name('admin.career.edit');
+    Route::post('/update','CareerController@update')->name('admin.career.update');
+    Route::get('/status/{id}','CareerController@status')->name('admin.career.status');
+    Route::get('/delete/{id}','CareerController@delete')->name('admin.career.delete');
+  });
+
+  Route::prefix('team')->group(function(){
+    Route::get('/','TeamController@index')->name('admin.team.index');
+    Route::get('/create','TeamController@create')->name('admin.team.create');
+    Route::post('/create','TeamController@store')->name('admin.team.store');
+    Route::get('/edit/{id}','TeamController@edit')->name('admin.team.edit');
+    Route::post('/update','TeamController@update')->name('admin.team.update');
+    Route::get('/status/{id}','TeamController@status')->name('admin.team.status');
+    Route::get('/delete/{id}','TeamController@delete')->name('admin.team.delete');
+  });
+
+  Route::prefix('page')->group(function(){
+    Route::get('/','PageController@index')->name('admin.page.index');
+    Route::get('/create','PageController@create')->name('admin.page.create');
+    Route::post('/create','PageController@store')->name('admin.page.store');
+    Route::get('/edit/{id}','PageController@edit')->name('admin.page.edit');
+    Route::post('/update','PageController@update')->name('admin.page.update');
+    Route::get('/status/{id}','PageController@status')->name('admin.page.status');
+    Route::get('/delete/{id}','PageController@delete')->name('admin.page.delete');
+  });
+
+  Route::prefix('client/say')->group(function(){
+    Route::get('/','ClientController@index')->name('admin.client.index');
+    Route::get('/create','ClientController@create')->name('admin.client.create');
+    Route::post('/create','ClientController@store')->name('admin.client.store');
+    Route::get('/edit/{id}','ClientController@edit')->name('admin.client.edit');
+    Route::post('/update','ClientController@update')->name('admin.client.update');
+    Route::get('/status/{id}','ClientController@status')->name('admin.client.status');
+    Route::get('/delete/{id}','ClientController@delete')->name('admin.client.delete');
+  });
+
+  Route::prefix('users')->group(function(){
+    Route::get('/','UserController@index')->name('admin.user.index');
+    Route::get('/create','UserController@create')->name('admin.user.create');
+    Route::post('/create','UserController@store')->name('admin.user.store');
+    Route::get('/edit/{type}/{id}','UserController@edit')->name('admin.user.edit');
+    Route::post('/update','UserController@update')->name('admin.user.update');
+    Route::get('/status/{type}/{id}','UserController@status')->name('admin.user.status');
+    Route::get('/delete/{type}/{id}','UserController@delete')->name('admin.user.delete');
+  });
+
+  Route::prefix('about/us')->group(function(){
+    Route::get('/','AboutUsController@index')->name('admin.aboutus.index');
+    Route::post('/update','AboutUsController@update')->name('admin.aboutus.update');
+  });
+  Route::prefix('profile')->group(function(){
+    Route::get('/{id}','ProfileController@showProfile')->name('admin.profile.index');
+    Route::get('/edit/{id}','ProfileController@editProfile')->name('admin.profile.edit');
+    Route::post('/update','ProfileController@updateProfile')->name('admin.profile.update');
+    Route::get('/password/change/{id}','ProfileController@passwordChangePage')->name('admin.profile.password.page');
+    Route::post('/password/change','ProfileController@passwordChange')->name('admin.password.change');
+  });
+  
 });
-
-
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/partner','PartnerController@index')->name('admin.partner.index');
-  Route::get('/partner/create','PartnerController@create')->name('admin.partner.create');
-  Route::post('/partner/create','PartnerController@store')->name('admin.partner.store');
-  Route::get('/partner/edit/{id}','PartnerController@edit')->name('admin.partner.edit');
-  Route::post('/partner/update','PartnerController@update')->name('admin.partner.update');
-  Route::get('/partner/status/{id}','PartnerController@status')->name('admin.partner.status');
-  Route::get('/partner/delete/{id}','PartnerController@delete')->name('admin.partner.delete');
-});
-
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/logo','LogoController@index')->name('admin.logo.index');
-  Route::post('/logo/update','LogoController@update')->name('admin.logo.update');
-});
-
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/subscriber','SubscriberController@index')->name('admin.subscriber.index');
-  Route::get('/subscriber/create','SubscriberController@create')->name('admin.subscriber.create');
-  Route::get('/subscriber/status/{id}','SubscriberController@status')->name('admin.subscriber.status');
-  Route::get('/subscriber/delete/{id}','SubscriberController@delete')->name('admin.subscriber.delete');
-});
-
-
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/career','CareerController@index')->name('admin.career.index');
-  Route::get('/career/create','CareerController@create')->name('admin.career.create');
-  Route::post('/career/create','CareerController@store')->name('admin.career.store');
-  Route::get('/career/edit/{id}','CareerController@edit')->name('admin.career.edit');
-  Route::post('/career/update','CareerController@update')->name('admin.career.update');
-  Route::get('/career/status/{id}','CareerController@status')->name('admin.career.status');
-  Route::get('/career/delete/{id}','CareerController@delete')->name('admin.career.delete');
-});
-
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/team','TeamController@index')->name('admin.team.index');
-  Route::get('/team/create','TeamController@create')->name('admin.team.create');
-  Route::post('/team/create','TeamController@store')->name('admin.team.store');
-  Route::get('/team/edit/{id}','TeamController@edit')->name('admin.team.edit');
-  Route::post('/team/update','TeamController@update')->name('admin.team.update');
-  Route::get('/team/status/{id}','TeamController@status')->name('admin.team.status');
-  Route::get('/team/delete/{id}','TeamController@delete')->name('admin.team.delete');
-});
-
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/page','PageController@index')->name('admin.page.index');
-  Route::get('/page/create','PageController@create')->name('admin.page.create');
-  Route::post('/page/create','PageController@store')->name('admin.page.store');
-  Route::get('/page/edit/{id}','PageController@edit')->name('admin.page.edit');
-  Route::post('/page/update','PageController@update')->name('admin.page.update');
-  Route::get('/page/status/{id}','PageController@status')->name('admin.page.status');
-  Route::get('/page/delete/{id}','PageController@delete')->name('admin.page.delete');
-});
-
-Route::prefix('admin')->namespace('Admin')->group(function(){
-  Route::get('/client/say','ClientController@index')->name('admin.client.index');
-  Route::get('/client/say/create','ClientController@create')->name('admin.client.create');
-  Route::post('/client/say/create','ClientController@store')->name('admin.client.store');
-  Route::get('/client/say/edit/{id}','ClientController@edit')->name('admin.client.edit');
-  Route::post('/client/say/update','ClientController@update')->name('admin.client.update');
-  Route::get('/client/say/status/{id}','ClientController@status')->name('admin.client.status');
-  Route::get('/client/say/delete/{id}','ClientController@delete')->name('admin.client.delete');
-});
-
 
 
 Auth::routes();

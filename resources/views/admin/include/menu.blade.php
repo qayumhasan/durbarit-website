@@ -32,6 +32,8 @@
 	                          <li><a href="{{route('admin.team.index')}}">Our Teams</a></li>
 	                          <li><a href="{{route('admin.page.index')}}">Pages</a></li>
 	                          <li><a href="{{route('admin.client.index')}}">Our Client Say</a></li>
+	                          <li><a href="{{route('admin.user.index')}}">Users</a></li>
+	                          <li><a href="{{route('admin.aboutus.index')}}">About Us</a></li>
 
 	                        </ul>
 	                  </li>
