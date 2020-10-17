@@ -2,12 +2,17 @@ export default {
 
     state:{
         // category:[],
+        sliders:[],
     },
 
     getters:{
         // getCategory(state){
         //     return state.category
         // },
+
+        getSlider(state){
+            return state.sliders
+        },
        
 
     },
@@ -19,6 +24,14 @@ export default {
         //             context.commit('categoreis',response.data.categories)
         //         })
         // },
+
+        allSlider(context){
+            axios.get('/slider')
+                .then((response)=>{
+                    context.commit('allsliders',response.data.data)
+                    console.log(response)
+                })
+        },
         
     },
     
@@ -26,6 +39,10 @@ export default {
         // categoreis(state,data){
         //     return state.category = data
         // },
+
+        allsliders(state,data){
+            return state.sliders =data
+        }
 
     }
 }
