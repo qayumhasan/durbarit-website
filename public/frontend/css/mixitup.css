@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.portfolio-area h2{
+    text-align: center;
+    margin-bottom:40px;
+    font-size:30px;
+}
+.single-item{
+    display: inline-block;
+    vertical-align: middle;
+    width:25%;
+    margin:-2px;
+    position: relative;
+}
+.img-thumbnail img{
+    width:100%;
+}
+.img-content{
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background:#00000078;
+    transition: .4s;
+    cursor: pointer;
+    transform: scaleY(0);
+    transform-origin: center center;
+    opacity:0;
+    visibility: hidden;
+}
+.single-item:hover .img-content{
+    transform: scaleY(1);
+    opacity: 1;
+    visibility: visible;
+}
+.img-content h2 {
+    color: #26abe2;
+    text-transform: capitalize;
+    font-size: 18px;
+    /* margin-bottom: 10px; */
+    position: relative;
+    top: -41px;
+}
+.img-content a {
+    color: #fff;
+    background-color: #26abe2;
+    /* padding: 7px 0px; */
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0px auto;
+    border-radius: 2px;
+    text-decoration: none;
+    display: block;
+}
+/*Controls CSS*/
+button:focus{
+    outline: none;
+}
+.controls{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.controls button {
+    background: transparent;
+    border: 1px solid #d2d2d2;
+    color: rgb(0 0 0 / 75%);
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 6px 20px;
+    margin-bottom: 5px;
+    transition: .4s;
+}
+.controls button:hover, button.mixitup-control-active {
+    background: #26abe2;
+    cursor: pointer;
+    color: #fff;
+}
+/* Responsive CSS */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px){
+    .single-item{
+        width:100%;
+    }
+    
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px){
+    .single-item{
+        width:50%;
+    }
+    
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px){
+    .single-item{
+        width:33.33%;
+    }
+    
+}
+

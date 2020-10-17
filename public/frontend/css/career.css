@@ -1,0 +1,154 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+#career{
+    padding: 80px 0px;
+    background-image: url(../images/simon-abrams-k_T9Zj3SE8k-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 999;
+
+}
+
+#career:before {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#career_post {
+    padding: 100px 0px;
+    background-color: rgb(241, 241, 241);
+    position: relative;
+    z-index: 999;
+}
+
+.career_header h3 {
+    font-weight: 600;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    font-size: 35px;
+    z-index: 9999;
+    color: #fff;
+}
+
+.career_header h3:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    width: 50%;
+    height: 2px;
+    background-color: #26abe2;
+}
+
+.career_header h3:after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 35px;
+    width: 50%;
+    height: 2px;
+    background-color: #26abe2;
+}
+
+.triangle_career {
+    position: relative;
+}
+
+.triangle_career:before {
+    content: '';
+    position: absolute;
+    /* right: 0px; */
+    left: -76px;
+    top: 21px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 15px solid #26abe2;
+}
+
+.triangle_career:after {
+    content: '';
+    position: absolute;
+    /* right: 0px; */
+    right: 45px;
+    top: 21px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 16px solid #26abe2;
+}
+
+
+.career_header p {
+    margin-bottom: 30px;
+    padding: 0px 115px;
+}
+.para_career p {
+    margin-bottom: 60px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.list_left ul li {
+    list-style: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.list_left .job_badge {
+    background-color: rgb(17, 0, 58);
+    color: #fff;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+span.job {
+    font-weight: 600;
+ 
+}
+
+span.type {
+    font-size: 14px;
+}
+
+.apply_btn a {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    background-color: #26abe2;
+    padding: 5px 10px;
+    transition: 0.6s linear;
+    border-radius: 4px;
+}
+
+.apply_btn {
+    position: relative;
+    top: 42px;
+}

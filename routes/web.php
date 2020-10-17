@@ -13,9 +13,9 @@
 */
 
 Route::get('/', function () {
-    // return view('welcome');
+    return view('frontend.master');
 
-    return view('admin.setting.profile');
+  
 });
 
 Route::prefix('admin')->namespace('Admin')->group(function () {
