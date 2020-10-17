@@ -25,7 +25,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 
-window.axios.defaults.baseURL ='https://lara-vue-6488e.firebaseio.com';
+window.axios.defaults.baseURL ='http://localhost/durbarit172/api';
 window.axios.defaults.headers.common['Authorization'] ='Qayum hasan';
 window.axios.defaults.headers.get['Accepts'] ='application/json';
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\AboutUs;
 use App\Http\Controllers\ApiController;
 use App\Logo;
 use Illuminate\Http\Request;
@@ -35,6 +36,12 @@ class FrontendController extends ApiController
     {
         $logos = Logo::all();
         return $this->showAll($logos);
+    }
+
+    public function aboutUs()
+    {
+        $about = AboutUs::all();
+        return $this->showAll($about);
     }
 
     
