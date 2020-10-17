@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery CaptionBox Plugin Demo</title>
+
+<link href="css/captionbox.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<h1>jQuery CaptionBox Plugin Demo</h1>
+
+<section>
+      
+        <figure>
+          <a class="captionBoxImage" href="img/img1.jpg">
+            <img title="Incoming night" src="img/img1_thumb.jpg"/>
+          </a>          
+        </figure>
+        <figure>
+          <a class="captionBoxImage" href="img/img2.jpg">
+            <img title="Night in the wilderness" src="img/img2_thumb.jpg"/>
+          </a>            
+        </figure>
+        <figure>
+          <a class="captionBoxImage" href="img/img3.jpg">
+            <img title="Dominants" src="img/img3_thumb.jpg"/>
+          </a>            
+        </figure>
+        <div id="captionBox"></div>
+</section>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/captionbox.js"></script>
+<script>
+    $( document ).ready(function() {
+        $('#captionBox').CaptionBox({
+              disableRightClick: true,
+			  alterUrlFlag: false
+        });
+    });    
+  </script>
+
+</body>
+</html>
