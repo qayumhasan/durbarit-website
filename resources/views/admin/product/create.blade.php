@@ -1,5 +1,13 @@
 @extends('admin.master')
 @section('contents')
+<style>
+.asif{
+  color: red;
+
+}
+
+
+</style>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 				<section class="page_area">
@@ -11,41 +19,81 @@
 								</div>
 								<div class="col-md-6 text-right">
 
-									<button type="button"  style="margin: 5px;" class="btn btn-success" ><i class="fas fa-award"></i> <a href="{{route('admin.category.index')}}" style="color: #fff;">All Product</a></button>
+									<button type="button"  style="margin: 5px;" class="btn btn-success" ><i class="fas fa-award"></i> <a href="{{route('admin.product.index')}}" style="color: #fff;">All Product</a></button>
 								</div>
 							</div>
 						</div>
 						<div class="panel_body">
+              <!-- @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif -->
+
 						<form class="form-horizontal" action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data" >
 						          	@csrf
 									 <div class="form-group row">
 									    <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Product Name:</label>
 									    <div class="col-sm-6">
-									      <input type="text" class="form-control" name="name" required>
+									      <input type="text" class="form-control @error('name') is-invalid @enderror" name="name">
+                        @error('name')
+                            <div class="alert asif">{{ $message }}</div>
+                        @enderror
 									    </div>
 									  </div>
                     <div class="form-group row">
+ 									    <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Product Sku:</label>
+ 									    <div class="col-sm-6">
+ 									      <input type="text" class="form-control  @error('sku') is-invalid @enderror" name="sku">
+                        @error('sku')
+                            <div class="alert asif">{{ $message }}</div>
+                        @enderror
+ 									    </div>
+ 									  </div>
+                    <div class="form-group row">
  									    <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Product Owner:</label>
  									    <div class="col-sm-6">
- 									      <input type="text" class="form-control" name="owner" required>
+ 									      <input type="text" class="form-control  @error('owner') is-invalid @enderror" name="owner">
+                        @error('owner')
+                            <div class="alert asif">{{ $message }}</div>
+                        @enderror
  									    </div>
  									  </div>
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Product Version:</label>
                       <div class="col-sm-6">
-                        <input type="text" class="form-control" name="version" required>
+                        <input type="text" class="form-control" name="version">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Regular Price:</label>
                       <div class="col-sm-6">
-                        <input type="text" class="form-control" name="reqular_price" required>
+                        <input type="text" class="form-control @error('reqular_price') is-invalid @enderror" name="reqular_price">
+                        @error('reqular_price')
+                            <div class="alert asif">{{ $message }}</div>
+                        @enderror
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Regular Price Feature:</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" name="reqular_price_feture" data-role="tagsinput">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-3 col-form-label text-right">premium Price:</label>
                       <div class="col-sm-6">
-                        <input type="text" class="form-control" name="premium_price" required>
+                        <input type="text" class="form-control" name="premium_price">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-3 col-form-label text-right">premium Price Feature:</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" name="premium_price_feture" data-role="tagsinput">
                       </div>
                     </div>
                     <div class="form-group row">
@@ -73,7 +121,7 @@
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Release Log:</label>
                       <div class="col-sm-6">
-                        <textarea class="form-control" name="name" id=""></textarea>
+                        <textarea class="form-control" name="release_log" id=""></textarea>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -91,7 +139,10 @@
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Demo Url:</label>
                       <div class="col-sm-6">
-                        <input type="text" class="form-control" name="demourl" id="">
+                        <input type="text" class="form-control  @error('demourl') is-invalid @enderror" name="demourl" id="">
+                        @error('demourl')
+                            <div class="alert asif">{{ $message }}</div>
+                        @enderror
                       </div>
                     </div>
 

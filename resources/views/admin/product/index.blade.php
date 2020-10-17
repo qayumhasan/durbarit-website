@@ -34,12 +34,14 @@
                       												</label>
 		                                      </th>
 		                                      <th>#</th>
-		                                      <th>Category Name</th>
+		                                      <th>Product Name</th>
+		                                      <th>Product Sku</th>
+		                                      <th>Product Price</th>
 		                                      <th>manage</th>
 		                                  </tr>
 		                              </thead>
 		                              <tbody>
-						          						@foreach($category as $key => $data)
+						          						@foreach($product as $key => $data)
 			                                  <tr>
 		                                  		  <td>
 																							<label class="chech_container mb-4">
@@ -48,10 +50,12 @@
 																							</label>
 			                                      </td>
 																						<td>{{++$key}}</td>
-			                                      <td>{{$data->name}}</td>
+			                                      <td>{{$data->product_name}}</td>
+			                                      <td>{{$data->sku}}</td>
+			                                      <td>{{$data->reqular_price}}</td>
 			                                       <td>
-			                                           <a href="{{url('admin/category/edit/'.$data->id)}}" class="btn btn-primary btn-sm text-white"  title="Edit"><i class="fas fa-pencil-alt"></i></a>
-			                                           <a id="delete" href="{{url('admin/category/destroy/'.$data->id)}}" class="btn btn-danger btn-sm text-white" data-toggle="tooltip" data-placement="right" title="Delete" data-original-title="Delete"><i class="far fa-trash-alt"></i></a>
+			                                           <a href="{{url('admin/product/edit/'.$data->id)}}" class="btn btn-primary btn-sm text-white"  title="Edit"><i class="fas fa-pencil-alt"></i></a>
+			                                           <a id="delete" href="{{url('admin/product/destroy/'.$data->id)}}" class="btn btn-danger btn-sm text-white" data-toggle="tooltip" data-placement="right" title="Delete" data-original-title="Delete"><i class="far fa-trash-alt"></i></a>
 			                                       </td>
 			                                  </tr>
 						                    			@endforeach

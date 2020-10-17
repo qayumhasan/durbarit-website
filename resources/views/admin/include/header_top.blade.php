@@ -15,7 +15,7 @@
 						<div class="modal fade search_box" id="myModal">
 							  <button type="button" class="close m-2 text-white float-right" data-dismiss="modal">&times;</button>
 							  <form action="#" class="modal-dialog modal-lg">
-							  	
+
 							    <div class="modal-content bg-transparent">
 								      <!-- Modal body -->
 								      <div class="modal-body">
@@ -23,7 +23,7 @@
 								   	 	<button class="btn btn-lg submit-btn" type="submit">Search</button>
 								      </div>
 								</div>
-							     
+
 							  </form>
 						</div>
 					</li>
@@ -225,10 +225,10 @@
 									<a href="#" class="user_link"><img src="assets/images/admin.jpg" alt=""></a>
 								</div>
 							<ul>
-								
-								<li><a href="{{route('admin.profile.index',auth()->user()->id)}}"><span><i class="fas fa-user"></i></span> User Profile</a></li>
+
+								<li><a href=""><span><i class="fas fa-user"></i></span> User Profile</a></li>
 								<li><a href="#"><span><i class="fas fa-cogs"></i></span>  Settings</a></li>
-								
+
 								<li>
 									<a onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><span><i class="fas fa-unlock-alt"></i></span> LogOut</a>

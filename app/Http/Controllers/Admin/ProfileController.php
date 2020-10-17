@@ -31,11 +31,11 @@ class ProfileController extends Controller
         $admin->username = $request->username;
         $admin->phone = $request->phone;
         if ($request->hasFile('image')) {
-            
+
             if($admin->image != 'admin.jpg'){
                 unlink(base_path('public/images/user/'.$admin->image));
             }
-            
+
             $user_id =Str::random(6);
             $user_img = $request->file('image');
             $imagename = $user_id . '.' . $user_img->getClientOriginalExtension();
@@ -44,7 +44,7 @@ class ProfileController extends Controller
         }
 
         $admin->save();
-        
+
         $notification=array(
             'messege'=>' Admin Updated Successfully.',
             'alert-type'=>'success'
@@ -64,8 +64,8 @@ class ProfileController extends Controller
             'password' => 'required',
             'new_password' => 'confirmed|max:8|different:password',
         ]);
-        
-        
+
+
         $validator = Validator::make($request->all(), [
             'old_password' => [
                 'required', function ($attribute, $value, $fail) {
@@ -75,8 +75,8 @@ class ProfileController extends Controller
                 },
             ],
         ]);
-        
-        if (Hash::check($request->password, $user->password)) { 
+
+        if (Hash::check($request->password, $user->password)) {
            $user->fill([
             'password' => Hash::make($request->new_password)
             ])->save();

@@ -70,7 +70,7 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
     Route::post('/update','LogoController@update')->name('admin.logo.update');
   });
 
-    
+
   Route::prefix('subscriber')->group(function(){
     Route::get('/','SubscriberController@index')->name('admin.subscriber.index');
     Route::get('/create','SubscriberController@create')->name('admin.subscriber.create');
@@ -149,7 +149,7 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
     Route::get('/password/change/{id}','ProfileController@passwordChangePage')->name('admin.profile.password.page');
     Route::post('/password/change','ProfileController@passwordChange')->name('admin.password.change');
   });
-  
+
 });
 
 
@@ -190,9 +190,9 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
 Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get(md5('/product/create'),'ProductController@create')->name('admin.product.create');
   Route::post(md5('/product/create/submit'),'ProductController@store')->name('admin.product.store');
-  // Route::post('/whychoseus/submit','ProductController@store')->name('admin.whychoseus.store');
-  // Route::get(md5('/whychoseus/index'),'ProductController@index')->name('admin.whychoseus.index');
-  // Route::get('/whychoseus/destroy/{id}','ProductController@destroy');
-  // Route::get('/whychoseus/edit/{id}','ProductController@edit');
-  // Route::post('/whychoseus/update/{id}','ProductController@update')->name('admin.whychoseus.update');
+   Route::get(md5('/product/index'),'ProductController@index')->name('admin.product.index');
+  Route::get('/product/destroy/{id}','ProductController@destroy');
+  Route::get('/product/edit/{id}','ProductController@edit');
+
+  Route::post('/product/update/{id}','ProductController@update')->name('admin.product.update');
 });

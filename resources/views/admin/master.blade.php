@@ -27,7 +27,7 @@
 		<!-- enddatatable -->
 		<link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+
 		<link rel="stylesheet" href="{{asset('public')}}/assets/plugins/Bootstrap-4-Tag-Input-Plugin-jQuery/tagsinput.css">
 
 
@@ -233,6 +233,13 @@
 						 }
 				 });
 		 });
+
+
+		 $('.remove_files').on('click', function(){
+		            // alert('remove_file');
+		             $(this).parents(".col-md-4").remove();
+		         });
+
  </script>
 <script src="{{asset('public')}}/assets/plugins/Bootstrap-4-Tag-Input-Plugin-jQuery/tagsinput.js"></script>
 
