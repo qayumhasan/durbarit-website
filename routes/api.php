@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/category','Admin\CategoryController');
+//Route::apiResource('/category','Api\CategoryController');
 Route::apiResource('/whychoseus','Admin\WhyChoseUsController');
-
 Route::apiResource('/companyinformation','Admin\ContactInformationController');
-Route::apiResource('/product','Admin\ProductController');
+
 
 Route::prefix('slider')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@slider');
@@ -35,3 +34,7 @@ Route::prefix('partners')->namespace('Frontend')->group(function () {
 Route::prefix('logos')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@logos');
   });
+  Route::prefix('category')->namespace('Frontend')->group(function () {
+      Route::get('/','FrontendController@categoris');
+      Route::get('/{id}','FrontendController@categorisid');
+    });

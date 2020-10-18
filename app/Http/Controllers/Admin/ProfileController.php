@@ -11,6 +11,10 @@ use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
+
+  public function __construct(){
+    $this->middleware('auth:Admin');
+  }
     public function showProfile($id)
     {
         $admin = Admin::findOrFail($id);
@@ -81,4 +85,5 @@ class ProfileController extends Controller
             'password' => Hash::make($request->new_password)
             ])->save();
     }
+}
 }

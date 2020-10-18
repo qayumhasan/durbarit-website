@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Slider;
 use App\Service;
 use App\Partner;
+use App\Category;
 use App\Http\Resources\ServiceResources;
 
 class FrontendController extends ApiController
@@ -15,7 +16,7 @@ class FrontendController extends ApiController
     public function slider()
     {
         $slider =Slider::select(['id','heading','paragraph','image','link'])->get();
-        
+
         return $this->showAll($slider);
     }
 
@@ -37,5 +38,11 @@ class FrontendController extends ApiController
         return $this->showAll($logos);
     }
 
-    
+    public function categoris(){
+      $categoris=Category::get();
+        return $this->showAll($categoris);
+    }
+  
+
+
 }
