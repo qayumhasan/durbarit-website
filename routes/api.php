@@ -45,4 +45,10 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
   Route::prefix('about-us')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@aboutUs');
   });
+  Route::prefix('choose-us')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@chooseus');
+  });
+  Route::prefix('clientsay')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@clientSay');
+  });
 

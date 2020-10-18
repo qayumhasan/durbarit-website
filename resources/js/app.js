@@ -4,6 +4,17 @@ require('./bootstrap');
 window.Vue = require('vue');
 Vue.config.productionTip = false;
 
+Vue.filter('striphtml', function (value) {
+    var div = document.createElement("div");
+    div.innerHTML = value;
+    var text = div.textContent || div.innerText || "";
+    return text;
+  });
+
+  import VueCarousel from 'vue-carousel';
+
+Vue.use(VueCarousel);
+
 // support router
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
