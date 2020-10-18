@@ -11,7 +11,7 @@
             <div class="item1" v-for="(slider,index) in getSliders">
 
               <div class="carousel_img">
-                <img src="public/frontend/images/banner.jpg"
+                <img :src="'public/images/slider/'+slider.image"
                   alt="banner-image"
                 />
               </div>
@@ -22,7 +22,7 @@
 
                 <div class="carousel_content_para">
                   <p>
-                    {{slider.paragraph}}
+                    {{slider.paragraph | striphtml}}
                   </p>
                 </div>
                 <div class="banner_link">
@@ -37,6 +37,7 @@
   </section>
 </template>
 <script>
+
 export default {
   name: "slider-area",
   mounted() {

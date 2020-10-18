@@ -10,7 +10,9 @@ use App\Slider;
 use App\Service;
 use App\Partner;
 use App\Category;
+use App\Client;
 use App\Http\Resources\ServiceResources;
+use App\Whychoseus;
 
 class FrontendController extends ApiController
 {
@@ -51,6 +53,20 @@ class FrontendController extends ApiController
     {
         $about = AboutUs::all();
         return $this->showAll($about);
+    }
+
+    public function chooseus()
+    {
+        
+        $data=Whychoseus::all();
+        return $this->showAll($data);
+    }
+
+    public function clientSay()
+    {
+        
+        $data =Client::all();
+        return $this->showAll($data);
     }
 
     
