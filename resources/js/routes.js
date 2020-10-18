@@ -30,4 +30,3 @@ export const routes = [
         component: require('./components/views/contact/contact-us').default
     },
   ]
-

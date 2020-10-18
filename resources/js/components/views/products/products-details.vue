@@ -108,8 +108,8 @@
                                         <li> - Few Responsive Issue Fixed</li>
                                 </ul>
                                   </div>
-                                       
-                                  
+
+
 
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                                 aria-labelledby="nav-profile-tab">Comment</div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel"
                                 aria-labelledby="nav-contact-tab">
-                                
+
                                              <div class="tsk-content-block bg-aliceblue margin-bottom-30 ">
                                     <h4 class="tsk-ctitle">Contact the author</h4>
                                     <p>We provides limited support for this item through email
@@ -147,11 +147,11 @@
                                     <a href="contact.html"
                                         class="btn-tsk d-block margin-top-30 text-center">Contact Us</a>
                                 </div>
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -277,7 +277,7 @@ export default {
 }
 </script>
 <style scoped>
-    
+
 #product_detail {
     padding: 80px 0px;
     /* background-image: url(../images/simon-abrams-k_T9Zj3SE8k-unsplash.jpg); */

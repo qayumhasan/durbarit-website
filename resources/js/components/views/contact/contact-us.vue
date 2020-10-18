@@ -79,12 +79,11 @@
                         <div class="col-sm-12">
                             <div class="contact_address">
                                 <ul>
-                                    <li><i class="fas fa-map-marker-alt"></i> Mukto Bangla Shopping Complex (8th Floor)
-                                        Mirpur-1
-                                        Dhaka 1216, Bangladesh</li>
-                                    <li><i class="fas fa-phone-square"></i> +880 1966 999777</li>
-                                    <li><i class="fas fa-envelope"></i> nfo@durbarit.com</li>
-                                    <li><i class="fas fa-globe"></i> www.durbarit.com</li>
+                                    <li><i class="fas fa-globe"></i>{{products.company_name}}</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>{{products.address}}</li>
+                                    <li><i class="fas fa-phone-square"></i>{{products.phone}}</li>
+                                    <li><i class="fas fa-envelope"></i> {{products.email}}</li>
+
                                 </ul>
                             </div>
                             <div class="social_icon_contact mt-4">
@@ -103,7 +102,7 @@
             </div>
 
         </div>
-        
+
     </section>
       <section id="map">
         <div class="container-fluid">
@@ -124,11 +123,27 @@
 
 
     </div>
-    
+
+
 </template>
 <script>
 export default {
-    name:'Contact-Us'
-    
+    name:'Contact-Us',
+    data(){
+      return{
+        products:[]
+      }
+    },
+    methods:{
+      allproduct(){
+        axios.get('/companyinformation/')
+        .then(({data}) => (this.products = data.data))
+        .catch()
+      }
+    },
+    mounted(){
+      this.allproduct();
+    }
+
 }
 </script>

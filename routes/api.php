@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 //Route::apiResource('/category','Api\CategoryController');
 Route::apiResource('/whychoseus','Admin\WhyChoseUsController');
-Route::apiResource('/companyinformation','Admin\ContactInformationController');
+ Route::apiResource('/companyinformation','Admin\ContactInformationController');
 
+Route::prefix('team')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@team');
+});
 
 Route::prefix('slider')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@slider');
@@ -40,9 +43,14 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
       Route::get('/{id}','FrontendController@categorisid');
     });
 
-
-
   Route::prefix('about-us')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@aboutUs');
   });
 
+  Route::prefix('product')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@product');
+  });
+
+  Route::prefix('career')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@career');
+  });
