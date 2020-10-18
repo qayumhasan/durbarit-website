@@ -34,7 +34,15 @@ Route::prefix('partners')->namespace('Frontend')->group(function () {
 Route::prefix('logos')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@logos');
   });
+
   Route::prefix('category')->namespace('Frontend')->group(function () {
       Route::get('/','FrontendController@categoris');
       Route::get('/{id}','FrontendController@categorisid');
     });
+
+
+
+  Route::prefix('about-us')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@aboutUs');
+  });
+

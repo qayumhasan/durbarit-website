@@ -32,82 +32,8 @@
 
     <!--- header part end -->
 
+<Slider/>
 
-    <!--- banner part start -->
-    <section id="banner">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 p-0">
-                    <div class="banner_slider owl-carousel owl-theme">
-                        <div class="item1">
-                            <div class="carousel_img">
-                                <img src="public/frontend/images/banner.jpg" alt="banner-image">
-                            </div>
-                            <div class="carousel_content">
-                                <div class="carousel_cont_head">
-                                    <h3>Website design and development</h3>
-                                </div>
-
-                                <div class="carousel_content_para">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, repellendus sint
-                                        eum ipsa
-                                        obcaecati numquam!</p>
-                                </div>
-                                <div class="banner_link">
-                                    <a href="#">
-                                        Read more
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item2">
-                            <div class="carousel_img">
-                                <img src="public/frontend/images/banner.jpg" alt="banner-image">
-                            </div>
-                            <div class="carousel_content">
-                                <div class="carousel_cont_head">
-                                    <h3>User Experience Design</h3>
-                                </div>
-                                <div class="carousel_content_para">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, repellendus sint
-                                        eum ipsa
-                                        obcaecati numquam!</p>
-                                </div>
-                                <div class="banner_link">
-                                    <a href="#">
-                                        Read more
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item3">
-                            <div class="carousel_img">
-                                <img src="public/frontend/images/banner.jpg" alt="banner-image">
-                            </div>
-                            <div class="carousel_content">
-                                <div class="carousel_cont_head">
-                                    <h3>Mobile Apps Development</h3>
-                                </div>
-                                <div class="carousel_content_para">
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, repellendus sint
-                                        eum ipsa
-                                        obcaecati numquam!</p>
-                                </div>
-                                <div class="banner_link">
-                                    <a href="#">
-                                        Read more
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-    <!--- banner part end -->
 
 
     
@@ -973,8 +899,35 @@
     </div>
 </template>
 <script>
-
+import Slider from './slider'
 export default {
     name:'main-component',
+    components:{
+        Slider
+    },
+     mounted() {
+      $(".banner_slider").owlCarousel({
+      loop: true,
+      dot: true,
+      nav: false,
+      autoplayTimeout: 5000,
+      smartSpeed: 1000,
+      autoplay: true,
+      // navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+      animateOut: "fadeOut",
+      animateIn: "fadeIn",
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 1,
+        },
+        1000: {
+          items: 1,
+        },
+      },
+    });
+    }
 }
 </script>

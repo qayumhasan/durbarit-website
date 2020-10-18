@@ -2440,6 +2440,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider */ "./resources/js/components/views/main/slider.vue");
 //
 //
 //
@@ -3340,42 +3341,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'main-component',
+  components: {
+    Slider: _slider__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  mounted: function mounted() {
+    $(".banner_slider").owlCarousel({
+      loop: true,
+      dot: true,
+      nav: false,
+      autoplayTimeout: 5000,
+      smartSpeed: 1000,
+      autoplay: true,
+      // navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+      animateOut: "fadeOut",
+      animateIn: "fadeIn",
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/main/slider.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/views/main/slider.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -3415,7 +3423,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'main-component'
+  name: "slider-area",
+  mounted: function mounted() {
+    return this.$store.dispatch("allSlider");
+  },
+  computed: {
+    getSliders: function getSliders() {
+      return this.$store.getters.getSlider;
+    }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -41945,15 +41962,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("Slider"),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _vm._m(5),
+      _vm._v(" "),
+      _vm._m(6)
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", { staticClass: "sidebar", attrs: { id: "mySidebar" } }, [
+    return _c(
+      "section",
+      { staticClass: "sidebar", attrs: { id: "mySidebar" } },
+      [
         _c(
           "a",
           { staticClass: "closebtn", attrs: { href: "javascript:void(0)" } },
@@ -42046,2208 +42085,2188 @@ var staticRenderFns = [
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "banner" } }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 p-0" }, [
-              _c(
-                "div",
-                { staticClass: "banner_slider owl-carousel owl-theme" },
-                [
-                  _c("div", { staticClass: "item1" }, [
-                    _c("div", { staticClass: "carousel_img" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/banner.jpg",
-                          alt: "banner-image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "carousel_content" }, [
-                      _c("div", { staticClass: "carousel_cont_head" }, [
-                        _c("h3", [_vm._v("Website design and development")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "carousel_content_para" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, repellendus sint\n                                        eum ipsa\n                                        obcaecati numquam!"
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "banner_link" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(
-                            "\n                                        Read more\n                                    "
-                          )
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "item2" }, [
-                    _c("div", { staticClass: "carousel_img" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/banner.jpg",
-                          alt: "banner-image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "carousel_content" }, [
-                      _c("div", { staticClass: "carousel_cont_head" }, [
-                        _c("h3", [_vm._v("User Experience Design")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "carousel_content_para" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, repellendus sint\n                                        eum ipsa\n                                        obcaecati numquam!"
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "banner_link" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(
-                            "\n                                        Read more\n                                    "
-                          )
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "item3" }, [
-                    _c("div", { staticClass: "carousel_img" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/banner.jpg",
-                          alt: "banner-image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "carousel_content" }, [
-                      _c("div", { staticClass: "carousel_cont_head" }, [
-                        _c("h3", [_vm._v("Mobile Apps Development")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "carousel_content_para" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, repellendus sint\n                                        eum ipsa\n                                        obcaecati numquam!"
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "banner_link" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(
-                            "\n                                        Read more\n                                    "
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "about" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-7" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "ab_head wow animate__animated animate__slideInLeft animate__delay-1s"
-                },
-                [
-                  _c("h3", [
-                    _vm._v("Welcome to "),
-                    _c("span", [_vm._v("Durbar It Limited")]),
-                    _vm._v(":"),
-                    _c("br"),
-                    _vm._v("Always Ready To Help")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, consectetur fuga corporis,\n                            quis nostrum perferendis debitis modi pariatur nam harum velit ab ex reprehenderit minima\n                            facilis enim exercitationem adipisci dignissimos aliquid facere. Fugiat sequi autem quis\n                            nisi deserunt reprehenderit? Illum!Lorem ipsum dolor sit amet consectetur adipisicing elit.\n                            Voluptas, consectetur fuga corporis,"
-                    ),
-                    _c("br"),
-                    _vm._v(
-                      "\n                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nulla quas\n                            nihil molestias voluptatum incidunt numquam blanditiis adipisci rerum odio?\n                        "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ab_link" }, [
-                    _c("a", { attrs: { href: "about.html" } }, [
-                      _vm._v("Read More")
-                    ])
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-5" }, [
-              _c("div", { staticClass: "ab_image" }, [
-                _c("img", {
-                  staticClass: "w-100",
-                  staticStyle: { width: "430px !important" },
-                  attrs: {
-                    src: "public/frontend/images/about.png",
-                    alt: "no-image"
-                  }
-                })
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "service" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "service_header  wow animate__animated animate__fadeIn animate__delay-0.7s"
-                },
-                [
-                  _c("h3", [_vm._v("Our Service")]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "triangle_service" }),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                            classical Latin literature from 45 BC"
-                    )
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "row wow animate__animated animate__fadeIn animate__delay-1s"
-            },
-            [
-              _c("div", { staticClass: "col-sm-12 m-0" }, [
-                _c("div", { staticClass: "tab_list_part" }, [
-                  _c(
-                    "ul",
-                    {
-                      staticClass: "nav nav-pills mb-3",
-                      attrs: { id: "pills-tab", role: "tablist" }
-                    },
-                    [
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link active",
-                              attrs: {
-                                id: "pills-home-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-home",
-                                role: "tab",
-                                "aria-selected": "true"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Software Development\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "pills-content11-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-content11",
-                                role: "tab",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Social Media\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "pills-content22-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-content22",
-                                role: "tab",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Online-Training-icon.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Online-Training\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "pills-content1-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-content1",
-                                role: "tab",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Content-Creationsi-icon.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Content Creation\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "pills-content2-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-content2",
-                                role: "tab",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Content-Creationsi-icon.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Content Creation\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "pills-content3-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-content3",
-                                role: "tab",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Content-Creationsi-icon.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Content Creation\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "pills-content4-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-content4",
-                                role: "tab",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Content-Creationsi-icon.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Content Creation\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        {
-                          staticClass: "nav-item",
-                          staticStyle: { "margin-bottom": "20px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "nav-link",
-                              attrs: {
-                                id: "pills-content5-tab",
-                                "data-toggle": "pill",
-                                href: "#pills-content5",
-                                role: "tab",
-                                "aria-selected": "false"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "100px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Proximity-Marketing.png",
-                                  alt: "image"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "log_name" }, [
-                                _vm._v(
-                                  "\n                                        Content Creation\n                                    "
-                                )
-                              ])
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "tab-content",
-                  attrs: { id: "pills-tabContent" }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade show active",
-                      attrs: { id: "pills-home", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content11", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content22", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content1", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content2", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("S Social Media")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content3", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content4", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content5", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v(" Social Media")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content6", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content7", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content8", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade",
-                      attrs: { id: "pills-content9", role: "tabpanel" }
-                    },
-                    [
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-sm-4" }, [
-                          _c(
-                            "div",
-                            { staticClass: "panel_content text-center" },
-                            [
-                              _c("img", {
-                                staticStyle: { width: "200px", height: "auto" },
-                                attrs: {
-                                  src:
-                                    "public/frontend/images/Software-Development-.png",
-                                  alt: "image"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-8" }, [
-                          _c("div", { staticClass: "panel_descrip" }, [
-                            _c("h4", [_vm._v("Software Development")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", { staticClass: "sub_panel" }, [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v("Lorem, ipsum dolor.")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "strength" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-6" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "strength_main wow animate__animated animate__fadeIn animate__delay-1s"
-                },
-                [
-                  _c("h3", [_vm._v("our strength")]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "We have a profoundly talented group of specialists who are experts in visual image altering\n                            sector. This enables us to give a wide range of image handling administrations everywhere\n                            throughout the world.\n                        "
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-sm-4 text-center" }, [
-                  _c("div", { staticClass: "content_strength" }, [
-                    _c("span", [_c("i", { staticClass: "fas fa-user" })]),
-                    _vm._v(" "),
-                    _c("h6", [_vm._v("150 skilled")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Graphic Designers")])
-                  ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "about" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-7" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "ab_head wow animate__animated animate__slideInLeft animate__delay-1s"
+              },
+              [
+                _c("h3", [
+                  _vm._v("Welcome to "),
+                  _c("span", [_vm._v("Durbar It Limited")]),
+                  _vm._v(":"),
+                  _c("br"),
+                  _vm._v("Always Ready To Help")
                 ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-4 text-center" }, [
-                  _c("div", { staticClass: "content_strength" }, [
-                    _c("span", [_c("i", { staticClass: "fas fa-clock" })]),
-                    _vm._v(" "),
-                    _c("h6", [_vm._v("24/7-365")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Client Support")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-4 text-center" }, [
-                  _c("div", { staticClass: "content_strength" }, [
-                    _c("span", [_c("i", { staticClass: "fas fa-images" })]),
-                    _vm._v(" "),
-                    _c("h6", [_vm._v("3000+ Images")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Processing Per Day")])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row mt-2" }, [
-                _c("div", { staticClass: "col-sm-4 text-center" }, [
-                  _c("div", { staticClass: "content_strength" }, [
-                    _c("span", [_c("i", { staticClass: "fas fa-wifi" })]),
-                    _vm._v(" "),
-                    _c("h6", [_vm._v("High Speed")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Internet Connection")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-4 text-center" }, [
-                  _c("div", { staticClass: "content_strength" }, [
-                    _c("span", [_c("i", { staticClass: "fas fa-users" })]),
-                    _vm._v(" "),
-                    _c("h6", [_vm._v("Three Shifts")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Duty Plan")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-4 text-center" }, [
-                  _c("div", { staticClass: "content_strength" }, [
-                    _c("span", [
-                      _c("i", { staticClass: "fas fa-dollar-sign" })
-                    ]),
-                    _vm._v(" "),
-                    _c("h6", [_vm._v("Guarantee")]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Your Satisfaction")])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-6" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "choose_us wow animate__animated animate__fadeIn animate__delay-1s"
-                },
-                [
-                  _c("h3", [_vm._v("why choose us?")]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta ratione rerum recusandae\n                            amet a unde reiciendis ipsa porro, dolorum qui aperiam odio illum aspernatur. Deserunt culpa\n                            quidem fugiat sit? dolorum qui aperiam odio illum aspernatur. Deserunt culpa\n                            quidem fugiat sit?"
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { attrs: { id: "accordion" } }, [
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-header str_card",
-                      attrs: { id: "headingOne" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "#",
-                            "data-toggle": "collapse",
-                            "data-target": "#collapseOne",
-                            "aria-expanded": "true",
-                            "aria-controls": "collapseOne"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            " 24/7 Customer Service\n                                "
-                          )
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse show",
-                      attrs: {
-                        id: "collapseOne",
-                        "aria-labelledby": "headingOne",
-                        "data-parent": "#accordion"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("p", [
-                          _vm._v(
-                            "We are open day-night just to give you the absolute best of our work and make you\n                                        fulfilled constantly. For any kinds of query you can get help from our experts\n                                        for 24 hours."
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-header str_card",
-                      attrs: { id: "headingTwo" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "collapsed",
-                          attrs: {
-                            href: "#",
-                            "data-toggle": "collapse",
-                            "data-target": "#collapseTwo",
-                            "aria-expanded": "false",
-                            "aria-controls": "collapseTwo"
-                          }
-                        },
-                        [_vm._v("VIP Client Service")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: {
-                        id: "collapseTwo",
-                        "aria-labelledby": "headingTwo",
-                        "data-parent": "#accordion"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Every one of the customers are supreme to us. We consider everybody customer as a\n                                        VIP members. In this way, be prepared to be modest by our additional normal\n                                        customer administration."
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-header str_card",
-                      attrs: { id: "headingThree" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "collapsed",
-                          attrs: {
-                            href: "#",
-                            "data-toggle": "collapse",
-                            "data-target": "#collapseThree",
-                            "aria-expanded": "false",
-                            "aria-controls": "collapseThree"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "Satisfaction ensuring\n                                "
-                          )
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: {
-                        id: "collapseThree",
-                        "aria-labelledby": "headingThree",
-                        "data-parent": "#accordion"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("p", [
-                          _vm._v(
-                            "We guaranteed that we will make your desire level high and make you feel to\n                                        return again to us for getting best."
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-header str_card",
-                      attrs: { id: "headingfour" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "collapsed",
-                          attrs: {
-                            href: "#",
-                            "data-toggle": "collapse",
-                            "data-target": "#collapsefour",
-                            "aria-expanded": "false",
-                            "aria-controls": "collapsefour"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            " Best Price Rate\n                                "
-                          )
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "collapse",
-                      attrs: {
-                        id: "collapsefour",
-                        "aria-labelledby": "headingfour",
-                        "data-parent": "#accordion"
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("p", [
-                          _vm._v(
-                            "Investigate the market and become more acquainted with the best evaluating. We\n                                        are certain that we are giving you the focused cost. Have an arrangement and get\n                                        the best. "
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "video_section" } }, [
-        _c("div", { staticClass: "continer" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xl-12" }, [
-              _c("div", { staticClass: "video_section_content text-center" }, [
-                _c("h3", [_vm._v("Our Work Process Video")]),
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, consectetur fuga corporis,\n                            quis nostrum perferendis debitis modi pariatur nam harum velit ab ex reprehenderit minima\n                            facilis enim exercitationem adipisci dignissimos aliquid facere. Fugiat sequi autem quis\n                            nisi deserunt reprehenderit? Illum!Lorem ipsum dolor sit amet consectetur adipisicing elit.\n                            Voluptas, consectetur fuga corporis,"
+                  ),
+                  _c("br"),
+                  _vm._v(
+                    "\n                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nulla quas\n                            nihil molestias voluptatum incidunt numquam blanditiis adipisci rerum odio?\n                        "
                   )
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "ab_link" }, [
+                  _c("a", { attrs: { href: "about.html" } }, [
+                    _vm._v("Read More")
+                  ])
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-5" }, [
+            _c("div", { staticClass: "ab_image" }, [
+              _c("img", {
+                staticClass: "w-100",
+                staticStyle: { width: "430px !important" },
+                attrs: {
+                  src: "public/frontend/images/about.png",
+                  alt: "no-image"
+                }
+              })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "service" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "service_header  wow animate__animated animate__fadeIn animate__delay-0.7s"
+              },
+              [
+                _c("h3", [_vm._v("Our Service")]),
+                _vm._v(" "),
+                _c("span", { staticClass: "triangle_service" }),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                            classical Latin literature from 45 BC"
+                  )
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "row wow animate__animated animate__fadeIn animate__delay-1s"
+          },
+          [
+            _c("div", { staticClass: "col-sm-12 m-0" }, [
+              _c("div", { staticClass: "tab_list_part" }, [
                 _c(
-                  "a",
+                  "ul",
                   {
-                    staticClass: "js-modal-btn",
-                    attrs: { "data-video-id": "VNGxECpJNTw" }
+                    staticClass: "nav nav-pills mb-3",
+                    attrs: { id: "pills-tab", role: "tablist" }
                   },
-                  [_c("i", { staticClass: "fas fa-play" })]
+                  [
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link active",
+                            attrs: {
+                              id: "pills-home-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-home",
+                              role: "tab",
+                              "aria-selected": "true"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Software Development\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: {
+                              id: "pills-content11-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-content11",
+                              role: "tab",
+                              "aria-selected": "false"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Social Media\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: {
+                              id: "pills-content22-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-content22",
+                              role: "tab",
+                              "aria-selected": "false"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Online-Training-icon.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Online-Training\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: {
+                              id: "pills-content1-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-content1",
+                              role: "tab",
+                              "aria-selected": "false"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Content-Creationsi-icon.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Content Creation\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: {
+                              id: "pills-content2-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-content2",
+                              role: "tab",
+                              "aria-selected": "false"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Content-Creationsi-icon.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Content Creation\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: {
+                              id: "pills-content3-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-content3",
+                              role: "tab",
+                              "aria-selected": "false"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Content-Creationsi-icon.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Content Creation\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: {
+                              id: "pills-content4-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-content4",
+                              role: "tab",
+                              "aria-selected": "false"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Content-Creationsi-icon.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Content Creation\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "nav-item",
+                        staticStyle: { "margin-bottom": "20px" }
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "nav-link",
+                            attrs: {
+                              id: "pills-content5-tab",
+                              "data-toggle": "pill",
+                              href: "#pills-content5",
+                              role: "tab",
+                              "aria-selected": "false"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "100px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Proximity-Marketing.png",
+                                alt: "image"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "log_name" }, [
+                              _vm._v(
+                                "\n                                        Content Creation\n                                    "
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ]
                 )
               ])
             ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "work" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "work_head wow animate__animated animate__fadeIn animate__delay-1s"
-                },
-                [
-                  _c("h3", [_vm._v("Our Project")]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "triangle_work" }),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                            classical Latin literature from 45 BC"
-                    )
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c("div", { staticClass: "portfolio-area" }, [
-                _c("div", { staticClass: "controls" }, [
-                  _c(
-                    "button",
-                    { attrs: { type: "button", "data-filter": "all" } },
-                    [_vm._v("All")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    { attrs: { type: "button", "data-filter": ".design" } },
-                    [_vm._v("Web Design")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    { attrs: { type: "button", "data-filter": ".develop" } },
-                    [_vm._v("Web Development")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    { attrs: { type: "button", "data-filter": ".graphics" } },
-                    [_vm._v("Graphics Design")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "portfolio-item" }, [
-                  _c("div", { staticClass: "single-item mix design" }, [
-                    _c("div", { staticClass: "img-thumbnail" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/img_1.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "img-content" }, [
-                      _c("h2", [_vm._v("Web Design")]),
-                      _vm._v(" "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "single-item mix develop" }, [
-                    _c("div", { staticClass: "img-thumbnail" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/img_2.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "img-content" }, [
-                      _c("h2", [_vm._v("Web Development")]),
-                      _vm._v(" "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "single-item mix design" }, [
-                    _c("div", { staticClass: "img-thumbnail" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/img_3.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "img-content" }, [
-                      _c("h2", [_vm._v("Web Design")]),
-                      _vm._v(" "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "single-item mix develop" }, [
-                    _c("div", { staticClass: "img-thumbnail" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/img_4.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "img-content" }, [
-                      _c("h2", [_vm._v("Web Development")]),
-                      _vm._v(" "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "single-item mix design" }, [
-                    _c("div", { staticClass: "img-thumbnail" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/img_5.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "img-content" }, [
-                      _c("h2", [_vm._v("Web Design")]),
-                      _vm._v(" "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "single-item mix graphics" }, [
-                    _c("div", { staticClass: "img-thumbnail" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/img_6.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "img-content" }, [
-                      _c("h2", [_vm._v("Graphics Design")]),
-                      _vm._v(" "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "single-item mix graphics develop" },
-                    [
-                      _c("div", { staticClass: "img-thumbnail" }, [
-                        _c("img", {
-                          attrs: {
-                            src: "public/frontend/images/img_1.jpg",
-                            alt: "image"
-                          }
-                        })
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c(
+              "div",
+              { staticClass: "tab-content", attrs: { id: "pills-tabContent" } },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade show active",
+                    attrs: { id: "pills-home", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "img-content" }, [
-                        _c("h2", [_vm._v("Graphics Design")]),
-                        _vm._v(" "),
-                        _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
                       ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "single-item mix develop" }, [
-                    _c("div", { staticClass: "img-thumbnail" }, [
-                      _c("img", {
-                        attrs: {
-                          src: "public/frontend/images/img_6.jpg",
-                          alt: "image"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "img-content" }, [
-                      _c("h2", [_vm._v("Web Development")]),
-                      _vm._v(" "),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
                     ])
-                  ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content11", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content22", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content1", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content2", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("S Social Media")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content3", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content4", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content5", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v(" Social Media")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content6", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content7", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content8", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane fade",
+                    attrs: { id: "pills-content9", role: "tabpanel" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-sm-4" }, [
+                        _c(
+                          "div",
+                          { staticClass: "panel_content text-center" },
+                          [
+                            _c("img", {
+                              staticStyle: { width: "200px", height: "auto" },
+                              attrs: {
+                                src:
+                                  "public/frontend/images/Software-Development-.png",
+                                alt: "image"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-8" }, [
+                        _c("div", { staticClass: "panel_descrip" }, [
+                          _c("h4", [_vm._v("Software Development")]),
+                          _vm._v(" "),
+                          _c("ul", [
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "sub_panel" }, [
+                              _c("i", { staticClass: "fas fa-check" }),
+                              _vm._v("Lorem, ipsum dolor.")
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "strength" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "strength_main wow animate__animated animate__fadeIn animate__delay-1s"
+              },
+              [
+                _c("h3", [_vm._v("our strength")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "We have a profoundly talented group of specialists who are experts in visual image altering\n                            sector. This enables us to give a wide range of image handling administrations everywhere\n                            throughout the world.\n                        "
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-4 text-center" }, [
+                _c("div", { staticClass: "content_strength" }, [
+                  _c("span", [_c("i", { staticClass: "fas fa-user" })]),
+                  _vm._v(" "),
+                  _c("h6", [_vm._v("150 skilled")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Graphic Designers")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-4 text-center" }, [
+                _c("div", { staticClass: "content_strength" }, [
+                  _c("span", [_c("i", { staticClass: "fas fa-clock" })]),
+                  _vm._v(" "),
+                  _c("h6", [_vm._v("24/7-365")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Client Support")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-4 text-center" }, [
+                _c("div", { staticClass: "content_strength" }, [
+                  _c("span", [_c("i", { staticClass: "fas fa-images" })]),
+                  _vm._v(" "),
+                  _c("h6", [_vm._v("3000+ Images")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Processing Per Day")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-2" }, [
+              _c("div", { staticClass: "col-sm-4 text-center" }, [
+                _c("div", { staticClass: "content_strength" }, [
+                  _c("span", [_c("i", { staticClass: "fas fa-wifi" })]),
+                  _vm._v(" "),
+                  _c("h6", [_vm._v("High Speed")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Internet Connection")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-4 text-center" }, [
+                _c("div", { staticClass: "content_strength" }, [
+                  _c("span", [_c("i", { staticClass: "fas fa-users" })]),
+                  _vm._v(" "),
+                  _c("h6", [_vm._v("Three Shifts")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Duty Plan")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-4 text-center" }, [
+                _c("div", { staticClass: "content_strength" }, [
+                  _c("span", [_c("i", { staticClass: "fas fa-dollar-sign" })]),
+                  _vm._v(" "),
+                  _c("h6", [_vm._v("Guarantee")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Your Satisfaction")])
                 ])
               ])
             ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "client" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "client_head wow animate__animated animate__fadeIn animate__delay-0.7s"
-                },
-                [
-                  _c("h3", [_vm._v("What our client are saying")]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "triangle_client" }),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                            classical Latin literature from 45 BC"
-                    )
-                  ])
-                ]
-              )
-            ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "testimonial_container" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-7" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "choose_us wow animate__animated animate__fadeIn animate__delay-1s"
+              },
+              [
+                _c("h3", [_vm._v("why choose us?")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dicta ratione rerum recusandae\n                            amet a unde reiciendis ipsa porro, dolorum qui aperiam odio illum aspernatur. Deserunt culpa\n                            quidem fugiat sit? dolorum qui aperiam odio illum aspernatur. Deserunt culpa\n                            quidem fugiat sit?"
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { attrs: { id: "accordion" } }, [
+              _c("div", { staticClass: "card" }, [
                 _c(
                   "div",
-                  { staticClass: "testimonial_slider owl-carousel owl-theme" },
+                  {
+                    staticClass: "card-header str_card",
+                    attrs: { id: "headingOne" }
+                  },
                   [
-                    _c("div", { staticClass: "testimonial_slider_item" }, [
-                      _c(
-                        "div",
-                        { staticClass: "testimonial_slider_content_text" },
-                        [
-                          _c("p", [
-                            _vm._v(
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, quos beatae!\n                                        Nulla, delectus pariatur! Sequi fuga eum ipsam nihil quasi?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "qoute_btn" }, [
-                            _c("span", [
-                              _c("i", { staticClass: "fas fa-quote-left" })
-                            ])
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "testmonial_slide_content_clint" },
-                        [
-                          _c("div", { staticClass: "testimonial_img" }, [
-                            _c("img", {
-                              staticClass: "img-fluid",
-                              staticStyle: {
-                                width: "90px",
-                                height: "auto",
-                                "border-radius": "50%"
-                              },
-                              attrs: {
-                                src: "public/frontend/images/download.png",
-                                alt: "Saied Rahman"
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "testimonial_cont" }, [
-                            _c("h4", [_vm._v("Saied Rahman")]),
-                            _vm._v(" "),
-                            _c("p", [_vm._v("CEO")]),
-                            _vm._v(" "),
-                            _c("h5", [_vm._v("Digital Hub Solution Limited")])
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "testimonial_slider_item" }, [
-                      _c(
-                        "div",
-                        { staticClass: "testimonial_slider_content_text" },
-                        [
-                          _c("p", [
-                            _vm._v(
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, quos beatae!\n                                        Nulla, delectus pariatur! Sequi fuga eum ipsam nihil quasi?"
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "qoute_btn" }, [
-                            _c("span", [
-                              _c("i", { staticClass: "fas fa-quote-left" })
-                            ])
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "testmonial_slide_content_clint" },
-                        [
-                          _c("div", { staticClass: "testimonial_img" }, [
-                            _c("img", {
-                              staticClass: "img-fluid",
-                              staticStyle: {
-                                width: "90px",
-                                height: "auto",
-                                "border-radius": "50%"
-                              },
-                              attrs: {
-                                src: "public/frontend/images/download.png",
-                                alt: "Saied Rahman"
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "testimonial_cont" }, [
-                            _c("h4", [_vm._v("Asif Rahman")]),
-                            _vm._v(" "),
-                            _c("p", [_vm._v("CEO")]),
-                            _vm._v(" "),
-                            _c("h5", [_vm._v("Digital Hub Solution Limited")])
-                          ])
-                        ]
-                      )
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "#",
+                          "data-toggle": "collapse",
+                          "data-target": "#collapseOne",
+                          "aria-expanded": "true",
+                          "aria-controls": "collapseOne"
+                        }
+                      },
+                      [
+                        _vm._v(
+                          " 24/7 Customer Service\n                                "
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "collapse show",
+                    attrs: {
+                      id: "collapseOne",
+                      "aria-labelledby": "headingOne",
+                      "data-parent": "#accordion"
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", [
+                        _vm._v(
+                          "We are open day-night just to give you the absolute best of our work and make you\n                                        fulfilled constantly. For any kinds of query you can get help from our experts\n                                        for 24 hours."
+                        )
+                      ])
                     ])
                   ]
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-sm-5" }, [
-                _c("div", { staticClass: "testimonial_image" }, [
-                  _c("img", {
-                    staticClass: "w-100",
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card-header str_card",
+                    attrs: { id: "headingTwo" }
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "collapsed",
+                        attrs: {
+                          href: "#",
+                          "data-toggle": "collapse",
+                          "data-target": "#collapseTwo",
+                          "aria-expanded": "false",
+                          "aria-controls": "collapseTwo"
+                        }
+                      },
+                      [_vm._v("VIP Client Service")]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "collapse",
                     attrs: {
-                      src: "public/frontend/images/testmonial.png",
-                      alt: ""
+                      id: "collapseTwo",
+                      "aria-labelledby": "headingTwo",
+                      "data-parent": "#accordion"
                     }
-                  })
+                  },
+                  [
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", [
+                        _vm._v(
+                          "Every one of the customers are supreme to us. We consider everybody customer as a\n                                        VIP members. In this way, be prepared to be modest by our additional normal\n                                        customer administration."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card-header str_card",
+                    attrs: { id: "headingThree" }
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "collapsed",
+                        attrs: {
+                          href: "#",
+                          "data-toggle": "collapse",
+                          "data-target": "#collapseThree",
+                          "aria-expanded": "false",
+                          "aria-controls": "collapseThree"
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "Satisfaction ensuring\n                                "
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "collapse",
+                    attrs: {
+                      id: "collapseThree",
+                      "aria-labelledby": "headingThree",
+                      "data-parent": "#accordion"
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", [
+                        _vm._v(
+                          "We guaranteed that we will make your desire level high and make you feel to\n                                        return again to us for getting best."
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card-header str_card",
+                    attrs: { id: "headingfour" }
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "collapsed",
+                        attrs: {
+                          href: "#",
+                          "data-toggle": "collapse",
+                          "data-target": "#collapsefour",
+                          "aria-expanded": "false",
+                          "aria-controls": "collapsefour"
+                        }
+                      },
+                      [
+                        _vm._v(
+                          " Best Price Rate\n                                "
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "collapse",
+                    attrs: {
+                      id: "collapsefour",
+                      "aria-labelledby": "headingfour",
+                      "data-parent": "#accordion"
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", [
+                        _vm._v(
+                          "Investigate the market and become more acquainted with the best evaluating. We\n                                        are certain that we are giving you the focused cost. Have an arrangement and get\n                                        the best. "
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "video_section" } }, [
+      _c("div", { staticClass: "continer" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-xl-12" }, [
+            _c("div", { staticClass: "video_section_content text-center" }, [
+              _c("h3", [_vm._v("Our Work Process Video")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "js-modal-btn",
+                  attrs: { "data-video-id": "VNGxECpJNTw" }
+                },
+                [_c("i", { staticClass: "fas fa-play" })]
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "work" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "work_head wow animate__animated animate__fadeIn animate__delay-1s"
+              },
+              [
+                _c("h3", [_vm._v("Our Project")]),
+                _vm._v(" "),
+                _c("span", { staticClass: "triangle_work" }),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                            classical Latin literature from 45 BC"
+                  )
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c("div", { staticClass: "portfolio-area" }, [
+              _c("div", { staticClass: "controls" }, [
+                _c(
+                  "button",
+                  { attrs: { type: "button", "data-filter": "all" } },
+                  [_vm._v("All")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { attrs: { type: "button", "data-filter": ".design" } },
+                  [_vm._v("Web Design")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { attrs: { type: "button", "data-filter": ".develop" } },
+                  [_vm._v("Web Development")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { attrs: { type: "button", "data-filter": ".graphics" } },
+                  [_vm._v("Graphics Design")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "portfolio-item" }, [
+                _c("div", { staticClass: "single-item mix design" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_1.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Web Design")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "single-item mix develop" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_2.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Web Development")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "single-item mix design" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_3.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Web Design")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "single-item mix develop" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_4.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Web Development")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "single-item mix design" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_5.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Web Design")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "single-item mix graphics" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_6.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Graphics Design")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "single-item mix graphics develop" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_1.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Graphics Design")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "single-item mix develop" }, [
+                  _c("div", { staticClass: "img-thumbnail" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "public/frontend/images/img_6.jpg",
+                        alt: "image"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img-content" }, [
+                    _c("h2", [_vm._v("Web Development")]),
+                    _vm._v(" "),
+                    _c("a", { attrs: { href: "#" } }, [_vm._v("Live Now")])
+                  ])
                 ])
               ])
             ])
           ])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "client" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "client_head wow animate__animated animate__fadeIn animate__delay-0.7s"
+              },
+              [
+                _c("h3", [_vm._v("What our client are saying")]),
+                _vm._v(" "),
+                _c("span", { staticClass: "triangle_client" }),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                            classical Latin literature from 45 BC"
+                  )
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "testimonial_container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-7" }, [
+              _c(
+                "div",
+                { staticClass: "testimonial_slider owl-carousel owl-theme" },
+                [
+                  _c("div", { staticClass: "testimonial_slider_item" }, [
+                    _c(
+                      "div",
+                      { staticClass: "testimonial_slider_content_text" },
+                      [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, quos beatae!\n                                        Nulla, delectus pariatur! Sequi fuga eum ipsam nihil quasi?"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "qoute_btn" }, [
+                          _c("span", [
+                            _c("i", { staticClass: "fas fa-quote-left" })
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "testmonial_slide_content_clint" },
+                      [
+                        _c("div", { staticClass: "testimonial_img" }, [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            staticStyle: {
+                              width: "90px",
+                              height: "auto",
+                              "border-radius": "50%"
+                            },
+                            attrs: {
+                              src: "public/frontend/images/download.png",
+                              alt: "Saied Rahman"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "testimonial_cont" }, [
+                          _c("h4", [_vm._v("Saied Rahman")]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("CEO")]),
+                          _vm._v(" "),
+                          _c("h5", [_vm._v("Digital Hub Solution Limited")])
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "testimonial_slider_item" }, [
+                    _c(
+                      "div",
+                      { staticClass: "testimonial_slider_content_text" },
+                      [
+                        _c("p", [
+                          _vm._v(
+                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, quos beatae!\n                                        Nulla, delectus pariatur! Sequi fuga eum ipsam nihil quasi?"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "qoute_btn" }, [
+                          _c("span", [
+                            _c("i", { staticClass: "fas fa-quote-left" })
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "testmonial_slide_content_clint" },
+                      [
+                        _c("div", { staticClass: "testimonial_img" }, [
+                          _c("img", {
+                            staticClass: "img-fluid",
+                            staticStyle: {
+                              width: "90px",
+                              height: "auto",
+                              "border-radius": "50%"
+                            },
+                            attrs: {
+                              src: "public/frontend/images/download.png",
+                              alt: "Saied Rahman"
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "testimonial_cont" }, [
+                          _c("h4", [_vm._v("Asif Rahman")]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v("CEO")]),
+                          _vm._v(" "),
+                          _c("h5", [_vm._v("Digital Hub Solution Limited")])
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-5" }, [
+              _c("div", { staticClass: "testimonial_image" }, [
+                _c("img", {
+                  staticClass: "w-100",
+                  attrs: {
+                    src: "public/frontend/images/testmonial.png",
+                    alt: ""
+                  }
+                })
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/main/slider.vue?vue&type=template&id=0219061b&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/views/main/slider.vue?vue&type=template&id=0219061b& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { attrs: { id: "banner" } }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-12 p-0" }, [
+          _c(
+            "div",
+            { staticClass: "banner_slider owl-carousel owl-theme" },
+            _vm._l(_vm.getSliders, function(slider, index) {
+              return _c("div", { staticClass: "item1" }, [
+                _vm._m(0, true),
+                _vm._v(" "),
+                _c("div", { staticClass: "carousel_content" }, [
+                  _c("div", { staticClass: "carousel_cont_head" }, [
+                    _c("h3", [_vm._v(_vm._s(slider.heading))])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "carousel_content_para" }, [
+                    _c("p", [
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(slider.paragraph) +
+                          "\n                "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1, true)
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "carousel_img" }, [
+      _c("img", {
+        attrs: { src: "public/frontend/images/banner.jpg", alt: "banner-image" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "banner_link" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v(" Read more ")])
     ])
   }
 ]
@@ -63300,7 +63319,7 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = 'https://lara-vue-6488e.firebaseio.com';
+window.axios.defaults.baseURL = 'http://localhost/durbarit172/api';
 window.axios.defaults.headers.common['Authorization'] = 'Qayum hasan';
 window.axios.defaults.headers.get['Accepts'] = 'application/json';
 /**
@@ -63804,6 +63823,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/views/main/slider.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/views/main/slider.vue ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _slider_vue_vue_type_template_id_0219061b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.vue?vue&type=template&id=0219061b& */ "./resources/js/components/views/main/slider.vue?vue&type=template&id=0219061b&");
+/* harmony import */ var _slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slider.vue?vue&type=script&lang=js& */ "./resources/js/components/views/main/slider.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _slider_vue_vue_type_template_id_0219061b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _slider_vue_vue_type_template_id_0219061b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/views/main/slider.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/views/main/slider.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/views/main/slider.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./slider.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/main/slider.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/views/main/slider.vue?vue&type=template&id=0219061b&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/views/main/slider.vue?vue&type=template&id=0219061b& ***!
+  \**************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_0219061b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./slider.vue?vue&type=template&id=0219061b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/views/main/slider.vue?vue&type=template&id=0219061b&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_0219061b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_slider_vue_vue_type_template_id_0219061b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/views/products/products-details.vue":
 /*!*********************************************************************!*\
   !*** ./resources/js/components/views/products/products-details.vue ***!
@@ -64095,22 +64183,39 @@ var routes = [{
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  state: {// category:[],
+  state: {
+    // category:[],
+    sliders: []
   },
-  getters: {// getCategory(state){
+  getters: {
+    // getCategory(state){
     //     return state.category
     // },
+    getSlider: function getSlider(state) {
+      return state.sliders;
+    }
   },
-  actions: {// allCategory(context){
+  actions: {
+    // allCategory(context){
     //     axios.get('/category')
     //         .then((response)=>{
     //             context.commit('categoreis',response.data.categories)
     //         })
     // },
+    allSlider: function allSlider(context) {
+      axios.get('/slider').then(function (response) {
+        context.commit('allsliders', response.data.data);
+        console.log(response);
+      });
+    }
   },
-  mutations: {// categoreis(state,data){
+  mutations: {
+    // categoreis(state,data){
     //     return state.category = data
     // },
+    allsliders: function allsliders(state, data) {
+      return state.sliders = data;
+    }
   }
 });
 
@@ -64134,8 +64239,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\durbaritnew17\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\durbaritnew17\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\durbarit172\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\durbarit172\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
