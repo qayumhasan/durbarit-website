@@ -47,6 +47,11 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
+      $createdate = Carbon::now()->format('d F Y');
+      //return $to;
     //  return $request;
         $validatedData = $request->validate([
           'name' => 'required',
@@ -79,6 +84,7 @@ class ProductController extends Controller
         $data->framework = $request->framework;
         $data->meta_tag = $request->meta_tag;
         $data->meta_description = $request->meta_description;
+        $data->first_create = $createdate;
         $data->created_at = Carbon::now();
         $photos = array();
        if ($request->hasFile('photos')) {
@@ -151,6 +157,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $lastdate = Carbon::now()->format('d F Y');
       $validatedData = $request->validate([
         'name' => 'required',
         'owner' => 'required',
@@ -182,6 +189,7 @@ class ProductController extends Controller
       $data->framework = $request->framework;
       $data->meta_tag = $request->meta_tag;
       $data->meta_description = $request->meta_description;
+      $data->last_update = $lastdate;
       $data->created_at = Carbon::now();
 
       $data->image = $request->previous_thumbnail_img;

@@ -18,106 +18,40 @@
     <section id="product_post">
         <div class="container wow animate__animated animate__fadeIn animate__delay-0.7s">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="product_single_box">
-                        <div class="product_image">
-                            <a href="#">
-                                <img src="public/frontend/images/img_4.jpg" style="height: 220px;" class="w-100" alt="image">
-                            </a>
-                        </div>
-                        
-                       
-                        <div class="product_price">
-                            <div class="product_cont">
-                                <h5><router-link :to="{ path: '/products/10'}">Slider Revolution Responsive WordPress Plugin</router-link></h5>
-                                <span> by themepunch in Sliders</span>
-                            </div>
-                            <div class="product_price_left">
-                                <ul>
-                                    <li><span><b>$29</b></span></li>
-                                    <li><span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                    </li>
-                                    <li><span style="font-size: 12px;">409.9K Sales</span></li>
-                                </ul>
-                            </div>
-                            <div class="product_price_right">
-                                <span><a href="#">Preview</a></span>
-                                <span><a href="#"><i class="fas fa-cart-plus"></i></a></span>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product_single_box">
-                        <div class="product_image">
-                            <a href="#">
-                                <img src="public/frontend/images/img_3.jpg" style="height: 220px;" class="w-100" alt="image">
-                            </a>
-                        </div>
-                       
-                        <div class="product_price">
-                            <div class="product_cont">
-                                <h5><router-link :to="{ path: '/products/10'}">Slider Revolution Responsive WordPress Plugin</router-link></h5>
-                                <span> by themepunch in Sliders</span>
-                            </div>
-                            <div class="product_price_left">
-                                <ul>
-                                    <li><span><b>$29</b></span></li>
-                                    <li><span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                    </li>
-                                    <li><span style="font-size: 12px;">409.9K Sales</span></li>
-                                </ul>
-                            </div>
-                            <div class="product_price_right">
-                                <span><a href="#">Preview</a></span>
-                                <span><a href="#"><i class="fas fa-cart-plus"></i></a></span>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="product_single_box">
-                        <div class="product_image">
-                            <a href="#">
-                                <img src="public/frontend/images/img_5.jpg" style="height: 220px;" class="w-100" alt="image">
-                            </a>
-                        </div>
-                       
-                        <div class="product_price">
-                            <div class="product_cont">
-                                <h5><router-link :to="{ path: '/products/10'}">Slider Revolution Responsive WordPress Plugin</router-link></h5>
-                                <span> by themepunch in Sliders</span>
-                            </div>
-                            <div class="product_price_left">
-                                <ul>
-                                    <li><span><b>$29</b></span></li>
-                                    <li><span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                    </li>
-                                    <li><span style="font-size: 12px;">409.9K Sales</span></li>
-                                </ul>
-                            </div>
-                            <div class="product_price_right">
-                                <span><a href="#">Preview</a></span>
-                                <span><a href="#"><i class="fas fa-cart-plus"></i></a></span>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                </div>
+              <div class="col-sm-4" v-for="product in products" :key="product.id">
+                  <div class="product_single_box">
+                      <div class="product_image">
+                          <a href="#">
+                              <img :src="'public/uploads/product/'+product.image" style="height: 270px;" class="w-100" alt="image">
+                          </a>
+                      </div>
+
+
+                      <div class="product_price">
+                          <div class="product_cont">
+                              <h5><router-link :to="{ path: '/products/'+product.id}">{{product.product_name}}</router-link></h5>
+
+                          </div>
+                          <div class="product_price_left">
+                              <ul>
+                                  <li><span><b>{{product.reqular_price}}</b></span></li>
+                                  <li><span><i class="fas fa-star"></i></span>
+                                      <span><i class="fas fa-star"></i></span>
+                                      <span><i class="fas fa-star"></i></span>
+                                      <span><i class="fas fa-star"></i></span>
+                                      <span><i class="fas fa-star"></i></span>
+                                  </li>
+                                  <li><span style="font-size: 12px;">{{product.number_of_sale}} Sales</span></li>
+                              </ul>
+                          </div>
+                          <div class="product_price_right">
+                              <span><a :href="product.demourl" target="_blank">Preview</a></span>
+                              <span><a ><i class="fas fa-cart-plus"></i></a></span>
+                          </div>
+                          <div class="clear"></div>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
 
@@ -128,14 +62,31 @@
 </template>
 <script>
 export default {
-    name:'Products'
+    name:'Products',
+    data(){
+      return{
+        products:[]
+      }
+    },
+    methods:{
+      allproduct(){
+        axios.get('/product/')
+        .then(({data}) => (this.products = data))
+        .catch()
+      }
+    },
+    mounted(){
+      
+      this.allproduct();
+    }
+
 }
 </script>
 
 
 <style scoped>
-<style scoped>
-    
+
+
 #product {
     padding: 80px 0px;
     background-image: url(/public/frontend/images/simon-abrams-k_T9Zj3SE8k-unsplash.jpg);
@@ -308,5 +259,4 @@ export default {
     background-color: #26abe2;
     color: #fff;
 }
-</style>
 </style>

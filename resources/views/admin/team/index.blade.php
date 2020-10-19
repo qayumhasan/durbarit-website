@@ -33,7 +33,7 @@
                             <th >Details</th>
                             <th >Image</th>
                             <th>Status</th>
-                            <th style="width: 10%;">manage</th>
+                            <th>manage</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,13 +42,13 @@
                             <td>
                             {{$loop->iteration}}
                             </td>
-                            
+
                             <td> {{$row->name}} </td>
                             <td> {{$row->designation}} </td>
-                            
+
                             <td> {!!Str::limit($row->details,150)!!} </td>
                             <td>
-                                <img src="{{asset('public/images/team/')}}/{{$row->image}}" alt="" width="25%">
+                                <img src="{{asset('public/images/team/')}}/{{$row->image}}" alt="" height="45px">
                             </td>
                             @if($row->status == 1)
                                 <td class="center"><span class="btn btn-success">Active</span></td>
@@ -77,7 +77,7 @@
                                     data-placement="right" title="Delete" data-original-title="Delete"><i
                                         class="far fa-trash-alt"></i></a>
 
-                                        
+
                             </td>
                         </tr>
                         @endforeach

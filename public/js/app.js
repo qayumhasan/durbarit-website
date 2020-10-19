@@ -2018,49 +2018,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Career'
+  name: 'Career',
+  data: function data() {
+    return {
+      careers: []
+    };
+  },
+  methods: {
+    allcareers: function allcareers() {
+      var _this = this;
+
+      axios.get('/career/').then(function (_ref) {
+        var data = _ref.data;
+        return _this.careers = data.data;
+      })["catch"]();
+    }
+  },
+  mounted: function mounted() {
+    this.allcareers();
+  }
 });
 
 /***/ }),
@@ -3502,12 +3479,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Product details'
+  name: 'Product-details',
+  data: function data() {
+    return {
+      products: []
+    };
+  },
+  methods: {
+    allproduct: function allproduct() {
+      var _this = this;
+
+      var id = this.$route.params.id;
+      console.log(id);
+      axios.get('/product/' + id).then(function (_ref) {
+        var data = _ref.data;
+        return _this.products = data;
+      })["catch"]();
+    }
+  },
+  created: function created() {
+    this.allproduct();
+  }
 });
 
 /***/ }),
@@ -3583,74 +3576,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Products'
+  name: 'Products',
+  data: function data() {
+    return {
+      products: []
+    };
+  },
+  methods: {
+    allproduct: function allproduct() {
+      var _this = this;
+
+      axios.get('/product/').then(function (_ref) {
+        var data = _ref.data;
+        return _this.products = data;
+      })["catch"]();
+    }
+  },
+  mounted: function mounted() {
+    this.allproduct();
+  }
 });
 
 /***/ }),
@@ -3723,406 +3668,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Team'
+  name: 'Team',
+  data: function data() {
+    return {
+      employees: []
+    };
+  },
+  methods: {
+    allemployess: function allemployess() {
+      var _this = this;
+
+      axios.get('/team/').then(function (_ref) {
+        var data = _ref.data;
+        return _this.employees = data.data;
+      })["catch"]();
+    }
+  },
+  mounted: function mounted() {
+    this.allemployess();
+  }
 });
 
 /***/ }),
@@ -8597,7 +8162,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n<style scoped>\r\n    \r\n#product[data-v-779d00d3] {\r\n    padding: 80px 0px;\r\n    background-image: url(/public/frontend/images/simon-abrams-k_T9Zj3SE8k-unsplash.jpg);\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    position: relative;\r\n    z-index: 999;\n}\n#product[data-v-779d00d3]:before {\r\n    position: absolute;\r\n    content: '';\r\n    left: 0px;\r\n    top: 0px;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(0, 0, 0, 0.7);\n}\n#product_post[data-v-779d00d3] {\r\n    padding: 100px 0px;\r\n    background-color: rgb(241, 241, 241);\r\n    position: relative;\r\n    z-index: 999;\n}\n.product_header h3[data-v-779d00d3] {\r\n    font-weight: 600;\r\n    margin-bottom: 50px;\r\n    position: relative;\r\n    display: inline-block;\r\n    font-size: 35px;\r\n    z-index: 9999;\r\n    color: #fff;\n}\n.product_header h3[data-v-779d00d3]:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0px;\r\n    top: 50px;\r\n    width: 50%;\r\n    height: 2px;\r\n    background-color: #26abe2;\n}\n.product_header h3[data-v-779d00d3]:after {\r\n    content: '';\r\n    position: absolute;\r\n    right: 0px;\r\n    top: 35px;\r\n    width: 50%;\r\n    height: 2px;\r\n    background-color: #26abe2;\n}\n.triangle_product[data-v-779d00d3] {\r\n    position: relative;\n}\n.triangle_product[data-v-779d00d3]:before {\r\n    content: '';\r\n    position: absolute;\r\n    /* right: 0px; */\r\n    left: -85px;\r\n    top: 21px;\r\n    width: 0;\r\n    height: 0;\r\n    border-left: 8px solid transparent;\r\n    border-right: 8px solid transparent;\r\n    border-bottom: 15px solid #26abe2;\n}\n.triangle_product[data-v-779d00d3]:after {\r\n    content: '';\r\n    position: absolute;\r\n    /* right: 0px; */\r\n    right: 54px;\r\n    top: 21px;\r\n    width: 0;\r\n    height: 0;\r\n    border-left: 8px solid transparent;\r\n    border-right: 8px solid transparent;\r\n    border-top: 16px solid #26abe2;\n}\n.product_price[data-v-779d00d3] {\r\n    padding: 15px;\n}\n.product_single_box[data-v-779d00d3] {\r\n    background-color: #fff;\n}\n.product_image img[data-v-779d00d3] {\r\n    border-top-left-radius: 8px;\r\n    border-top-right-radius: 8px;\n}\n.product_price_left[data-v-779d00d3] {\r\n    float: left;\r\n    width: 50%;\n}\n.product_price_right[data-v-779d00d3] {\r\n    float: right;\r\n    width: 50%;\n}\n.clear[data-v-779d00d3] {\r\n    clear: both;\n}\n.product_single_box[data-v-779d00d3] {\r\n    border-radius: 8px;\r\n    box-shadow: 0px 3px 20px -10px rgba(0, 0, 0, 0.75);\n}\n.product_cont h5 a[data-v-779d00d3] {\r\n    text-decoration: none;\r\n    font-size: 15px;\r\n    color: #26abe2;\n}\n.product_cont span[data-v-779d00d3] {\r\n    font-size: 14px;\r\n    color: #909090;\n}\n.product_price_right[data-v-779d00d3] {\r\n    float: right;\r\n    width: 50%;\r\n    position: relative;\r\n    top: 46px;\r\n    left: 9px;\n}\n.product_price_left ul li[data-v-779d00d3] {\r\n    list-style: none;\r\n    display: block;\r\n    margin-bottom: 3px;\n}\n.product_price_left span[data-v-779d00d3] {\r\n    font-size: 14px;\n}\n.product_price_left i.fas.fa-star[data-v-779d00d3] {\r\n    color: orange;\n}\n.product_price_right span a[data-v-779d00d3] {\r\n    color: #26abe2;\r\n    text-transform: capitalize;\r\n    border: 1px solid #26abe2;\r\n    padding: 5px 12px;\r\n    border-radius: 3px;\r\n    margin-right: 10px;\r\n    font-size: 14px;\r\n    text-decoration: none;\r\n    transition: 0.6s all;\n}\n.product_price_right span a[data-v-779d00d3]:hover {\r\n    background-color: #26abe2;\r\n    color: #fff;\n}\r\n", ""]);
+exports.push([module.i, "\n#product[data-v-779d00d3] {\r\n    padding: 80px 0px;\r\n    background-image: url(/public/frontend/images/simon-abrams-k_T9Zj3SE8k-unsplash.jpg);\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    position: relative;\r\n    z-index: 999;\n}\n#product[data-v-779d00d3]:before {\r\n    position: absolute;\r\n    content: '';\r\n    left: 0px;\r\n    top: 0px;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: rgba(0, 0, 0, 0.7);\n}\n#product_post[data-v-779d00d3] {\r\n    padding: 100px 0px;\r\n    background-color: rgb(241, 241, 241);\r\n    position: relative;\r\n    z-index: 999;\n}\n.product_header h3[data-v-779d00d3] {\r\n    font-weight: 600;\r\n    margin-bottom: 50px;\r\n    position: relative;\r\n    display: inline-block;\r\n    font-size: 35px;\r\n    z-index: 9999;\r\n    color: #fff;\n}\n.product_header h3[data-v-779d00d3]:before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0px;\r\n    top: 50px;\r\n    width: 50%;\r\n    height: 2px;\r\n    background-color: #26abe2;\n}\n.product_header h3[data-v-779d00d3]:after {\r\n    content: '';\r\n    position: absolute;\r\n    right: 0px;\r\n    top: 35px;\r\n    width: 50%;\r\n    height: 2px;\r\n    background-color: #26abe2;\n}\n.triangle_product[data-v-779d00d3] {\r\n    position: relative;\n}\n.triangle_product[data-v-779d00d3]:before {\r\n    content: '';\r\n    position: absolute;\r\n    /* right: 0px; */\r\n    left: -85px;\r\n    top: 21px;\r\n    width: 0;\r\n    height: 0;\r\n    border-left: 8px solid transparent;\r\n    border-right: 8px solid transparent;\r\n    border-bottom: 15px solid #26abe2;\n}\n.triangle_product[data-v-779d00d3]:after {\r\n    content: '';\r\n    position: absolute;\r\n    /* right: 0px; */\r\n    right: 54px;\r\n    top: 21px;\r\n    width: 0;\r\n    height: 0;\r\n    border-left: 8px solid transparent;\r\n    border-right: 8px solid transparent;\r\n    border-top: 16px solid #26abe2;\n}\n.product_price[data-v-779d00d3] {\r\n    padding: 15px;\n}\n.product_single_box[data-v-779d00d3] {\r\n    background-color: #fff;\n}\n.product_image img[data-v-779d00d3] {\r\n    border-top-left-radius: 8px;\r\n    border-top-right-radius: 8px;\n}\n.product_price_left[data-v-779d00d3] {\r\n    float: left;\r\n    width: 50%;\n}\n.product_price_right[data-v-779d00d3] {\r\n    float: right;\r\n    width: 50%;\n}\n.clear[data-v-779d00d3] {\r\n    clear: both;\n}\n.product_single_box[data-v-779d00d3] {\r\n    border-radius: 8px;\r\n    box-shadow: 0px 3px 20px -10px rgba(0, 0, 0, 0.75);\n}\n.product_cont h5 a[data-v-779d00d3] {\r\n    text-decoration: none;\r\n    font-size: 15px;\r\n    color: #26abe2;\n}\n.product_cont span[data-v-779d00d3] {\r\n    font-size: 14px;\r\n    color: #909090;\n}\n.product_price_right[data-v-779d00d3] {\r\n    float: right;\r\n    width: 50%;\r\n    position: relative;\r\n    top: 46px;\r\n    left: 9px;\n}\n.product_price_left ul li[data-v-779d00d3] {\r\n    list-style: none;\r\n    display: block;\r\n    margin-bottom: 3px;\n}\n.product_price_left span[data-v-779d00d3] {\r\n    font-size: 14px;\n}\n.product_price_left i.fas.fa-star[data-v-779d00d3] {\r\n    color: orange;\n}\n.product_price_right span a[data-v-779d00d3] {\r\n    color: #26abe2;\r\n    text-transform: capitalize;\r\n    border: 1px solid #26abe2;\r\n    padding: 5px 12px;\r\n    border-radius: 3px;\r\n    margin-right: 10px;\r\n    font-size: 14px;\r\n    text-decoration: none;\r\n    transition: 0.6s all;\n}\n.product_price_right span a[data-v-779d00d3]:hover {\r\n    background-color: #26abe2;\r\n    color: #fff;\n}\r\n", ""]);
 
 // exports
 
@@ -40504,215 +40069,128 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "career_post" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "job_list wow animate__animated animate__fadeIn animate__delay-0.7s"
+              },
+              [
+                _c("table", { staticClass: "table table-striped" }, [
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.careers, function(carrer) {
+                      return _c("tr", { key: carrer.id }, [
+                        _c("td", [
+                          _c("div", { staticClass: "list_left" }, [
+                            _c("ul", [
+                              _c("li", [
+                                _c("span", { staticClass: "job_badge" }, [
+                                  _vm._v("s")
+                                ]),
+                                _c(
+                                  "span",
+                                  { staticStyle: { "margin-left": "10px" } },
+                                  [_vm._v(_vm._s(carrer.subject))]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("span", { staticClass: "job" }, [
+                                  _vm._v(
+                                    _vm._s(carrer.designation) +
+                                      "\n                                                "
+                                  )
+                                ]),
+                                _c("span", [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "badge badge-primary",
+                                      attrs: { href: carrer.ink }
+                                    },
+                                    [_vm._v("Open")]
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("span", { staticClass: "type" }, [
+                                  _vm._v("Job Type: " + _vm._s(carrer.jobtype))
+                                ])
+                              ])
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(2, true)
+                      ])
+                    }),
+                    0
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", { attrs: { id: "career" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c("div", { staticClass: "career_header" }, [
-                _c("h3", [_vm._v("Career")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "triangle_career" })
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "career_post" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "para_career wow animate__animated animate__fadeIn animate__delay-0.7s text-center "
-                },
-                [
-                  _c("p", [
-                    _vm._v(
-                      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                        classical Latin literature from 45 BC.Contrary to popular belief, Lorem Ipsum is not simply\n                        random text. It has roots in a piece of\n                        classical Latin literature from 45 BC.Contrary to popular belief, Lorem Ipsum is not simply\n                        random text. It has roots in a piece of\n                        classical Latin literature from 45 BC.Contrary to popular belief, Lorem Ipsum is not simply\n                        random text. It has roots in a piece of\n                        classical Latin literature from 45 BC"
-                    )
-                  ])
-                ]
-              ),
+    return _c("section", { attrs: { id: "career" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c("div", { staticClass: "career_header" }, [
+              _c("h3", [_vm._v("Career")]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "job_list wow animate__animated animate__fadeIn animate__delay-0.7s"
-                },
-                [
-                  _c("table", { staticClass: "table table-striped" }, [
-                    _c("tbody", [
-                      _c("tr", [
-                        _c("td", [
-                          _c("div", { staticClass: "list_left" }, [
-                            _c("ul", [
-                              _c("li", [
-                                _c("span", { staticClass: "job_badge" }, [
-                                  _vm._v("S")
-                                ]),
-                                _c(
-                                  "span",
-                                  { staticStyle: { "margin-left": "10px" } },
-                                  [_vm._v("Support")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("span", { staticClass: "job" }, [
-                                  _vm._v(
-                                    "Lead Support Engineer, WordPress\n                                                "
-                                  )
-                                ]),
-                                _c("span", [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "badge badge-primary",
-                                      attrs: { href: "#" }
-                                    },
-                                    [_vm._v("Open")]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("span", { staticClass: "type" }, [
-                                  _vm._v("Job Type: Parmanent")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("div", { staticClass: "apply_btn" }, [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("apply now")
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("td", [
-                          _c("div", { staticClass: "list_left" }, [
-                            _c("ul", [
-                              _c("li", [
-                                _c("span", { staticClass: "job_badge" }, [
-                                  _vm._v("S")
-                                ]),
-                                _c(
-                                  "span",
-                                  { staticStyle: { "margin-left": "10px" } },
-                                  [_vm._v("Support")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("span", { staticClass: "job" }, [
-                                  _vm._v(
-                                    "Lead Support Engineer, WordPress\n                                                "
-                                  )
-                                ]),
-                                _c("span", [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "badge badge-primary",
-                                      attrs: { href: "#" }
-                                    },
-                                    [_vm._v("Open")]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("span", { staticClass: "type" }, [
-                                  _vm._v("Job Type: Parmanent")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("div", { staticClass: "apply_btn" }, [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("apply now")
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("td", [
-                          _c("div", { staticClass: "list_left" }, [
-                            _c("ul", [
-                              _c("li", [
-                                _c("span", { staticClass: "job_badge" }, [
-                                  _vm._v("S")
-                                ]),
-                                _c(
-                                  "span",
-                                  { staticStyle: { "margin-left": "10px" } },
-                                  [_vm._v("Support")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("span", { staticClass: "job" }, [
-                                  _vm._v(
-                                    "Lead Support Engineer, WordPress\n                                                "
-                                  )
-                                ]),
-                                _c("span", [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "badge badge-primary",
-                                      attrs: { href: "#" }
-                                    },
-                                    [_vm._v("Open")]
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("span", { staticClass: "type" }, [
-                                  _vm._v("Job Type: Parmanent")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c("div", { staticClass: "apply_btn" }, [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("apply now")
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                ]
-              )
+              _c("span", { staticClass: "triangle_career" })
             ])
           ])
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "para_career wow animate__animated animate__fadeIn animate__delay-0.7s text-center "
+      },
+      [
+        _c("p", [
+          _vm._v(
+            "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of\n                        classical Latin literature from 45 BC.Contrary to popular belief, Lorem Ipsum is not simply\n                        random text. It has roots in a piece of\n                        classical Latin literature from 45 BC.Contrary to popular belief, Lorem Ipsum is not simply\n                        random text. It has roots in a piece of\n                        classical Latin literature from 45 BC.Contrary to popular belief, Lorem Ipsum is not simply\n                        random text. It has roots in a piece of\n                        classical Latin literature from 45 BC"
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("div", { staticClass: "apply_btn" }, [
+        _c("a", { attrs: { href: "#" } }, [_vm._v("apply now")])
       ])
     ])
   }
@@ -42973,603 +42451,220 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", { attrs: { id: "product_detail" } }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "container wow animate__animated animate__fadeIn animate__delay-1s"
-          },
-          [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-12 text-center" }, [
-                _c("div", { staticClass: "product_header_d" }, [
-                  _c("h3", [_vm._v("Product Detail")]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "triangle_product_d" })
-                ])
-              ])
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "detail_tab" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c("div", { staticClass: "product_heading" }, [
-                _c("h3", [_vm._v("Hoteleon - Complete Hotel Booking System")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12" }, [
-              _c("nav", [
-                _c(
-                  "div",
-                  {
-                    staticClass: "nav nav-tabs",
-                    attrs: { id: "nav-tab", role: "tablist" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-item nav-link active",
-                        attrs: {
-                          id: "nav-home-tab",
-                          "data-toggle": "tab",
-                          href: "#nav-home",
-                          role: "tab",
-                          "aria-controls": "nav-home",
-                          "aria-selected": "true"
-                        }
-                      },
-                      [_vm._v("Item Details")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-item nav-link",
-                        attrs: {
-                          id: "nav-profile-tab",
-                          "data-toggle": "tab",
-                          href: "#nav-profile",
-                          role: "tab",
-                          "aria-controls": "nav-profile",
-                          "aria-selected": "false"
-                        }
-                      },
-                      [_vm._v("Comment")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-item nav-link",
-                        attrs: {
-                          id: "nav-contact-tab",
-                          "data-toggle": "tab",
-                          href: "#nav-contact",
-                          role: "tab",
-                          "aria-controls": "nav-contact",
-                          "aria-selected": "false"
-                        }
-                      },
-                      [_vm._v("Support")]
-                    )
-                  ]
-                )
-              ])
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { attrs: { id: "detail_tab" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "product_heading" }, [
+              _c("h3", [_vm._v(_vm._s(_vm.products.product_name))])
             ])
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "detail_section" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-7" }, [
-              _c("div", { staticClass: "detail_single_box" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-content",
-                    attrs: { id: "nav-tabContent" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-pane fade show active",
-                        staticStyle: { "background-color": "transparent" },
-                        attrs: {
-                          id: "nav-home",
-                          role: "tabpanel",
-                          "aria-labelledby": "nav-home-tab"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "single_details_box" }, [
-                          _c("div", { staticClass: "detail_box_image" }, [
-                            _c("img", {
-                              staticClass: "w-100",
-                              attrs: {
-                                src: "public/frontend/images/img_6.jpg",
-                                alt: "image"
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "detail_button text-center" },
-                            [
-                              _c("span", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _c("i", { staticClass: "fas fa-image" }),
-                                  _vm._v(" Live preview")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _c("i", { staticClass: "fas fa-image" }),
-                                  _vm._v(" screenshot")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("ul", { staticClass: "link_btn" }, [
-                                _c("li", [_c("span", [_vm._v("Share:")])]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _c("i", {
-                                      staticClass: "fab fa-facebook-f"
-                                    })
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _c("i", { staticClass: "fab fa-twitter" })
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _c("i", { staticClass: "fab fa-linkedin" })
-                                  ])
-                                ])
-                              ])
-                            ]
-                          )
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]),
+    _vm._v(" "),
+    _c("section", { attrs: { id: "detail_section" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-7" }, [
+            _c("div", { staticClass: "detail_single_box" }, [
+              _c(
+                "div",
+                { staticClass: "tab-content", attrs: { id: "nav-tabContent" } },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade show active",
+                      staticStyle: { "background-color": "transparent" },
+                      attrs: {
+                        id: "nav-home",
+                        role: "tabpanel",
+                        "aria-labelledby": "nav-home-tab"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "single_details_box" }, [
+                        _c("div", { staticClass: "detail_box_image" }, [
+                          _c("img", {
+                            staticClass: "w-100",
+                            attrs: {
+                              src:
+                                "public/uploads/product/" + _vm.products.image,
+                              alt: "image"
+                            }
+                          })
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "sec_box" }, [
-                          _c(
-                            "div",
-                            { staticClass: "detail_button_bottom text-center" },
-                            [
-                              _c("ul", [
-                                _c("li", [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _c("i", { staticClass: "fas fa-heart" }),
-                                    _vm._v(" Add to Wishlist")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("li", [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _c("i", { staticClass: "fas fa-book" }),
-                                    _vm._v(" Add to Collection")
-                                  ])
-                                ])
-                              ])
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "third_sec" }, [
-                          _c("h3", [_vm._v("About:")]),
-                          _vm._v(" "),
-                          _c("hr"),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dicta ducimus\n                                    facere at molestiae nostrum sequi quasi placeat? Architecto rem maiores eius\n                                    earum, in accusamus natus neque suscipit nihil. Blanditiis."
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "four_sec" }, [
-                          _c("h3", [_vm._v("feature:")]),
-                          _vm._v(" "),
-                          _c("hr"),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "point" }, [
-                            _c("li", [
-                              _c("i", { staticClass: "fas fa-check" }),
-                              _vm._v(" Free technical support")
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _c("i", { staticClass: "fas fa-check" }),
-                              _vm._v(" Future product updates")
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _c("i", { staticClass: "fas fa-check" }),
-                              _vm._v(" Quality checked by DurbarIT")
-                            ]),
-                            _vm._v(" "),
-                            _c("li", [
-                              _c("i", { staticClass: "fas fa-check" }),
-                              _vm._v(" Lowest price guarantee")
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "five_sec mt-3" }, [
-                          _c("h3", [_vm._v("Demo")]),
-                          _vm._v(" "),
-                          _c("hr"),
-                          _vm._v(" "),
-                          _c("span", [
-                            _vm._v(" Frontend: "),
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("http://rifat636.thesoftking.com/hoteleo/")
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "six_sec mt-3" }, [
-                          _c("h3", [_vm._v("Release Log:")]),
-                          _vm._v(" "),
-                          _c("hr"),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "bug" }, [
-                            _c("ul", [
-                              _c("li", [
-                                _vm._v(" - Few Responsive Issue Fixed")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _vm._v(" - Few Responsive Issue Fixed")
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _vm._v(" - Few Responsive Issue Fixed")
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-pane fade",
-                        attrs: {
-                          id: "nav-profile",
-                          role: "tabpanel",
-                          "aria-labelledby": "nav-profile-tab"
-                        }
-                      },
-                      [_vm._v("Comment")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "tab-pane fade",
-                        attrs: {
-                          id: "nav-contact",
-                          role: "tabpanel",
-                          "aria-labelledby": "nav-contact-tab"
-                        }
-                      },
-                      [
                         _c(
                           "div",
-                          {
-                            staticClass:
-                              "tsk-content-block bg-aliceblue margin-bottom-30 "
-                          },
+                          { staticClass: "detail_button text-center" },
                           [
-                            _c("h4", { staticClass: "tsk-ctitle" }, [
-                              _vm._v("Contact the author")
-                            ]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v(
-                                "We provides limited support for this item through email\n                                    contact form."
+                            _c("span", [
+                              _c(
+                                "a",
+                                { attrs: { href: _vm.products.demourl } },
+                                [
+                                  _c("i", { staticClass: "fas fa-image" }),
+                                  _vm._v(" Live preview")
+                                ]
                               )
                             ]),
                             _vm._v(" "),
-                            _c(
-                              "h4",
-                              { staticClass: "tsk-ctitle margin-top-20" },
-                              [_vm._v("Item support includes:")]
-                            ),
+                            _vm._m(2),
                             _vm._v(" "),
-                            _c("ul", { staticClass: "checklist-right" }, [
-                              _c("li", [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v(
-                                  " Availability of the author to\n                                        answer questions\n                                    "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v(
-                                  " Answering technical questions about\n                                        item’s features\n                                    "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v(
-                                  " Assistance with reported bugs and\n                                        issues\n                                    "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("i", { staticClass: "fas fa-check" }),
-                                _vm._v(
-                                  " Help with included 3rd party assets\n                                    "
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "h4",
-                              { staticClass: "tsk-ctitle margin-top-20" },
-                              [
-                                _vm._v(
-                                  "However, item support does not include:"
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "checklist-cross" }, [
-                              _c("li", [
-                                _c("i", { staticClass: "fas fa-times" }),
-                                _vm._v(
-                                  " Customization services\n                                    "
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("i", { staticClass: "fas fa-times" }),
-                                _vm._v(
-                                  " Installation services\n                                    "
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass:
-                                  "btn-tsk d-block margin-top-30 text-center",
-                                attrs: { href: "contact.html" }
-                              },
-                              [_vm._v("Contact Us")]
-                            )
+                            _vm._m(3)
                           ]
                         )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "third_sec" }, [
+                        _c("h3", [_vm._v("About:")]),
+                        _vm._v(" "),
+                        _c("hr"),
+                        _vm._v(" "),
+                        _c("p", [_vm._v(_vm._s(_vm.products.meta_description))])
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "five_sec mt-3" }, [
+                        _c("h3", [_vm._v("Demo")]),
+                        _vm._v(" "),
+                        _c("hr"),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(" Frontend: "),
+                          _c("a", { attrs: { href: _vm.products.demourl } }, [
+                            _vm._v(_vm._s(_vm.products.demourl))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(6)
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade",
+                      attrs: {
+                        id: "nav-profile",
+                        role: "tabpanel",
+                        "aria-labelledby": "nav-profile-tab"
+                      }
+                    },
+                    [_vm._v("Comment")]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(7)
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-5" }, [
+            _c("div", { staticClass: "price_list_box" }, [
+              _c("div", { staticClass: "top_box" }, [
+                _vm._m(8),
+                _vm._v(" "),
+                _c("div", { staticClass: "price_part" }, [
+                  _c("span", [
+                    _vm._v(_vm._s(_vm.products.reqular_price) + " ৳")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "clear" })
+              ]),
+              _vm._v(" "),
+              _vm._m(9),
+              _vm._v(" "),
+              _vm._m(10),
+              _vm._v(" "),
+              _c("div", { staticClass: "cart text-center" }, [
+                _vm._m(11),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mt-4" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _c(
+                      "div",
+                      { staticClass: "tsk-content-block sales-block" },
+                      [
+                        _c("h4", { staticClass: "sales-count" }, [
+                          _c("i", { staticClass: "fas fa-cart-arrow-down" }),
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.products.number_of_sale) +
+                              " Sales\n                                    "
+                          )
+                        ])
                       ]
                     )
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-5" }, [
-              _c("div", { staticClass: "price_list_box" }, [
-                _c("div", { staticClass: "top_box" }, [
-                  _c("div", { staticClass: "select_option" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c(
-                        "select",
-                        {
-                          staticClass: "form-control",
-                          attrs: { id: "exampleFormControlSelect1" }
-                        },
-                        [
-                          _c("option", { attrs: { selected: "" } }, [
-                            _vm._v("Choose package")
-                          ]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("Reguler")]),
-                          _vm._v(" "),
-                          _c("option", [_vm._v("Premium")])
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "price_part" }, [
-                    _c("span", [_vm._v("$49")])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "clear" })
-                ]),
-                _vm._v(" "),
-                _c("ul", { staticClass: "point" }, [
-                  _c("li", [
-                    _c("i", { staticClass: "fas fa-check-circle" }),
-                    _vm._v(" Free technical support")
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", { staticClass: "fas fa-check-circle" }),
-                    _vm._v(" Future product updates")
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", { staticClass: "fas fa-check-circle" }),
-                    _vm._v(" Quality checked by DurbarIT")
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", { staticClass: "fas fa-check-circle" }),
-                    _vm._v(" Lowest price guarantee")
-                  ]),
-                  _vm._v(" "),
-                  _c("li", {}, [
-                    _c("i", { staticClass: "fas fa-check-circle" }),
-                    _vm._v(" 3 months support included "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "ml-4 small" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href:
-                              "https://thesoftking.com/item/hoteleon-complete-hotel-booking-system/376/support"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "What\n                                    does support include?"
-                          )
-                        ]
-                      )
-                    ])
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "mt-4" }, [
-                  _c("input", {
-                    attrs: {
-                      type: "checkbox",
-                      id: "exSupport",
-                      name: "exSupport",
-                      value: "12"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "exSupport" } }, [
-                    _vm._v("Extend support to 6 months")
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "float-right font-weight-bold" }, [
-                    _vm._v("$"),
-                    _c("span", { staticClass: "supPrice" }, [_vm._v("14.75")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "cart text-center" }, [
-                  _c("div", { staticClass: "row mt-2" }, [
-                    _c("div", { staticClass: "col-sm-12 block" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: " cart_btn margin-top-30",
-                          attrs: { type: "button", id: "purchase-now" }
-                        },
-                        [
-                          _c("i", { staticClass: "fas fa-shopping-cart" }),
-                          _vm._v(" Add to Cart")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mt-4" }, [
-                    _c("div", { staticClass: "col-sm-12" }, [
-                      _c(
-                        "div",
-                        { staticClass: "tsk-content-block sales-block" },
-                        [
-                          _c("h4", { staticClass: "sales-count" }, [
-                            _c("i", { staticClass: "fas fa-cart-arrow-down" }),
-                            _vm._v(
-                              " 70 Sales\n                                    "
-                            )
-                          ])
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row text-left" }, [
-                    _c("div", { staticClass: "col-sm-12 mt-4" }, [
-                      _c("div", { staticClass: "info_head" }, [
-                        _c("h4", [_vm._v("Information")]),
+                _c("div", { staticClass: "row text-left" }, [
+                  _c("div", { staticClass: "col-sm-12 mt-4" }, [
+                    _c("div", { staticClass: "info_head" }, [
+                      _c("h4", [_vm._v("Information")]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "single_item_info" }, [
+                        _c("h5", [_vm._v("First Release")]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("h5", [_vm._v("First Release")]),
+                        _c("span", [_vm._v(_vm._s(_vm.products.first_create))])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "single_item_info" }, [
+                        _c("h5", [_vm._v("Last update")]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(_vm.products.last_update))])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "single_item_info" }, [
+                        _c("h5", [_vm._v("Compatible Browsers")]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(_vm._s(_vm.products.compatible_browser))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "single_item_info" }, [
+                        _c("h5", [_vm._v("Software Version")]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(_vm._s(_vm.products.software_version))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "single_item_info" }, [
+                        _c("h5", [_vm._v("Demo URL")]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(_vm.products.demourl))])
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(12),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "single_item_info" }, [
+                        _c("h5", [_vm._v("Software Framework")]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v(_vm._s(_vm.products.framework))])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "single_item_info" }, [
+                        _c("div", { staticClass: "tag" }, [
+                          _c("h5", [_vm._v("Tags")]),
                           _vm._v(" "),
-                          _c("span", [_vm._v("19 july 2020")])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("h5", [_vm._v("Last update")]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("19 August 2020")])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("h5", [_vm._v("Compatible Browsers")]),
-                          _vm._v(" "),
-                          _c("span", [
-                            _vm._v(
-                              "IE6,IE7,IE8,IE9,IE10,IE11,Firefox,Safari,Opera,Chrome,Edge,"
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("h5", [_vm._v("Software Version")]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("PHP 7.x,MySQL 5.x,")])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("h5", [_vm._v("Demo URL")]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("http://www.durbarit.com/html/")])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("h5", [_vm._v("High Resolution")]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Yes")])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("h5", [_vm._v("Software Framework")]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Laravel")])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "single_item_info" }, [
-                          _c("div", { staticClass: "tag" }, [
-                            _c("h5", [_vm._v("Tags")]),
-                            _vm._v(" "),
-                            _c("ul", [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Holiday")
-                                ])
-                              ])
+                          _c("ul", [
+                            _c("li", [
+                              _c("a", [_vm._v(_vm._s(_vm.products.meta_tag))])
                             ])
                           ])
                         ])
@@ -43582,6 +42677,422 @@ var staticRenderFns = [
           ])
         ])
       ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "product_detail" } }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "container wow animate__animated animate__fadeIn animate__delay-1s"
+        },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-12 text-center" }, [
+              _c("div", { staticClass: "product_header_d" }, [
+                _c("h3", [_vm._v("Product Detail")]),
+                _vm._v(" "),
+                _c("span", { staticClass: "triangle_product_d" })
+              ])
+            ])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("nav", [
+          _c(
+            "div",
+            {
+              staticClass: "nav nav-tabs",
+              attrs: { id: "nav-tab", role: "tablist" }
+            },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-item nav-link active",
+                  attrs: {
+                    id: "nav-home-tab",
+                    "data-toggle": "tab",
+                    href: "#nav-home",
+                    role: "tab",
+                    "aria-controls": "nav-home",
+                    "aria-selected": "true"
+                  }
+                },
+                [_vm._v("Item Details")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "nav-item nav-link",
+                  attrs: {
+                    id: "nav-profile-tab",
+                    "data-toggle": "tab",
+                    href: "#nav-profile",
+                    role: "tab",
+                    "aria-controls": "nav-profile",
+                    "aria-selected": "false"
+                  }
+                },
+                [_vm._v("Comment")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "nav-item nav-link",
+                  attrs: {
+                    id: "nav-contact-tab",
+                    "data-toggle": "tab",
+                    href: "#nav-contact",
+                    role: "tab",
+                    "aria-controls": "nav-contact",
+                    "aria-selected": "false"
+                  }
+                },
+                [_vm._v("Support")]
+              )
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fas fa-image" }),
+        _vm._v(" screenshot")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "link_btn" }, [
+      _c("li", [_c("span", [_vm._v("Share:")])]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fab fa-facebook-f" })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fab fa-twitter" })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("a", { attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fab fa-linkedin" })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sec_box" }, [
+      _c("div", { staticClass: "detail_button_bottom text-center" }, [
+        _c("ul", [
+          _c("li", [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fas fa-heart" }),
+              _vm._v(" Add to Wishlist")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: "#" } }, [
+              _c("i", { staticClass: "fas fa-book" }),
+              _vm._v(" Add to Collection")
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "four_sec" }, [
+      _c("h3", [_vm._v("feature:")]),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("ul", { staticClass: "point" }, [
+        _c("li", [
+          _c("i", { staticClass: "fas fa-check" }),
+          _vm._v(" Free technical support")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "six_sec mt-3" }, [
+      _c("h3", [_vm._v("Release Log:")]),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("div", { staticClass: "bug" }, [
+        _c("ul", [
+          _c("li", [_vm._v(" - Few Responsive Issue Fixed")]),
+          _vm._v(" "),
+          _c("li", [_vm._v(" - Few Responsive Issue Fixed")]),
+          _vm._v(" "),
+          _c("li", [_vm._v(" - Few Responsive Issue Fixed")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: {
+          id: "nav-contact",
+          role: "tabpanel",
+          "aria-labelledby": "nav-contact-tab"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "tsk-content-block bg-aliceblue margin-bottom-30 " },
+          [
+            _c("h4", { staticClass: "tsk-ctitle" }, [
+              _vm._v("Contact the author")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "We provides limited support for this item through email\n                                    contact form."
+              )
+            ]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "tsk-ctitle margin-top-20" }, [
+              _vm._v("Item support includes:")
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "checklist-right" }, [
+              _c("li", [
+                _c("i", { staticClass: "fas fa-check" }),
+                _vm._v(
+                  " Availability of the author to\n                                        answer questions\n                                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("i", { staticClass: "fas fa-check" }),
+                _vm._v(
+                  " Answering technical questions about\n                                        item’s features\n                                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("i", { staticClass: "fas fa-check" }),
+                _vm._v(
+                  " Assistance with reported bugs and\n                                        issues\n                                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("i", { staticClass: "fas fa-check" }),
+                _vm._v(
+                  " Help with included 3rd party assets\n                                    "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "tsk-ctitle margin-top-20" }, [
+              _vm._v("However, item support does not include:")
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "checklist-cross" }, [
+              _c("li", [
+                _c("i", { staticClass: "fas fa-times" }),
+                _vm._v(
+                  " Customization services\n                                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c("i", { staticClass: "fas fa-times" }),
+                _vm._v(
+                  " Installation services\n                                    "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "btn-tsk d-block margin-top-30 text-center",
+                attrs: { href: "contact.html" }
+              },
+              [_vm._v("Contact Us")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "select_option" }, [
+      _c("div", { staticClass: "form-group" }, [
+        _c(
+          "select",
+          {
+            staticClass: "form-control",
+            attrs: { id: "exampleFormControlSelect1" }
+          },
+          [
+            _c("option", { attrs: { selected: "" } }, [
+              _vm._v("Choose package")
+            ]),
+            _vm._v(" "),
+            _c("option", [_vm._v("Reguler")]),
+            _vm._v(" "),
+            _c("option", [_vm._v("Premium")])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "point" }, [
+      _c("li", [
+        _c("i", { staticClass: "fas fa-check-circle" }),
+        _vm._v(" Free technical support")
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("i", { staticClass: "fas fa-check-circle" }),
+        _vm._v(" Future product updates")
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("i", { staticClass: "fas fa-check-circle" }),
+        _vm._v(" Quality checked by DurbarIT")
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _c("i", { staticClass: "fas fa-check-circle" }),
+        _vm._v(" Lowest price guarantee")
+      ]),
+      _vm._v(" "),
+      _c("li", {}, [
+        _c("i", { staticClass: "fas fa-check-circle" }),
+        _vm._v(" 3 months support included "),
+        _c("br"),
+        _vm._v(" "),
+        _c("span", { staticClass: "ml-4 small" }, [
+          _c(
+            "a",
+            {
+              attrs: {
+                href:
+                  "https://thesoftking.com/item/hoteleon-complete-hotel-booking-system/376/support"
+              }
+            },
+            [
+              _vm._v(
+                "What\n                                    does support include?"
+              )
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-4" }, [
+      _c("input", {
+        attrs: {
+          type: "checkbox",
+          id: "exSupport",
+          name: "exSupport",
+          value: "12"
+        }
+      }),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "exSupport" } }, [
+        _vm._v("Extend support to 6 months")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "float-right font-weight-bold" }, [
+        _vm._v("$"),
+        _c("span", { staticClass: "supPrice" }, [_vm._v("14.75")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mt-2" }, [
+      _c("div", { staticClass: "col-sm-12 block" }, [
+        _c(
+          "button",
+          {
+            staticClass: " cart_btn margin-top-30",
+            attrs: { type: "button", id: "purchase-now" }
+          },
+          [
+            _c("i", { staticClass: "fas fa-shopping-cart" }),
+            _vm._v(" Add to Cart")
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "single_item_info" }, [
+      _c("h5", [_vm._v("High Resolution")]),
+      _vm._v(" "),
+      _c("span", [_vm._v("Yes")])
     ])
   }
 ]
@@ -43617,109 +43128,81 @@ var render = function() {
             "container wow animate__animated animate__fadeIn animate__delay-0.7s"
         },
         [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-4" }, [
-              _c("div", { staticClass: "product_single_box" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "product_price" }, [
-                  _c("div", { staticClass: "product_cont" }, [
-                    _c(
-                      "h5",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { path: "/products/10" } } },
-                          [
-                            _vm._v(
-                              "Slider Revolution Responsive WordPress Plugin"
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(" by themepunch in Sliders")])
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.products, function(product) {
+              return _c("div", { key: product.id, staticClass: "col-sm-4" }, [
+                _c("div", { staticClass: "product_single_box" }, [
+                  _c("div", { staticClass: "product_image" }, [
+                    _c("a", { attrs: { href: "#" } }, [
+                      _c("img", {
+                        staticClass: "w-100",
+                        staticStyle: { height: "270px" },
+                        attrs: {
+                          src: "public/uploads/product/" + product.image,
+                          alt: "image"
+                        }
+                      })
+                    ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _vm._m(3),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "clear" })
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-4" }, [
-              _c("div", { staticClass: "product_single_box" }, [
-                _vm._m(4),
-                _vm._v(" "),
-                _c("div", { staticClass: "product_price" }, [
-                  _c("div", { staticClass: "product_cont" }, [
-                    _c(
-                      "h5",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { path: "/products/10" } } },
-                          [
-                            _vm._v(
-                              "Slider Revolution Responsive WordPress Plugin"
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    ),
+                  _c("div", { staticClass: "product_price" }, [
+                    _c("div", { staticClass: "product_cont" }, [
+                      _c(
+                        "h5",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: { to: { path: "/products/" + product.id } }
+                            },
+                            [_vm._v(_vm._s(product.product_name))]
+                          )
+                        ],
+                        1
+                      )
+                    ]),
                     _vm._v(" "),
-                    _c("span", [_vm._v(" by themepunch in Sliders")])
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(5),
-                  _vm._v(" "),
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "clear" })
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-4" }, [
-              _c("div", { staticClass: "product_single_box" }, [
-                _vm._m(7),
-                _vm._v(" "),
-                _c("div", { staticClass: "product_price" }, [
-                  _c("div", { staticClass: "product_cont" }, [
-                    _c(
-                      "h5",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { path: "/products/10" } } },
-                          [
-                            _vm._v(
-                              "Slider Revolution Responsive WordPress Plugin"
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    ),
+                    _c("div", { staticClass: "product_price_left" }, [
+                      _c("ul", [
+                        _c("li", [
+                          _c("span", [
+                            _c("b", [_vm._v(_vm._s(product.reqular_price))])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1, true),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("span", { staticStyle: { "font-size": "12px" } }, [
+                            _vm._v(_vm._s(product.number_of_sale) + " Sales")
+                          ])
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("span", [_vm._v(" by themepunch in Sliders")])
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(8),
-                  _vm._v(" "),
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "clear" })
+                    _c("div", { staticClass: "product_price_right" }, [
+                      _c("span", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: product.demourl, target: "_blank" }
+                          },
+                          [_vm._v("Preview")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(2, true)
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "clear" })
+                  ])
                 ])
               ])
-            ])
-          ])
+            }),
+            0
+          )
         ]
       )
     ])
@@ -43748,169 +43231,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_image" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("img", {
-          staticClass: "w-100",
-          staticStyle: { height: "220px" },
-          attrs: { src: "public/frontend/images/img_4.jpg", alt: "image" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_price_left" }, [
-      _c("ul", [
-        _c("li", [_c("span", [_c("b", [_vm._v("$29")])])]),
-        _vm._v(" "),
-        _c("li", [
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("span", { staticStyle: { "font-size": "12px" } }, [
-            _vm._v("409.9K Sales")
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_price_right" }, [
-      _c("span", [_c("a", { attrs: { href: "#" } }, [_vm._v("Preview")])]),
+    return _c("li", [
+      _c("span", [_c("i", { staticClass: "fas fa-star" })]),
       _vm._v(" "),
-      _c("span", [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fas fa-cart-plus" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_image" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("img", {
-          staticClass: "w-100",
-          staticStyle: { height: "220px" },
-          attrs: { src: "public/frontend/images/img_3.jpg", alt: "image" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_price_left" }, [
-      _c("ul", [
-        _c("li", [_c("span", [_c("b", [_vm._v("$29")])])]),
-        _vm._v(" "),
-        _c("li", [
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("span", { staticStyle: { "font-size": "12px" } }, [
-            _vm._v("409.9K Sales")
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_price_right" }, [
-      _c("span", [_c("a", { attrs: { href: "#" } }, [_vm._v("Preview")])]),
+      _c("span", [_c("i", { staticClass: "fas fa-star" })]),
       _vm._v(" "),
-      _c("span", [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fas fa-cart-plus" })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_image" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("img", {
-          staticClass: "w-100",
-          staticStyle: { height: "220px" },
-          attrs: { src: "public/frontend/images/img_5.jpg", alt: "image" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_price_left" }, [
-      _c("ul", [
-        _c("li", [_c("span", [_c("b", [_vm._v("$29")])])]),
-        _vm._v(" "),
-        _c("li", [
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })]),
-          _vm._v(" "),
-          _c("span", [_c("i", { staticClass: "fas fa-star" })])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("span", { staticStyle: { "font-size": "12px" } }, [
-            _vm._v("409.9K Sales")
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product_price_right" }, [
-      _c("span", [_c("a", { attrs: { href: "#" } }, [_vm._v("Preview")])]),
+      _c("span", [_c("i", { staticClass: "fas fa-star" })]),
       _vm._v(" "),
-      _c("span", [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("i", { staticClass: "fas fa-cart-plus" })
-        ])
-      ])
+      _c("span", [_c("i", { staticClass: "fas fa-star" })]),
+      _vm._v(" "),
+      _c("span", [_c("i", { staticClass: "fas fa-star" })])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("a", [_c("i", { staticClass: "fas fa-cart-plus" })])])
   }
 ]
 render._withStripped = true
@@ -43934,38 +43271,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", { attrs: { id: "team" } }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c("div", { staticClass: "team_header" }, [
-                _c("h3", [_vm._v("Team")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "triangle_team" })
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "team_member_sec" } }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "container wow animate__animated animate__fadeIn animate__delay-0.9s"
-          },
-          [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-4" }, [
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { attrs: { id: "team_member_sec" } }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "container wow animate__animated animate__fadeIn animate__delay-0.9s"
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.employees, function(employee) {
+              return _c("div", { staticClass: "col-sm-4" }, [
                 _c(
                   "div",
                   { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
@@ -43980,25 +43301,28 @@ var staticRenderFns = [
                           staticClass: "card-img-top w-100",
                           staticStyle: { height: "320px" },
                           attrs: {
-                            src: "public/frontend/images/nuruddin.jpg",
+                            src: "public/images/team/" + employee.image,
                             alt: "team image"
                           }
                         }),
                         _vm._v(" "),
                         _c("div", { staticClass: "card-body" }, [
                           _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Nur Uddin Rana")
+                            _vm._v(_vm._s(employee.name))
                           ]),
                           _vm._v(" "),
-                          _c("span", [
-                            _vm._v("Managing Director at Durbar-IT")
-                          ]),
+                          _c("span", [_vm._v(_vm._s(employee.designation))]),
                           _vm._v(" "),
                           _c("ul", { staticClass: "list-inline pt-2 social" }, [
                             _c("li", { staticClass: "list-inline-item" }, [
                               _c(
                                 "a",
-                                { attrs: { href: "", target: "_blank" } },
+                                {
+                                  attrs: {
+                                    href: employee.facebook,
+                                    target: "_blank"
+                                  }
+                                },
                                 [_c("i", { staticClass: "fab fa-facebook-f" })]
                               )
                             ]),
@@ -44006,7 +43330,12 @@ var staticRenderFns = [
                             _c("li", { staticClass: "list-inline-item" }, [
                               _c(
                                 "a",
-                                { attrs: { href: "", target: "_blank" } },
+                                {
+                                  attrs: {
+                                    href: employee.twitter,
+                                    target: "_blank"
+                                  }
+                                },
                                 [_c("i", { staticClass: "fab fa-twitter" })]
                               )
                             ]),
@@ -44014,7 +43343,12 @@ var staticRenderFns = [
                             _c("li", { staticClass: "list-inline-item" }, [
                               _c(
                                 "a",
-                                { attrs: { href: "", target: "_blank" } },
+                                {
+                                  attrs: {
+                                    href: employee.linkedin,
+                                    target: "_blank"
+                                  }
+                                },
                                 [_c("i", { staticClass: "fab fa-linkedin-in" })]
                               )
                             ])
@@ -44031,11 +43365,10 @@ var staticRenderFns = [
                       },
                       [
                         _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
+                          _c("p", {
+                            staticClass: "teacher-quote",
+                            domProps: { innerHTML: _vm._s(employee.details) }
+                          }),
                           _c(
                             "a",
                             {
@@ -44046,7 +43379,7 @@ var staticRenderFns = [
                               _c(
                                 "h5",
                                 { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Nur Uddin Rana")]
+                                [_vm._v(_vm._s(employee.name))]
                               )
                             ]
                           ),
@@ -44054,14 +43387,19 @@ var staticRenderFns = [
                           _c(
                             "span",
                             { staticClass: "teacher-field text-white" },
-                            [_vm._v("Managing Director at Durbar-IT")]
+                            [_vm._v(_vm._s(employee.designation))]
                           ),
                           _vm._v(" "),
                           _c("ul", { staticClass: "list-inline py-4 social" }, [
                             _c("li", { staticClass: "list-inline-item" }, [
                               _c(
                                 "a",
-                                { attrs: { href: "", target: "_blank" } },
+                                {
+                                  attrs: {
+                                    href: employee.facebook,
+                                    target: "_blank"
+                                  }
+                                },
                                 [_c("i", { staticClass: "fab fa-facebook-f" })]
                               )
                             ]),
@@ -44069,7 +43407,12 @@ var staticRenderFns = [
                             _c("li", { staticClass: "list-inline-item" }, [
                               _c(
                                 "a",
-                                { attrs: { href: "", target: "_blank" } },
+                                {
+                                  attrs: {
+                                    href: employee.twitter,
+                                    target: "_blank"
+                                  }
+                                },
                                 [_c("i", { staticClass: "fab fa-twitter" })]
                               )
                             ]),
@@ -44077,1349 +43420,12 @@ var staticRenderFns = [
                             _c("li", { staticClass: "list-inline-item" }, [
                               _c(
                                 "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/asif.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Asif Foysal")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Asif Foysal")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/qayum.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Qayum Hasan")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Qayum Hasan")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/ovi.png",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Mosabberuzzaman Ovi")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Designer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Mosabberuzzaman Ovi")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Designer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/abir.png",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Iftekhar Abir")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("System Analysist")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Iftekhar Abir")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("System Analysist")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/t2.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Naeem Hasan")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Naeem Hasan")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/t1.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Rasel Ahmed")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Rasel Ahmed")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/t2.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Afjal hossen")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Afjal hossen")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/t1.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Shajibul islam")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Shajibul islam")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/img_avatar.png",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Shahin Islam")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Shahin Islam")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/t2.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Shoriful Islam")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Shoriful Islam")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "staff-member my-lg-3 my-md-3 my-sm-0" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "card gray-light-bg text-center border-0"
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top w-100",
-                          staticStyle: { height: "320px" },
-                          attrs: {
-                            src: "public/frontend/images/t1.jpg",
-                            alt: "team image"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("h5", { staticClass: "teacher mb-0" }, [
-                            _vm._v("Md.Rakibul Islam")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Web Developer")]),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline pt-2 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-linkedin-in" })]
-                              )
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "overlay d-flex align-items-center justify-content-center"
-                      },
-                      [
-                        _c("div", { staticClass: "overlay-inner" }, [
-                          _c("p", { staticClass: "teacher-quote" }, [
-                            _vm._v(
-                              '"Energistically administrate multifunctional rather than\n                                front-end expertise." '
-                            )
-                          ]),
-                          _c(
-                            "a",
-                            {
-                              staticClass: "teacher-name",
-                              attrs: { href: "#" }
-                            },
-                            [
-                              _c(
-                                "h5",
-                                { staticClass: "mb-0 teacher text-white" },
-                                [_vm._v("Md.Rakibul Islam")]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "teacher-field text-white" },
-                            [_vm._v("Web Developer")]
-                          ),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "list-inline py-4 social" }, [
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-facebook-f" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
-                                [_c("i", { staticClass: "fab fa-twitter" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "list-inline-item" }, [
-                              _c(
-                                "a",
-                                { attrs: { href: "", target: "_blank" } },
+                                {
+                                  attrs: {
+                                    href: employee.linkedin,
+                                    target: "_blank"
+                                  }
+                                },
                                 [_c("i", { staticClass: "fab fa-linkedin-in" })]
                               )
                             ])
@@ -45430,9 +43436,30 @@ var staticRenderFns = [
                   ]
                 )
               ])
+            }),
+            0
+          )
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "team" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c("div", { staticClass: "team_header" }, [
+              _c("h3", [_vm._v("Team")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "triangle_team" })
             ])
-          ]
-        )
+          ])
+        ])
       ])
     ])
   }
@@ -62011,7 +60038,7 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = 'http://localhost/durbarit18/api';
+window.axios.defaults.baseURL = 'http://localhost/Durbarit/durbar9/api';
 window.axios.defaults.headers.common['Authorization'] = 'Qayum hasan';
 window.axios.defaults.headers.get['Accepts'] = 'application/json';
 /**
@@ -63449,8 +61476,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\durbarit18\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\durbarit18\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\soft\xampp\htdocs\Durbarit\durbar9\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\soft\xampp\htdocs\Durbarit\durbar9\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
