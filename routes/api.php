@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 //Route::apiResource('/category','Api\CategoryController');
 Route::apiResource('/whychoseus','Admin\WhyChoseUsController');
-Route::apiResource('/companyinformation','Admin\ContactInformationController');
+Route::apiResource('/companyinformation','Api\ContactInformationController');
 Route::apiResource('/product','Api\ProductController');
+Route::apiResource('/contactmessage','Api\ContactMessageController');
 
 
 Route::prefix('slider')->namespace('Frontend')->group(function () {

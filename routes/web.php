@@ -15,8 +15,19 @@
 Route::get('/', function () {
     return view('frontend.master');
 
-  
+
 });
+
+// Route::get('/{vue_capture?}', function () {
+//     return view('frontend.master');
+// })->where('vue_capture','[\/\w\.-]*');
+
+
+
+
+
+
+
 
 Route::prefix('admin')->namespace('Admin')->group(function () {
    Route::get('/login','AdminController@showLoginPage')->name('admin.login.page');
@@ -195,4 +206,9 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get('/product/edit/{id}','ProductController@edit');
 
   Route::post('/product/update/{id}','ProductController@update')->name('admin.product.update');
+});
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get(md5('/contactmessage/index'),'ContactMessageController@index')->name('admin.contactmessage.index');
+  Route::get(md5('/contactmessage/compose'),'ContactMessageController@create')->name('admin.compose.create');
 });

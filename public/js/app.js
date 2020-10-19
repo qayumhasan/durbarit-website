@@ -2167,20 +2167,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Contact-Us'
+  name: 'Contact-Us',
+  data: function data() {
+    return {
+      contact: [],
+      form: {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      }
+    };
+  },
+  methods: {
+    contactinformation: function contactinformation() {
+      var _this = this;
+
+      axios.get('/companyinformation/').then(function (_ref) {
+        var data = _ref.data;
+        return _this.contact = data;
+      })["catch"]();
+    },
+    employeeInsert: function employeeInsert() {
+      var _this2 = this;
+
+      var contactms = {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message
+      }; //console.log(contactms)
+
+      axios.post('/contactmessage', contactms).then(function (response) {
+        alert('Message sent!');
+
+        _this2.$router.push('/');
+      })["catch"](function (error) {
+        if (error.response.status === 422) {
+          _this2.errors = error.response.data.errors || {};
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.contactinformation();
+  }
 });
 
 /***/ }),
@@ -40216,68 +40248,89 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", { attrs: { id: "contact" } }, [
-        _c("div", { staticClass: "container" }, [
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { attrs: { id: "contact_form" } }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "container wow animate__animated animate__fadeIn animate__delay-0.7s"
+        },
+        [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 text-center" }, [
-              _c("div", { staticClass: "contact_header" }, [
-                _c("h3", [_vm._v("Contact")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "triangle_contact" })
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "contact_form" } }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "container wow animate__animated animate__fadeIn animate__delay-0.7s"
-          },
-          [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-sm-7" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm-12" }, [
-                    _c("div", { staticClass: "form_head" }, [
-                      _c("h3", [_vm._v("Send Your Message")])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm-12" }, [
-                    _c("form", [
+            _c("div", { staticClass: "col-sm-7" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c(
+                    "form",
+                    {
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.employeeInsert($event)
+                        }
+                      }
+                    },
+                    [
                       _c("div", { staticClass: "form-row" }, [
                         _c("div", { staticClass: "form-group col-md-6" }, [
                           _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.name,
+                                expression: "name"
+                              }
+                            ],
                             staticClass: "form-control",
                             attrs: {
-                              type: "email",
-                              name: "name",
-                              placeholder: "Enter your Name"
+                              type: "text",
+                              placeholder: "Enter your Name",
+                              id: "name",
+                              name: "name"
+                            },
+                            domProps: { value: _vm.name },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.name = $event.target.value
+                              }
                             }
                           })
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "form-group col-md-6" }, [
                           _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.email,
+                                expression: "email"
+                              }
+                            ],
                             staticClass: "form-control",
                             attrs: {
-                              type: "password",
-                              name: "email",
-                              placeholder: "Enter your Email"
+                              type: "email",
+                              placeholder: "Enter your Email",
+                              id: "email",
+                              name: "email"
+                            },
+                            domProps: { value: _vm.email },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.email = $event.target.value
+                              }
                             }
                           })
                         ])
@@ -40286,11 +40339,29 @@ var staticRenderFns = [
                       _c("div", { staticClass: "form-row" }, [
                         _c("div", { staticClass: "form-group col-md-12" }, [
                           _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.phone,
+                                expression: "phone"
+                              }
+                            ],
                             staticClass: "form-control",
                             attrs: {
                               type: "text",
-                              name: "phone",
-                              placeholder: "Enter your Number"
+                              placeholder: "Enter your Number",
+                              id: "phone",
+                              name: "phone"
+                            },
+                            domProps: { value: _vm.phone },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.phone = $event.target.value
+                              }
                             }
                           })
                         ])
@@ -40299,23 +40370,28 @@ var staticRenderFns = [
                       _c("div", { staticClass: "form-row" }, [
                         _c("div", { staticClass: "form-group col-md-12" }, [
                           _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.message,
+                                expression: "message"
+                              }
+                            ],
                             attrs: {
-                              name: "message",
                               placeholder: "Leave Your Message",
                               rows: "5",
-                              required: ""
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("form", [
-                        _c("div", { staticClass: "form-group" }, [
-                          _c("input", {
-                            staticClass: "form-control-file",
-                            attrs: {
-                              type: "file",
-                              id: "exampleFormControlFile1"
+                              name: "message",
+                              id: "message"
+                            },
+                            domProps: { value: _vm.message },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.message = $event.target.value
+                              }
                             }
                           })
                         ])
@@ -40327,110 +40403,158 @@ var staticRenderFns = [
                           staticClass: "btn submit_con",
                           attrs: { type: "submit" }
                         },
-                        [_vm._v("Sign in")]
+                        [_vm._v("Send Message")]
                       )
-                    ])
-                  ])
+                    ]
+                  )
                 ])
-              ]),
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-5" }, [
+              _vm._m(2),
               _vm._v(" "),
-              _c("div", { staticClass: "col-sm-5" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm-12" }, [
-                    _c("div", { staticClass: "form_head" }, [
-                      _c("h3", [_vm._v("Contact Information")])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm-12" }, [
-                    _c("div", { staticClass: "contact_address" }, [
-                      _c("ul", [
-                        _c("li", [
-                          _c("i", { staticClass: "fas fa-map-marker-alt" }),
-                          _vm._v(
-                            " Mukto Bangla Shopping Complex (8th Floor)\n                                    Mirpur-1\n                                    Dhaka 1216, Bangladesh"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("i", { staticClass: "fas fa-phone-square" }),
-                          _vm._v(" +880 1966 999777")
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("i", { staticClass: "fas fa-envelope" }),
-                          _vm._v(" nfo@durbarit.com")
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("i", { staticClass: "fas fa-globe" }),
-                          _vm._v(" www.durbarit.com")
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "social_icon_contact mt-4" }, [
-                      _c("ul", [
-                        _c("li", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-facebook-f" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-twitter" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-linkedin-in" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fab fa-google-plus-g" })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c("a", { attrs: { href: "#" } }, [
-                            _c("i", { staticClass: "fas fa-rss" })
-                          ])
-                        ])
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "contact_address" }, [
+                    _c("ul", [
+                      _c("li", [
+                        _c("i", { staticClass: "fas fa-globe" }),
+                        _vm._v(" " + _vm._s(_vm.contact.company_name))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("i", { staticClass: "fas fa-map-marker-alt" }),
+                        _vm._v(_vm._s(_vm.contact.address))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("i", { staticClass: "fas fa-phone-square" }),
+                        _vm._v(" " + _vm._s(_vm.contact.phone))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("i", { staticClass: "fas fa-envelope" }),
+                        _vm._v(" " + _vm._s(_vm.contact.email))
                       ])
                     ])
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(3)
                 ])
               ])
             ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("section", { attrs: { id: "map" } }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-sm-12 p-0" }, [
-              _c("div", { staticClass: "map_main" }, [
-                _c("iframe", {
-                  staticStyle: { border: "0" },
-                  attrs: {
-                    src:
-                      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.558007355293!2d90.35071691543209!3d23.7987486928435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c130f0ab0095%3A0x5449a940d93e13ee!2sDurbar%20IT!5e0!3m2!1sen!2sbd!4v1601292117845!5m2!1sen!2sbd",
-                    width: "100%",
-                    height: "450",
-                    frameborder: "0",
-                    allowfullscreen: "",
-                    "aria-hidden": "false",
-                    tabindex: "0"
-                  }
-                })
-              ])
+          ])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(4)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "contact" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c("div", { staticClass: "contact_header" }, [
+              _c("h3", [_vm._v("Contact")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "triangle_contact" })
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("div", { staticClass: "form_head" }, [
+          _c("h3", [_vm._v("Send Your Message")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c("div", { staticClass: "form_head" }, [
+          _c("h3", [_vm._v("Contact Information")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "social_icon_contact mt-4" }, [
+      _c("ul", [
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-facebook-f" })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-twitter" })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-linkedin-in" })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-google-plus-g" })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fas fa-rss" })
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { attrs: { id: "map" } }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 p-0" }, [
+            _c("div", { staticClass: "map_main" }, [
+              _c("iframe", {
+                staticStyle: { border: "0" },
+                attrs: {
+                  src:
+                    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.558007355293!2d90.35071691543209!3d23.7987486928435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c130f0ab0095%3A0x5449a940d93e13ee!2sDurbar%20IT!5e0!3m2!1sen!2sbd!4v1601292117845!5m2!1sen!2sbd",
+                  width: "100%",
+                  height: "450",
+                  frameborder: "0",
+                  allowfullscreen: "",
+                  "aria-hidden": "false",
+                  tabindex: "0"
+                }
+              })
             ])
           ])
         ])

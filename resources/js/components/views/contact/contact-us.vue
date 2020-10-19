@@ -28,41 +28,30 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <form>
+                            <form @submit.prevent="employeeInsert">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" v-model="name" placeholder="Enter your Name" id="name" name="name">
 
-                                        <input type="email" class="form-control" name="name"
-                                            placeholder="Enter your Name">
                                     </div>
                                     <div class="form-group col-md-6">
-
-                                        <input type="password" class="form-control" name="email"
-                                            placeholder="Enter your Email">
+                                        <input type="email" class="form-control" v-model="email" placeholder="Enter your Email" id="email" name="email">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
 
-                                        <input type="text" class="form-control" name="phone"
-                                            placeholder="Enter your Number">
+                                        <input type="text" class="form-control" v-model="phone" placeholder="Enter your Number" id="phone" name="phone">
                                     </div>
 
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <textarea name="message" placeholder="Leave Your Message" rows="5"
-                                            required=""></textarea>
+                                        <textarea v-model="message" placeholder="Leave Your Message" rows="5" name="message" id="message"></textarea>
                                     </div>
                                 </div>
-                                <form>
-                                    <div class="form-group">
 
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                    </div>
-                                </form>
-
-                                <button type="submit" class="btn submit_con">Sign in</button>
+                                <button type="submit" class="btn submit_con">Send Message</button>
                             </form>
                         </div>
                     </div>
@@ -79,12 +68,11 @@
                         <div class="col-sm-12">
                             <div class="contact_address">
                                 <ul>
-                                    <li><i class="fas fa-map-marker-alt"></i> Mukto Bangla Shopping Complex (8th Floor)
-                                        Mirpur-1
-                                        Dhaka 1216, Bangladesh</li>
-                                    <li><i class="fas fa-phone-square"></i> +880 1966 999777</li>
-                                    <li><i class="fas fa-envelope"></i> nfo@durbarit.com</li>
-                                    <li><i class="fas fa-globe"></i> www.durbarit.com</li>
+                                    <li><i class="fas fa-globe"></i> {{contact.company_name}}</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>{{contact.address}}</li>
+                                    <li><i class="fas fa-phone-square"></i> {{contact.phone}}</li>
+                                    <li><i class="fas fa-envelope"></i> {{contact.email}}</li>
+
                                 </ul>
                             </div>
                             <div class="social_icon_contact mt-4">
@@ -103,7 +91,7 @@
             </div>
 
         </div>
-        
+
     </section>
       <section id="map">
         <div class="container-fluid">
@@ -124,11 +112,55 @@
 
 
     </div>
-    
+
 </template>
 <script>
 export default {
-    name:'Contact-Us'
-    
+    name:'Contact-Us',
+    data(){
+          return{
+            contact:[],
+            form:{
+              name: '',
+              email: '',
+              phone: '',
+              message: ''
+            }
+          }
+
+      },
+
+      methods:{
+
+        contactinformation(){
+          axios.get('/companyinformation/')
+          .then(({data}) => (this.contact = data))
+          .catch()
+        },
+        employeeInsert(){
+          const contactms ={
+              name:this.name,
+              email:this.email,
+              phone:this.phone,
+              message:this.message,
+            }
+            //console.log(contactms)
+          axios.post('/contactmessage',contactms)
+          .then(response => {
+              alert('Message sent!');
+              this.$router.push('/')
+            }).catch(error => {
+              if (error.response.status === 422) {
+                this.errors = error.response.data.errors || {};
+              }
+            });
+
+        },
+      },
+      mounted() {
+          this.contactinformation();
+       },
+
+
 }
 </script>
