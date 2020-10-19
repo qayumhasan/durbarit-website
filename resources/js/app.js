@@ -1,6 +1,8 @@
 
 require('./bootstrap');
 
+
+
 window.Vue = require('vue');
 Vue.config.productionTip = false;
 
@@ -12,8 +14,16 @@ Vue.filter('striphtml', function (value) {
   });
 
   import VueCarousel from 'vue-carousel';
-
 Vue.use(VueCarousel);
+
+import VueMeta from 'vue-meta'
+Vue.use(VueMeta)
+
+// using filter
+Vue.filter('sortlength',function (text,length,suffix) {
+    return text.substring(0,length)+suffix;
+})
+
 
 // support router
 import VueRouter from 'vue-router'

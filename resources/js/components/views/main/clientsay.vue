@@ -1,4 +1,5 @@
 <template>
+  <!--- client part start -->
   <section id="client">
     <div class="container">
       <div class="row">
@@ -19,73 +20,56 @@
       <div class="testimonial_container">
         <div class="row">
           <div class="col-sm-7">
-            <carousel
-              :per-page="0"
-              :navigate-to="someLocalProperty"
-              :mouse-drag="true"
-              :perPage="1"
-              :autoplay="true"
-            >
-              <div v-for="client in getClientSay">
-                <slide>
-                  <div class="testimonial_slider_item">
-                    <div class="testimonial_slider_content_text">
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Molestias, quos beatae! Nulla, delectus pariatur!
-                        Sequi fuga eum ipsam nihil quasi?{{ clients }}
-                      </p>
-                      <div class="qoute_btn">
-                        <span>
-                          <i class="fas fa-quote-left"></i>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="testmonial_slide_content_clint">
-                      <div class="testimonial_img">
-                        <img
-                          class="img-fluid"
-                          src="public/frontend/images/download.png"
-                          alt="Saied Rahman"
-                          style="width: 90px; height: auto; border-radius: 50%"
-                        />
-                      </div>
-                      <div class="testimonial_cont">
-                        <h4>Saied Rahman</h4>
-                        <p>CEO</p>
-                        <h5>Digital Hub Solution Limited</h5>
-                      </div>
+            <!-- <div class="testimonial_slider owl-carousel owl-theme"> -->
+            <carousel :perPage="1">
+              <slide v-for="(client, index) in getClientSay" :key="index">
+                <div class="testimonial_slider_item">
+                  <div class="testimonial_slider_content_text">
+                    <p>
+                      {{ client.review | striphtml }}
+                    </p>
+                    <div class="qoute_btn">
+                      <span>
+                        <i class="fas fa-quote-left"></i>
+                      </span>
                     </div>
                   </div>
-                </slide>
-              </div>
+                  <div class="testmonial_slide_content_clint">
+                    <div class="testimonial_img">
+                      <img
+                        class="img-fluid"
+                        :src="'public/images/client/' + client.image"
+                        alt="Saied Rahman"
+                        style="width: 90px; height: auto; border-radius: 50%"
+                      />
+                    </div>
+                    <div class="testimonial_cont">
+                      <h4>{{ client.name }}</h4>
+                      <p>{{ client.designation }}</p>
+                      <h5>{{ client.company }}</h5>
+                    </div>
+                  </div>
+                </div>
+              </slide>
             </carousel>
+            <!-- </div> -->
           </div>
           <div class="col-sm-5">
             <div class="testimonial_image">
-              <img
-                src="public/frontend/images/testmonial.png"
-                class="w-100"
-                alt=""
-              />
+              <img src="public/frontend/images/testmonial.png" class="w-100" alt="" />
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!--- client part end -->
 </template>
 <script>
 import Testimonial from "./_testimonial";
 import { Carousel, Slide } from "vue-carousel";
 export default {
   name: "ClientSayComponent",
-  data() {
-    return {
-      renderComponent: true,
-    };
-  },
-
   mounted() {
     return this.$store.dispatch("allClientSay");
   },
@@ -95,6 +79,7 @@ export default {
     },
   },
   components: {
+    Testimonial,
     Carousel,
     Slide,
   },
