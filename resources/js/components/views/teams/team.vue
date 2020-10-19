@@ -16,438 +16,40 @@
     <section id="team_member_sec">
         <div class="container wow animate__animated animate__fadeIn animate__delay-0.9s">
             <div class="row">
-                <div class="col-sm-4">
+
+                <div class="col-sm-4" v-for="employee in employees">
                     <div class="staff-member my-lg-3 my-md-3 my-sm-0">
                         <div class="card gray-light-bg text-center border-0 ">
-                            <img src="public/frontend/images/nuruddin.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
+                            <img :src="'public/images/team/'+employee.image" alt="team image" class="card-img-top w-100" style="height:320px;">
                             <div class="card-body">
-                                <h5 class="teacher mb-0">Nur Uddin Rana</h5>
-                                <span>Managing Director at Durbar-IT</span>
+                                <h5 class="teacher mb-0">{{employee.name}}</h5>
+                                <span>{{employee.designation}}</span>
                                 <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
+                                    <li class="list-inline-item"><a :href="employee.facebook" target="_blank"><i
                                                 class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
+                                    <li class="list-inline-item"><a :href="employee.twitter" target="_blank"><i
                                                 class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
+                                    <li class="list-inline-item"><a :href="employee.linkedin" target="_blank"><i
                                                 class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="overlay d-flex align-items-center justify-content-center">
                             <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Nur Uddin Rana</h5>
+                                <p class="teacher-quote" v-html="employee.details"></p><a href="#" class="teacher-name">
+                                    <h5 class="mb-0 teacher text-white">{{employee.name}}</h5>
                                 </a>
-                                <span class="teacher-field text-white">Managing Director at Durbar-IT</span>
+                                <span class="teacher-field text-white">{{employee.designation}}</span>
                                 <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
+                                    <li class="list-inline-item"><a :href="employee.facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li class="list-inline-item"><a :href="employee.twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a :href="employee.linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/asif.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Asif Foysal</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Asif Foysal</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/qayum.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Qayum Hasan</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Qayum Hasan</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/ovi.png" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Mosabberuzzaman Ovi</h5>
-                                <span>Web Designer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Mosabberuzzaman Ovi</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Designer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/abir.png" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Iftekhar Abir</h5>
-                                <span>System Analysist</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Iftekhar Abir</h5>
-                                </a>
-                                <span class="teacher-field text-white">System Analysist</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/t2.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Naeem Hasan</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Naeem Hasan</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/t1.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Rasel Ahmed</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Rasel Ahmed</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/t2.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Afjal hossen</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Afjal hossen</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/t1.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Shajibul islam</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Shajibul islam</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/img_avatar.png" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Shahin Islam</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Shahin Islam</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                     <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/t2.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Shoriful Islam</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Shoriful Islam</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                     <div class="col-sm-4">
-                    <div class="staff-member my-lg-3 my-md-3 my-sm-0">
-                        <div class="card gray-light-bg text-center border-0">
-                            <img src="public/frontend/images/t1.jpg" alt="team image" class="card-img-top w-100" style="height:320px;">
-                            <div class="card-body">
-                                <h5 class="teacher mb-0">Md.Rakibul Islam</h5>
-                                <span>Web Developer</span>
-                                <ul class="list-inline pt-2 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="overlay d-flex align-items-center justify-content-center">
-                            <div class="overlay-inner">
-                                <p class="teacher-quote">"Energistically administrate multifunctional rather than
-                                    front-end expertise." </p><a href="#" class="teacher-name">
-                                    <h5 class="mb-0 teacher text-white">Md.Rakibul Islam</h5>
-                                </a>
-                                <span class="teacher-field text-white">Web Developer</span>
-                                <ul class="list-inline py-4 social">
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="" target="_blank"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 
@@ -458,7 +60,20 @@
 <script>
 export default {
     name:'Team',
-   
- 
+    data(){
+      return{
+        employees:[]
+      }
+    },
+    methods:{
+      allemployess(){
+        axios.get('/team/')
+        .then(({data}) => (this.employees = data.data))
+        .catch()
+      }
+    },
+    mounted(){
+      this.allemployess();
+    }
 }
 </script>
