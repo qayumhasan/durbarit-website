@@ -80,28 +80,7 @@ export default {
         ClientSay
     },
      mounted() {
-      $(".banner_slider").owlCarousel({
-      loop: true,
-      dot: true,
-      nav: false,
-      autoplayTimeout: 5000,
-      smartSpeed: 1000,
-      autoplay: true,
-      // navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-      animateOut: "fadeOut",
-      animateIn: "fadeIn",
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 1,
-        },
-        1000: {
-          items: 1,
-        },
-      },
-    });
+      
     }
 }
 </script>

@@ -6,6 +6,7 @@ export default {
         services:[],
         chooseus:[],
         clientSay:[],
+        ourclients:[],
     },
 
     getters:{
@@ -23,6 +24,9 @@ export default {
         },
         getClientSay(state){
             return state.clientSay
+        },
+        getOurClient(state){
+            return state.ourclients
         }
 
 
@@ -64,7 +68,15 @@ export default {
             axios.get('/clientsay')
                 .then((response)=>{
                     context.commit('allClientSay',response.data.data)
-                    console.log(response.data.data);
+                    
+                })
+        },
+        allOurClient(context){
+            axios.get('/partners')
+                .then((response)=>{
+                    console.log(response.data.data)
+                    context.commit('allOurClient',response.data.data)
+                    
                 })
         },
         
@@ -87,6 +99,9 @@ export default {
         },
         allClientSay(state,data){
             return state.clientSay =data
+        },
+        allOurClient(state,data){
+            return state.ourclients =data
         },
 
     }

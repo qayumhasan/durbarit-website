@@ -7,7 +7,7 @@
                         <h3>Welcome to <span>Durbar It Limited</span>:<br>Always Ready To Help</h3>
 
                         <p v-for="(aboutus,index) in getAboutUs">
-                                {{aboutus.details |striphtml}}
+                                {{aboutus.details |striphtml |sortlength(590,' ')}}
                         </p>
                         <div class="ab_link">
                             <a href="about.html">Read More</a>
@@ -28,7 +28,7 @@
 </template>
 <script>
 export default {
-    name:'About us',
+    name:'Aboutus',
     mounted(){
         return this.$store.dispatch("allAboutUs");
     },

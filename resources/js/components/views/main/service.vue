@@ -91,15 +91,25 @@
 </template>
 <script>
 export default {
-    name:"Service Component",
+    name:"ServiceComponent",
+    data(){
+        return{
+            servicedes:{},
+        }
+    },
     mounted(){
+        
         return this.$store.dispatch("allService");
+        
+        
+    
     },
     computed:{
         getServices(){
              return this.$store.getters.getService;
         }
-    }
+    },
+    
 
 }
 </script>
