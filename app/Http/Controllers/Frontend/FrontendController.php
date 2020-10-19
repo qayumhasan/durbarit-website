@@ -11,7 +11,10 @@ use App\Service;
 use App\Partner;
 use App\Category;
 use App\Client;
+use App\ContactInformation;
 use App\Http\Resources\ServiceResources;
+use App\Page;
+use App\Subscriber;
 use App\Whychoseus;
 
 class FrontendController extends ApiController
@@ -37,8 +40,8 @@ class FrontendController extends ApiController
 
     public function logos()
     {
-        $logos = Logo::all();
-        return $this->showAll($logos);
+        $logos = Logo::where('id',1)->select(['id','flogo'])->first();
+        return $this->showOne($logos);
     }
 
 
@@ -51,8 +54,8 @@ class FrontendController extends ApiController
 
     public function aboutUs()
     {
-        $about = AboutUs::all();
-        return $this->showAll($about);
+        $about = AboutUs::where('id',1)->first();
+        return $this->showOne($about);
     }
 
     public function chooseus()
@@ -67,6 +70,30 @@ class FrontendController extends ApiController
         
         $data =Client::all();
         return $this->showAll($data);
+    }
+
+    public function contact()
+    {
+        $data = ContactInformation::findOrFail(1);
+        return $this->showOne($data);
+    }
+
+    public function pages()
+    {
+        $data = Page::all();
+        return $this->showAll($data);
+    }
+
+    public function NewsLetter(Request $request)
+    {
+        $request->validate([
+            'email'=>'required|email'
+        ]);
+        $sub= new Subscriber;
+        $sub->email = $request->email;
+        $sub->status = 1;
+        $sub->save();
+        return $sub;
     }
 
     

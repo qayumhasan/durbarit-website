@@ -13,9 +13,11 @@
                   [768, 3],
                   [1024, 5],
                 ]"
-
                 :autoplay="true"
                 :paginationEnabled="false"
+                :navigationEnabled="true"
+                navigationNextLabel="<i class='fa fa-angle-right'></i>"
+                navigationPrevLabel="<i class='fa fa-angle-left'></i>"
               >
                 <slide v-for="(partner, index) in getOurPartner" :key="index">
                   <div class="item">
@@ -41,17 +43,14 @@
               <div class="footer_logo">
                 <a href="#">
                   <img
-                    src="images/logo.png"
+                    :src="'public/images/logo/' + logo.flogo"
                     class="w-100"
                     alt="no-logo"
                     style="width: 250px !important; height: auto"
                   />
                 </a>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
-                  unde ipsa! Natus expedita odit incidunt doloremque sunt
-                  cupiditate molestias nobis aut ex accusamus illum nam
-                  recusandae
+                  {{ getAboutUs.details | striphtml | sortlength(150, " ") }}
                 </p>
                 <div class="social_icon">
                   <ul>
@@ -81,11 +80,9 @@
                 <div class="support_footer">
                   <h5>Support</h5>
                   <ul>
-                    <li><a href="#">- Help Center</a></li>
-                    <li><a href="#">- Item Support</a></li>
-                    <li><a href="#">- Contact US</a></li>
-                    <li><a href="#">- About Us</a></li>
-                    <li><a href="#">- Pay With Us</a></li>
+                    <li v-for="(page, index) in getPages">
+                      <a href="#">- {{ page.title }} </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -112,12 +109,14 @@
                   </p>
                   <div class="email_form">
                     <div class="input-group mb-2 mr-sm-2">
-                      <input
-                        type="text"
+                     
+                      <input @keyup.enter="createsub"
+                        type="email" v-model="email"
                         class="form-control"
                         id="inlineFormInputGroupUsername2"
-                        placeholder="Username Qayum hasan"
+                        placeholder="Email"
                       />
+                
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <a href="#">
@@ -160,17 +159,50 @@
 import { Carousel, Slide } from "vue-carousel";
 export default {
   name: "Footer",
+  data(){
+    return{
+      email:'',
+    }
+  },
   mounted() {
-    return this.$store.dispatch("allOurClient");
+    this.$store.dispatch("allOurClient");
+    this.$store.dispatch("allLogo");
+    this.$store.dispatch("allAboutUs");
+    this.$store.dispatch("allPages");
   },
   computed: {
     getOurPartner() {
       return this.$store.getters.getOurClient;
     },
+    logo() {
+      return this.$store.getters.getlogo;
+    },
+    getAboutUs() {
+      return this.$store.getters.getAboutUs;
+    },
+    getAboutUs() {
+      return this.$store.getters.getAboutUs;
+    },
+    getPages() {
+      return this.$store.getters.getpage;
+    },
   },
   components: {
     Carousel,
     Slide,
+  },
+  methods: {
+    createsub() {
+      axios.post("/subscribers/create", {
+          email: this.email,
+        })
+        .then(function (response) {
+          console.log(response);
+          
+        })
+        
+    },
+    
   },
 };
 </script>
