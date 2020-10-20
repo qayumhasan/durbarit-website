@@ -19,23 +19,23 @@ class PartnerController extends Controller
 
     public function create()
     {
-        
+
         return view('admin.partner.create');
     }
 
     public function store(Request $request)
     {
-        
-        
+
+
         $partner = new Partner();
         $partner->link = $request->link;
-        
+
 
         if ($request->hasFile('image')) {
             $partner_id =Str::random(6);
             $partner_img = $request->file('image');
             $imagename = $partner_id . '.' . $partner_img->getClientOriginalExtension();
-            Image::make($partner_img)->resize(600, 400)->save(base_path('public/images/partner/' . $imagename), 50);
+            Image::make($partner_img)->resize(120, 70)->save(base_path('public/images/partner/' . $imagename), 50);
             $partner->image = $imagename;
         }
         $partner->save();
@@ -58,14 +58,14 @@ class PartnerController extends Controller
 
         $partner = Partner::findOrFail($request->id);
         $partner->link = $request->link;
-        
+
 
         if ($request->hasFile('image')) {
             unlink(base_path('public/images/partner/'.$partner->image));
             $partner_id =Str::random(6);
             $partner_img = $request->file('image');
             $imagename = $partner_id . '.' . $partner_img->getClientOriginalExtension();
-            Image::make($partner_img)->resize(600, 400)->save(base_path('public/images/partner/' . $imagename), 50);
+            Image::make($partner_img)->resize(120, 70)->save(base_path('public/images/partner/' . $imagename), 50);
             $partner->image = $imagename;
         }
 
@@ -88,7 +88,7 @@ class PartnerController extends Controller
             $partner->save();
         }else{
             $partner->status =0;
-            $partner->save();   
+            $partner->save();
         }
 
         $notification=array(
@@ -100,7 +100,7 @@ class PartnerController extends Controller
 
     public function delete($id)
     {
-        
+
         $partner = Partner::findOrFail($id);
         unlink(base_path('public/images/partner/'.$partner->image));
         $partner->delete();
@@ -109,5 +109,5 @@ class PartnerController extends Controller
             'alert-type'=>'success'
              );
          return redirect()->back()->with($notification);
-    } 
+    }
 }

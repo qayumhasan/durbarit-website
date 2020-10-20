@@ -22,7 +22,7 @@
                   <div class="product_single_box">
                       <div class="product_image">
                           <a href="#">
-                              <img :src="'public/uploads/product/'+product.image" style="height: 270px;" class="w-100" alt="image">
+                              <img :src="'public/uploads/product/smallthum/'+product.image" style="height: 270px;" class="w-100" alt="image">
                           </a>
                       </div>
 
@@ -152,7 +152,7 @@ export default {
 .triangle_product:before {
     content: '';
     position: absolute;
-    /* right: 0px; */
+
     left: -85px;
     top: 21px;
     width: 0;
@@ -165,7 +165,7 @@ export default {
 .triangle_product:after {
     content: '';
     position: absolute;
-    /* right: 0px; */
+
     right: 54px;
     top: 21px;
     width: 0;

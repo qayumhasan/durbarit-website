@@ -16,15 +16,15 @@ class LogoController extends Controller
         return view('admin.logo.edit',compact('logo'));
     }
 
-    
+
 
     public function update (Request $request)
     {
 
- 
+
        $logo = Logo::findOrFail(1);
-       
-        
+
+
 
         if ($request->hasFile('flogo')) {
             unlink(base_path('public/images/logo/'.$logo->flogo));
@@ -39,11 +39,11 @@ class LogoController extends Controller
             unlink(base_path('public/images/logo/'.$logo->blogo));
             $blogo_img = $request->file('blogo');
             $imagename = 'blogo'. '.' . $blogo_img->getClientOriginalExtension();
-            Image::make($blogo_img)->resize(600, 400)->save(base_path('public/images/logo/' . $imagename), 50);
+            Image::make($blogo_img)->resize(200, 50)->save(base_path('public/images/logo/' . $imagename), 50);
             $logo->blogo = $imagename;
         }
 
-        
+
         if ($request->hasFile('favicon')) {
             unlink(base_path('public/images/logo/'.$logo->favicon));
             $favicon_img = $request->file('favicon');

@@ -76,12 +76,13 @@
                                 </ul>
                             </div>
                             <div class="social_icon_contact mt-4">
+                              
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                    <li><a href="#"><i class="fas fa-rss"></i></a></li>
+                                    <li><a :href="allsocial.facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a :href="allsocial.twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a :href="allsocial.linkend" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a :href="allsocial.google" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
+                                    <li><a :href="allsocial.feed" target="_blank"><i class="fas fa-rss"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -120,6 +121,7 @@ export default {
     data(){
           return{
             contact:[],
+            allsocial:[],
             form:{
               name: '',
               email: '',
@@ -132,11 +134,18 @@ export default {
 
       methods:{
 
+        social(){
+            axios.get('/social/')
+            .then(({data}) => (this.allsocial = data))
+          },
         contactinformation(){
           axios.get('/companyinformation/')
           .then(({data}) => (this.contact = data))
           .catch()
         },
+
+
+
         employeeInsert(){
           const contactms ={
               name:this.name,
@@ -159,6 +168,8 @@ export default {
       },
       mounted() {
           this.contactinformation();
+          this.social();
+
        },
 
 
