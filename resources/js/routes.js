@@ -20,6 +20,7 @@ export const routes = [
     {
         path: '/products/:id',
         component: require('./components/views/products/products-details').default
+        
     },
     {
         path: '/career',
@@ -30,4 +31,3 @@ export const routes = [
         component: require('./components/views/contact/contact-us').default
     },
   ]
-

@@ -5,7 +5,7 @@
         <div class="panel_header">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="panel_title"><span class="panel_icon"><i class="fas fa-plus-square"></i></span><span>All
+                    <div class="panel_title"><span class="panel_icon"><i class="fas fa-plus-square"></i></span><span>Update
                             Slider</span></div>
                 </div>
                 <div class="col-md-6 text-right">
@@ -35,12 +35,15 @@
                         </textarea>
                     </div>
                 </div>
-               
+
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Slider Image:</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <input type="file" value="{{$slider->image}}" name="image">
                         <p>(270px*270px)</p>
+                    </div>
+                    <div class="col-sm-3">
+                      <img src="{{asset('public/images/slider/'.$slider->image)}}" height="100px">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -49,13 +52,15 @@
                         <input type="text" name="link" class="form-control" value="{{$slider->link}}">
                         <!--  <p>(20px*20px)</p> -->
                     </div>
+
                 </div>
 
 
-                
+
+
                 <div class="form-group text-center">
 
-                    <button type="submit" class="btn btn-blue">Add Slider</button>
+                    <button type="submit" class="btn btn-blue">update Slider</button>
                 </div>
 
             </form>

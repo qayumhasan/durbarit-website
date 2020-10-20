@@ -35,17 +35,17 @@
                         <table class="table table-striped">
 
                             <tbody>
-                                <tr>
 
+                                <tr v-for="carrer in careers" :key="carrer.id">
                                     <td>
                                         <div class="list_left">
                                             <ul>
-                                                <li><span class="job_badge">S</span><span
-                                                        style="margin-left:10px;">Support</span></li>
-                                                <li><span class="job">Lead Support Engineer, WordPress
-                                                    </span><span><a href="#" class="badge badge-primary">Open</a></span>
+                                                <li><span class="job_badge">s</span><span
+                                                        style="margin-left:10px;">{{carrer.subject}}</span></li>
+                                                <li><span class="job">{{carrer.designation}}
+                                                    </span><span><a :href="carrer.ink" class="badge badge-primary">Open</a></span>
                                                 </li>
-                                                <li><span class="type">Job Type: Parmanent</span></li>
+                                                <li><span class="type">Job Type: {{carrer.jobtype}}</span></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -54,49 +54,8 @@
                                             <a href="#">apply now</a>
                                         </div>
                                     </td>
-
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="list_left">
-                                            <ul>
-                                                <li><span class="job_badge">S</span><span
-                                                        style="margin-left:10px;">Support</span></li>
-                                                <li><span class="job">Lead Support Engineer, WordPress
-                                                    </span><span><a href="#" class="badge badge-primary">Open</a></span>
-                                                </li>
-                                                <li><span class="type">Job Type: Parmanent</span></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="apply_btn">
-                                            <a href="#">apply now</a>
-                                        </div>
-                                    </td>
 
-                                </tr>
-                                <tr>
-
-                                    <td>
-                                        <div class="list_left">
-                                            <ul>
-                                                <li><span class="job_badge">S</span><span
-                                                        style="margin-left:10px;">Support</span></li>
-                                                <li><span class="job">Lead Support Engineer, WordPress
-                                                    </span><span><a href="#" class="badge badge-primary">Open</a></span>
-                                                </li>
-                                                <li><span class="type">Job Type: Parmanent</span></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="apply_btn">
-                                            <a href="#">apply now</a>
-                                        </div>
-                                    </td>
-
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -105,11 +64,30 @@
         </div>
     </div>
     <!--- career part end -->
-   
+
     </div>
 </template>
 <script>
 export default {
     name:'Career',
+
+    data(){
+      return{
+        careers:[]
+      }
+    },
+    methods:{
+      allcareers(){
+        axios.get('/career/')
+        .then(({data}) => (this.careers = data.data))
+        .catch()
+      }
+    },
+    mounted(){
+      this.allcareers();
+    }
+
+
 }
+
 </script>

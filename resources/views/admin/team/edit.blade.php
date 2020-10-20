@@ -5,7 +5,7 @@
         <div class="panel_header">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="panel_title"><span class="panel_icon"><i class="fas fa-plus-square"></i></span><span>All
+                    <div class="panel_title"><span class="panel_icon"><i class="fas fa-plus-square"></i></span><span>Update
                             Teams</span></div>
                 </div>
                 <div class="col-md-6 text-right">
@@ -21,7 +21,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
-                    
+
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Team Name:</label>
                     <div class="col-sm-6">
                         <input type="hidden" class="form-control" name="id" value="{{$team->id}}" required>
@@ -30,13 +30,13 @@
                 </div>
 
                 <div class="form-group row">
-                    
+
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Designation:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="designation" value="{{$team->designation}}" required>
                     </div>
                 </div>
-                
+
 
                 <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Details:</label>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="form-group row">
-                    
+
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Facebook:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="facebook" value="{{$team->facebook}}" required>
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-group row">
-                    
+
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Twitter:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="twitter" value="{{$team->twitter}}" required>
@@ -64,20 +64,20 @@
                 </div>
 
                 <div class="form-group row">
-                    
+
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Linked In:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="linkedin" value="{{$team->linkedin}}" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    
+
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Phone:</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="phone" value="{{$team->phone}}" required>
                     </div>
                 </div>
-               
+
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Service Image:</label>
                     <div class="col-sm-4">
@@ -85,18 +85,24 @@
                         <p>(270px*270px)</p>
                     </div>
                     <div class="col-sm-3">
-                        
                         <img src="{{asset('public/images/team/')}}/{{$team->image}}" alt="" width="50%"/>
                     </div>
                 </div>
-               
-               
+                <!-- <div class="form-group row">
+
+                    <label for="inputEmail3" class="col-sm-3 col-form-label text-right"></label>
+                    <div class="col-sm-6">
+                        <img src="{{asset('public/')}}" height="45px" >
+                    </div>
+                </div> -->
 
 
-                
+
+
+
                 <div class="form-group text-center">
 
-                    <button type="submit" class="btn btn-blue">Add Update Team Member</button>
+                    <button type="submit" class="btn btn-blue">Update Team Member</button>
                 </div>
 
             </form>

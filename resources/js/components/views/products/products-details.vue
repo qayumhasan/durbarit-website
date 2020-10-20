@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="product_heading">
-                        <h3>Hoteleon - Complete Hotel Booking System</h3>
+                        <h3>{{products.product_name}}</h3>
                     </div>
                 </div>
             </div>
@@ -51,10 +51,10 @@
                                 aria-labelledby="nav-home-tab" style="background-color: transparent;">
                                 <div class="single_details_box">
                                     <div class="detail_box_image">
-                                        <img src="public/frontend/images/img_6.jpg" class="w-100" alt="image">
+                                        <img :src="'public/uploads/product/'+products.image" class="w-100" alt="image">
                                     </div>
                                     <div class="detail_button text-center">
-                                        <span><a href="#"><i class="fas fa-image"></i> Live preview</a></span>
+                                        <span><a :href="products.demourl"><i class="fas fa-image"></i> Live preview</a></span>
                                         <span><a href="#"><i class="fas fa-image"></i> screenshot</a></span>
                                         <ul class="link_btn">
                                             <li><span>Share:</span></li>
@@ -76,9 +76,7 @@
                                 <div class="third_sec">
                                     <h3>About:</h3>
                                     <hr>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, dicta ducimus
-                                        facere at molestiae nostrum sequi quasi placeat? Architecto rem maiores eius
-                                        earum, in accusamus natus neque suscipit nihil. Blanditiis.</p>
+                                    <p>{{products.meta_description}}</p>
 
                                 </div>
                                 <div class="four_sec">
@@ -86,16 +84,13 @@
                                     <hr>
                                     <ul class="point">
                                         <li><i class="fas fa-check"></i> Free technical support</li>
-                                        <li><i class="fas fa-check"></i> Future product updates</li>
-                                        <li><i class="fas fa-check"></i> Quality checked by DurbarIT</li>
-                                        <li><i class="fas fa-check"></i> Lowest price guarantee</li>
 
                                     </ul>
                                 </div>
                                 <div class="five_sec mt-3">
                                     <h3>Demo</h3>
                                     <hr>
-                                    <span> Frontend: <a href="#">http://rifat636.thesoftking.com/hoteleo/</a></span>
+                                    <span> Frontend: <a :href="products.demourl">{{products.demourl}}</a></span>
 
                                 </div>
                                 <div class="six_sec mt-3">
@@ -108,8 +103,8 @@
                                         <li> - Few Responsive Issue Fixed</li>
                                 </ul>
                                   </div>
-                                       
-                                  
+
+
 
                                 </div>
                             </div>
@@ -117,7 +112,7 @@
                                 aria-labelledby="nav-profile-tab">Comment</div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel"
                                 aria-labelledby="nav-contact-tab">
-                                
+
                                              <div class="tsk-content-block bg-aliceblue margin-bottom-30 ">
                                     <h4 class="tsk-ctitle">Contact the author</h4>
                                     <p>We provides limited support for this item through email
@@ -147,11 +142,11 @@
                                     <a href="contact.html"
                                         class="btn-tsk d-block margin-top-30 text-center">Contact Us</a>
                                 </div>
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -171,7 +166,7 @@
                                 </div>
                             </div>
                             <div class="price_part">
-                                <span>$49</span>
+                                <span>{{products.reqular_price}} ৳</span>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -204,7 +199,7 @@
                                 <div class="col-sm-12">
                                     <div class="tsk-content-block sales-block">
                                         <h4 class="sales-count">
-                                            <i class="fas fa-cart-arrow-down"></i> 70 Sales
+                                            <i class="fas fa-cart-arrow-down"></i> {{products.number_of_sale}} Sales
                                         </h4>
                                     </div>
                                 </div>
@@ -215,37 +210,38 @@
                                         <h4>Information</h4>
                                         <div class="single_item_info">
                                             <h5>First Release</h5>
-                                            <span>19 july 2020</span>
+                                            <span>{{products.first_create}}</span>
 
                                         </div>
                                         <div class="single_item_info">
                                             <h5>Last update</h5>
-                                            <span>19 August 2020</span>
+                                            <span>{{products.last_update}}</span>
 
                                         </div>
                                         <div class="single_item_info">
                                             <h5>Compatible Browsers</h5>
-                                            <span>IE6,IE7,IE8,IE9,IE10,IE11,Firefox,Safari,Opera,Chrome,Edge,</span>
+                                            <span>{{products.compatible_browser}}</span>
 
                                         </div>
                                         <div class="single_item_info">
                                             <h5>Software Version</h5>
-                                            <span>PHP 7.x,MySQL 5.x,</span>
+                                            <span>{{products.software_version}}</span>
 
                                         </div>
                                         <div class="single_item_info">
                                             <h5>Demo URL</h5>
-                                            <span>http://www.durbarit.com/html/</span>
+                                            <span>{{products.demourl}}</span>
 
                                         </div>
                                         <div class="single_item_info">
                                             <h5>High Resolution</h5>
+
                                             <span>Yes</span>
 
                                         </div>
                                          <div class="single_item_info">
                                             <h5>Software Framework</h5>
-                                            <span>Laravel</span>
+                                            <span>{{products.framework}}</span>
 
                                         </div>
                                         <div class="single_item_info">
@@ -253,7 +249,7 @@
                                                 <h5>Tags</h5>
                                                 <ul>
 
-                                                    <li><a href="#">Holiday</a></li>
+                                                    <li><a>{{products.meta_tag}}</a></li>
                                                 </ul>
                                             </div>
 
@@ -273,11 +269,30 @@
 </template>
 <script>
 export default {
-    name:'Product details'
+    name:'Product-details',
+    data(){
+      return{
+        products:[]
+      }
+    },
+    methods:{
+      allproduct(){
+        let id=this.$route.params.id
+        console.log(id)
+        axios.get('/product/'+id)
+        .then(({data}) => (this.products = data))
+        .catch()
+      }
+    },
+    created(){
+      this.allproduct();
+    }
+
+
 }
 </script>
 <style scoped>
-    
+
 #product_detail {
     padding: 80px 0px;
     /* background-image: url(../images/simon-abrams-k_T9Zj3SE8k-unsplash.jpg); */

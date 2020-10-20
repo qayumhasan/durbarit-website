@@ -61,6 +61,13 @@
 	                        <span class="menu-text">Whychoseus</span>
 	                    </a>
 	                  </li>
+                    <li class="single-nav-wrapper">
+                      <a href="{{route('admin.contactmessage.index')}}" class="menu-item">
+                          <span class="left-icon"><i class="fas fa-file"></i></span>
+                          <span class="menu-text">Contact Message</span>
+                      </a>
+                    </li>
+
 
 
 	                </ul>

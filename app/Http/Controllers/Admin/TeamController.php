@@ -19,14 +19,14 @@ class TeamController extends Controller
 
     public function create()
     {
-        
+
         return view('admin.team.create');
     }
 
     public function store(Request $request)
     {
-        
-        
+
+
         $team = new team();
         $team->name = $request->name;
         $team->designation = $request->designation;
@@ -35,7 +35,7 @@ class TeamController extends Controller
         $team->twitter = $request->twitter;
         $team->linkedin = $request->linkedin;
         $team->phone = $request->phone;
-        
+
 
         if ($request->hasFile('image')) {
             $team_id =Str::random(6);
@@ -70,10 +70,10 @@ class TeamController extends Controller
         $team->twitter = $request->twitter;
         $team->linkedin = $request->linkedin;
         $team->phone = $request->phone;
-        
+
 
         if ($request->hasFile('image')) {
-            unlink(base_path('public/images/team/'.$team->image));
+            //unlink(base_path('public/images/team/'.$team->image));
             $team_id =Str::random(6);
             $team_img = $request->file('image');
             $imagename = $team_id . '.' . $team_img->getClientOriginalExtension();
@@ -100,7 +100,7 @@ class TeamController extends Controller
             $team->save();
         }else{
             $team->status =0;
-            $team->save();   
+            $team->save();
         }
 
         $notification=array(
@@ -112,7 +112,7 @@ class TeamController extends Controller
 
     public function delete($id)
     {
-        
+
         $team = team::findOrFail($id);
         unlink(base_path('public/images/team/'.$team->image));
         $team->delete();
@@ -121,5 +121,5 @@ class TeamController extends Controller
             'alert-type'=>'success'
              );
          return redirect()->back()->with($notification);
-    } 
+    }
 }

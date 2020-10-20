@@ -11,7 +11,13 @@ use App\Service;
 use App\Partner;
 use App\Category;
 use App\Client;
+
+use App\Team;
+use App\Career;
+use App\Product;
+
 use App\ContactInformation;
+
 use App\Http\Resources\ServiceResources;
 use App\Page;
 use App\Subscriber;
@@ -49,8 +55,6 @@ class FrontendController extends ApiController
       $categoris=Category::get();
         return $this->showAll($categoris);
     }
-  
-
 
     public function aboutUs()
     {
@@ -60,17 +64,34 @@ class FrontendController extends ApiController
 
     public function chooseus()
     {
-        
+
         $data=Whychoseus::all();
         return $this->showAll($data);
     }
 
     public function clientSay()
     {
-        
+
         $data =Client::all();
         return $this->showAll($data);
     }
+
+
+    public function team(){
+      $team=Team::where('status',1)->get();
+      return $this->showAll($team);
+    }
+
+    public function career(){
+        $career=Career::where('status',1)->get();
+        return $this->showAll($career);
+    }
+
+    // public function product(){
+    //     $product=Product::where('status',1)->get();
+    //     return $this->showAll($product);
+    // }
+
 
     public function contact()
     {
@@ -97,5 +118,6 @@ class FrontendController extends ApiController
     }
 
     
+
 
 }
