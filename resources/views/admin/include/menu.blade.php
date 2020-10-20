@@ -34,6 +34,7 @@
 	                          <li><a href="{{route('admin.client.index')}}">Our Client Say</a></li>
 	                          <li><a href="{{route('admin.user.index')}}">Users</a></li>
 	                          <li><a href="{{route('admin.aboutus.index')}}">About Us</a></li>
+	                          <li><a href="{{route('admin.project.index')}}">Our Project</a></li>
 
 	                        </ul>
 	                  </li>

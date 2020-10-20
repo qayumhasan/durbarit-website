@@ -3,6 +3,7 @@ require('./bootstrap');
 
 
 
+
 window.Vue = require('vue');
 Vue.config.productionTip = false;
 
@@ -30,13 +31,20 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import {routes} from './routes';
 
+
+
 Vue.component('main-component', require('./components/master-component').default);
+Vue.component('pulse-loader', require('vue-spinner/src/PulseLoader.vue'));
 const router = new VueRouter({
     // mode: 'history',
     routes, // short for `routes: routes`
     
 })
 
+
+
+
+Vue.prototype.$eventBus = new Vue();
 // support vuex
 
 import Vuex from 'vuex'
@@ -45,6 +53,10 @@ import storeData from "./store/index"
 const store = new Vuex.Store(
     storeData
 )
+import VueIziToast from 'vue-izitoast';
+Vue.use(VueIziToast);
+
+
 
 
 const app = new Vue({

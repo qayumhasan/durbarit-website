@@ -81,4 +81,12 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
     Route::post('/create','FrontendController@NewsLetter');
   });
 
+  Route::prefix('categores')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@categores');
+  });
+
+  Route::prefix('projects')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@projects');
+  });
+
 

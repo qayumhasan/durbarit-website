@@ -40,7 +40,7 @@
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Slider Image:</label>
                     <div class="col-sm-3">
                         <input type="file" value="{{$slider->image}}" name="image">
-                        <p>(270px*270px)</p>
+                        <p>(2560px*1700px)</p>
                     </div>
                     <div class="col-sm-3">
                       <img src="{{asset('public/images/slider/'.$slider->image)}}" height="100px">

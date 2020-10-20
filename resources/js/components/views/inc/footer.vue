@@ -197,7 +197,9 @@ export default {
           email: this.email,
         })
         .then(function (response) {
+
           console.log(response);
+
 
         })
 

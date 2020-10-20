@@ -33,7 +33,7 @@
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Partner Image:</label>
                     <div class="col-sm-4">
                         <input type="file" name="image">
-                        <p>(270px*270px)</p>
+                        <p>(120px*70px)</p>
                     </div>
                     <div class="col-sm-3">
                         

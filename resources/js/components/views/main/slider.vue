@@ -7,25 +7,31 @@
           <!-- <div class="banner_slider"> -->
           <carousel :perPage="1">
             <slide v-for="(slider, index) in getSliders" :key="index">
+
               <div class="item_one">
                 <div class="carousel_img_one">
+
                   <img
                     :src="'public/images/slider/' + slider.image"
                     alt="banner-image"
                     class="w-100"
                   />
                 </div>
+
                 <div class="carousel_content_one">
                   <div class="carousel_cont_head_one">
                     <h3>{{ slider.heading }}</h3>
                   </div>
 
                   <div class="carousel_content_para_one">
+
                     <p>
                       {{ slider.paragraph | striphtml }}
                     </p>
                   </div>
+
                   <div class="banner_link_one">
+
                     <a href="#"> Read more </a>
                   </div>
                 </div>
@@ -58,6 +64,7 @@ export default {
   },
 };
 </script>
+
 <style>
 .VueCarousel-pagination {
   position: absolute;
@@ -126,4 +133,6 @@ section#banner {
   width: 100%;
   height: 100%;
 }
+
+
 </style>

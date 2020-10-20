@@ -33,7 +33,20 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="tab-content" id="pills-tabContent">
-                        <div v-for="servicedetails in getServices" class="tab-pane fade show active" :id="'pills-home'+servicedetails.id" role="tabpanel">
+
+
+
+
+
+                
+                        
+                     
+
+
+                        
+
+                        <div v-for="(servicedetails,key,index) in getServices" :class="['tab-pane fade',(key == 0 ? 'show active':' ')]" :id="'pills-home'+servicedetails.id" role="tabpanel">
+
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="panel_content text-center">
