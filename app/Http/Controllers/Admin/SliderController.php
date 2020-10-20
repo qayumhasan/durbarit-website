@@ -48,7 +48,7 @@ class SliderController extends Controller
             $slider_id =Str::random(6);
             $slider_img = $request->file('image');
             $imagename = $slider_id . '.' . $slider_img->getClientOriginalExtension();
-            Image::make($slider_img)->resize(600, 400)->save(base_path('public/images/slider/' . $imagename), 50);
+            Image::make($slider_img)->resize(2560, 1705)->save(base_path('public/images/slider/' . $imagename), 50);
             $slider->image = $imagename;
         }
 
@@ -116,7 +116,7 @@ class SliderController extends Controller
             $slider_id =Str::random(6);
             $slider_img = $request->file('image');
             $imagename = $slider_id . '.' . $slider_img->getClientOriginalExtension();
-            Image::make($slider_img)->resize(600, 400)->save(base_path('public/images/slider/' . $imagename), 50);
+            Image::make($slider_img)->resize(2560, 1705)->save(base_path('public/images/slider/' . $imagename), 50);
             $slider->image = $imagename;
         }
 

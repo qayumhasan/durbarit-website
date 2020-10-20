@@ -43,7 +43,7 @@
                                 {{$loop->iteration}}
                             </td>
                             <td> {{$row->heading}} </td>
-                            <td> {!!Str::limit($row->paragraph,150)!!} </td>
+                            <td> {!!Str::limit($row->paragraph,100)!!} </td>
 
 
                             <td>

@@ -10,6 +10,8 @@ export default {
         contact:[],
         logo:[],
         pages:[],
+        categores:[],
+        projects:[],
     },
 
     getters:{
@@ -39,6 +41,12 @@ export default {
         },
         getpage(state){
             return state.pages
+        },
+        getproject(state){
+            return state.categores
+        },
+        getprojectdetails(state){
+            return state.projects
         }
     },
 
@@ -106,8 +114,24 @@ export default {
         allPages(context){
             axios.get('/pages')
                 .then((response)=>{
-                                console.log(response.data.data)
+                             
                     context.commit('allPage',response.data.data)
+                    
+                })
+        },
+        allProject(context){
+            axios.get('/categores')
+                .then((response)=>{
+                                
+                    context.commit('allProject',response.data.data)
+                    
+                })
+        },
+        allProjectDetails(context){
+            axios.get('/projects')
+                .then((response)=>{
+                                console.log(response.data.data)
+                    context.commit('allProjectDetails',response.data.data)
                     
                 })
         },
@@ -144,6 +168,12 @@ export default {
         },
         allPage(state,data){
             return state.pages =data
+        },
+        allProject(state,data){
+            return state.categores =data
+        },
+        allProjectDetails(state,data){
+            return state.projects =data
         },
 
     }

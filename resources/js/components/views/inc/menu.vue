@@ -100,17 +100,17 @@
                                     </li>
                                     <li>
                                         
-                                        <router-link to="teams">Our Team</router-link>
+                                        <router-link :to="{ name: 'teams' }">Our Team</router-link>
                                     </li>
                                      <li>
-                                        <router-link to="products">Products</router-link>
+                                        <router-link :to="{name:'products'}">Products</router-link>
                                     </li>
                                       <li>
-                                        <router-link to="career">Career</router-link>
+                                        <router-link :to="{ name: 'career' }">Career</router-link>
                                     </li>
                                    
                                     <li>
-                                        <router-link to="contact-us">Contact Us</router-link>
+                                        <router-link :to="{ name: 'contact-us' }">Contact Us</router-link>
                                     </li>
 
                                 </ul>

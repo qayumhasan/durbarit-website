@@ -59,7 +59,7 @@
 
                         
 
-                        <div v-for="servicedetails in getServices" class="tab-pane fade" :id="'pills-home'+servicedetails.id" role="tabpanel">
+                        <div v-for="(servicedetails,key,index) in getServices" :class="['tab-pane fade',(key == 0 ? 'show active':' ')]" :id="'pills-home'+servicedetails.id" role="tabpanel">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="panel_content text-center">

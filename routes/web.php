@@ -139,6 +139,16 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
     Route::get('/delete/{id}','ClientController@delete')->name('admin.client.delete');
   });
 
+  Route::prefix('project')->group(function(){
+    Route::get('/','ProjectController@index')->name('admin.project.index');
+    Route::get('/create','ProjectController@create')->name('admin.project.create');
+    Route::post('/create','ProjectController@store')->name('admin.project.store');
+    Route::get('/edit/{id}','ProjectController@edit')->name('admin.project.edit');
+    Route::post('/update/{id}','ProjectController@update')->name('admin.project.update');
+    Route::get('/status/{id}','ProjectController@status')->name('admin.project.status');
+    Route::get('/delete/{id}','ProjectController@delete')->name('admin.project.delete');
+  });
+
   Route::prefix('users')->group(function(){
     Route::get('/','UserController@index')->name('admin.user.index');
     Route::get('/create','UserController@create')->name('admin.user.create');
