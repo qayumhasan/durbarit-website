@@ -19,6 +19,10 @@ Route::apiResource('/whychoseus','Admin\WhyChoseUsController');
 Route::apiResource('/companyinformation','Api\ContactInformationController');
 Route::apiResource('/product','Api\ProductController');
 Route::apiResource('/contactmessage','Api\ContactMessageController');
+Route::apiResource('/social','Api\SocialController');
+
+
+
 
 
 Route::prefix('slider')->namespace('Frontend')->group(function () {
@@ -80,6 +84,7 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
   Route::prefix('subscribers')->namespace('Frontend')->group(function () {
     Route::post('/create','FrontendController@NewsLetter');
   });
+
 
   Route::prefix('categores')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@categores');

@@ -23,6 +23,9 @@ Route::get('/', function () {
 // })->where('vue_capture','[\/\w\.-]*');
 
 
+// Route::get('/{vue?}', function () {
+//    return view('layouts.app');
+// })->where('vue', '[\/\w\.-]*');
 
 
 
@@ -53,9 +56,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 
 
 Route::resource('admin/slider', Admin\SliderController::class);
-
 Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
-
   Route::prefix('service')->group(function(){
     Route::get('/','ServiceController@index')->name('admin.service.index');
     Route::get('/create','ServiceController@create')->name('admin.service.create');
@@ -221,4 +222,10 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
 Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::get(md5('/contactmessage/index'),'ContactMessageController@index')->name('admin.contactmessage.index');
   Route::get(md5('/contactmessage/compose'),'ContactMessageController@create')->name('admin.compose.create');
+});
+
+Route::prefix('admin')->namespace('Admin')->group(function(){
+  Route::get(md5('/social/index'),'SocialController@index')->name('admin.social.index');
+  Route::post(md5('/social/index'),'SocialController@update')->name('admin.social.update');
+
 });

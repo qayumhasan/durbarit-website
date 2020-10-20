@@ -29,10 +29,10 @@
                                 SL
                             </th>
                             <th >Link</th>
-                            
+
                             <th >Image</th>
                             <th>Status</th>
-                            <th style="width: 10%;">manage</th>
+                            <th>manage</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,12 +41,12 @@
                             <td>
                             {{$loop->iteration}}
                             </td>
-                            
+
                             <td> {{$row->link}} </td>
-                            
+
 
                             <td>
-                                <img src="{{asset('public/images/partner/')}}/{{$row->image}}" alt="" width="25%">
+                                <img src="{{asset('public/images/partner/')}}/{{$row->image}}" alt="" height="40px">
                             </td>
                             @if($row->status == 1)
                                 <td class="center"><span class="btn btn-success">Active</span></td>
@@ -75,7 +75,7 @@
                                     data-placement="right" title="Delete" data-original-title="Delete"><i
                                         class="far fa-trash-alt"></i></a>
 
-                                        
+
                             </td>
                         </tr>
                         @endforeach

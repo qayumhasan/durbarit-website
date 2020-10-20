@@ -2,9 +2,13 @@
 <header class="header_area">
 				<!-- logo -->
 				<div class="sidebar_logo">
-					<a href="index.html">
-						<img src="{{asset('public/assets/images/logo.png')}}" alt="" class="img-fluid logo1">
-						<img src="{{asset('public/assets/images/logo_small.png')}}" alt="" class="img-fluid logo2">
+					<a href="{{route('admin.home')}}">
+						@php
+						$logos=App\Logo::first();
+
+						@endphp
+						<img src="{{asset('public/images/logo/'.$logos->blogo)}}" alt="" class="img-fluid logo1">
+						<img src="{{asset('public/images/logo/'.$logos->blogo)}}" alt="" class="img-fluid logo2">
 					</a>
 				</div>
 				<div class="sidebar_btn">
@@ -27,7 +31,7 @@
 							  </form>
 						</div>
 					</li>
-					<li><a data-toggle="dropdown" href="#"><i class="far fa-envelope"></i><span>4</span></a>
+					<!-- <li><a data-toggle="dropdown" href="#"><i class="far fa-envelope"></i><span>4</span></a>
 						<div class="dropdown_wrapper messages_item dropdown-menu dropdown-menu-right">
 							<div class="dropdown_header">
 								<p>you have 4 messages</p>
@@ -218,7 +222,8 @@
 								<a href="#">view All</a>
 							</div>
 						</div>
-					</li>
+					</li> -->
+					<li><a href="{{url('/')}}" target="_blank">Live</a></li>
 					<li><a data-toggle="dropdown" href="#"><i class="far fa-user"></i></a>
 							<div class="user_item dropdown-menu dropdown-menu-right">
 								<div class="admin">

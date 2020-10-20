@@ -90,7 +90,7 @@ class ProductController extends Controller
        if ($request->hasFile('photos')) {
            foreach ($request->photos as $key => $photo) {
                $photoName = uniqid() . "." . $photo->getClientOriginalExtension();
-               $resizedPhoto = Image::make($photo)->resize(600, 600)->save($photoName);
+               $resizedPhoto = Image::make($photo)->resize(1200, 1600)->save($photoName);
                Storage::disk('public')->put($photoName, $resizedPhoto);
                unlink($photoName);
                array_push($photos, $photoName);
@@ -100,7 +100,8 @@ class ProductController extends Controller
        if ($request->hasFile('thumbnail_img')) {
             $image = $request->file('thumbnail_img');
             $ImageName = 'th' . '_' . time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(300, 300)->save('public/uploads/product/' . $ImageName);
+            Image::make($image)->resize(590, 300)->save('public/uploads/product/' . $ImageName);
+            Image::make($image)->resize(350, 270)->save('public/uploads/product/smallthum/' . $ImageName);
             $data->image = $ImageName;
         }
         if ($data->save()){
@@ -196,7 +197,8 @@ class ProductController extends Controller
       if ($request->hasFile('thumbnail_img')) {
             $image = $request->file('thumbnail_img');
             $ImageName = 'th' . '_' . time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(300, 300)->save('public/uploads/product/' . $ImageName);
+            Image::make($image)->resize(590, 300)->save('public/uploads/product/' . $ImageName);
+            Image::make($image)->resize(350, 270)->save('public/uploads/product/smallthum/' . $ImageName);
             $data->image = $ImageName;
         }
 

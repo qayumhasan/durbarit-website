@@ -6,8 +6,8 @@
                     <div class="video_section_content text-center">
                         <h3>Our Work Process Video</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                        <a class="js-modal-btn" data-video-id="VNGxECpJNTw"> <i class="fas fa-play"></i></a>
-                   
+                        <a class="js-modal-btn" data-video-id="nGh4K3m7u0s"> <i class="fas fa-play"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
 export default {
     name:'VideoComponent',
     mounted(){
-        
+
     }
 }
 </script>

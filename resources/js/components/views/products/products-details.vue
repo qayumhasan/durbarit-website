@@ -158,7 +158,7 @@
                                 <div class="form-group">
 
                                     <select class="form-control" id="exampleFormControlSelect1">
-                                        <option selected>Choose package</option>
+                                      
                                         <option>Reguler</option>
                                         <option>Premium</option>
 
@@ -185,7 +185,7 @@
                         <div class="mt-4">
                             <input type="checkbox" id="exSupport" name="exSupport" value="12">
                             <label for="exSupport">Extend support to 6 months</label>
-                            <span class="float-right font-weight-bold">$<span class="supPrice">14.75</span></span>
+                            <span class="float-right font-weight-bold"><span class="supPrice">1000 ৳</span></span>
                         </div>
                         <div class="cart text-center">
 

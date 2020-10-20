@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+const router = new VueRouter({
+  mode: "history",
+  routes
+});
 
 export const routes = [
     {
@@ -22,7 +26,7 @@ export const routes = [
     {
         path: '/products/:id',
         component: require('./components/views/products/products-details').default
-        
+
     },
     {
         path: '/career',
