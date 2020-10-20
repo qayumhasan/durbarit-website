@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
-                    <div class="ab_head wow animate__animated animate__slideInLeft animate__delay-1s">
+                    <div class="ab_head wow animate__animated animate__fadeIn animate__delay-1s">
                         <h3>Welcome to <span>Durbar It Limited</span>:<br>Always Ready To Help</h3>
 
                         <p>

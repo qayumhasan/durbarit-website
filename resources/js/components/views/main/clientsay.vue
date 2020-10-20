@@ -21,7 +21,13 @@
         <div class="row">
           <div class="col-sm-7">
             <!-- <div class="testimonial_slider owl-carousel owl-theme"> -->
-            <carousel :perPage="1">
+            <carousel
+            :perPage="1"
+            :paginationEnabled="false"
+                :navigationEnabled="true"
+            navigationNextLabel="<i class='fa fa-angle-right'></i>"
+                navigationPrevLabel="<i class='fa fa-angle-left'></i>"
+            >
               <slide v-for="(client, index) in getClientSay" :key="index">
                 <div class="testimonial_slider_item">
                   <div class="testimonial_slider_content_text">
@@ -40,7 +46,7 @@
                         class="img-fluid"
                         :src="'public/images/client/' + client.image"
                         alt="Saied Rahman"
-                        style="width: 90px; height: auto; border-radius: 50%"
+
                       />
                     </div>
                     <div class="testimonial_cont">
@@ -85,3 +91,47 @@ export default {
   },
 };
 </script>
+
+<style>
+.testimonial_container button.VueCarousel-navigation-button.VueCarousel-navigation-next {
+    position: absolute;
+    right: 35px;
+    top: 296px;
+    border: 1px solid #d4d4d4;
+    width: 35px;
+    height: 35px;
+        padding: 0px !important;
+    margin-left: 0px !important;
+}
+.testimonial_container button.VueCarousel-navigation-button.VueCarousel-navigation-prev {
+    position: absolute;
+    /* right: 23px; */
+    top: 296px;
+    left: 598px;
+    border: 1px solid #d4d4d4;
+   width: 35px;
+    height: 35px;
+        padding: 0px !important;
+    margin-left: 0px !important;
+}
+.testimonial_img img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+
+}
+.testimonial_container i{
+    color: #26abe2;
+}
+@media (max-width: 575.98px) {
+
+  .testimonial_container
+    button.VueCarousel-navigation-button.VueCarousel-navigation-prev {
+    left: 302px !important;
+  }
+  button.openbtn {
+    position: relative;
+    top: 7px !important;
+}
+}
+</style>

@@ -11,19 +11,11 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="row wow animate__animated animate__fadeIn animate__delay-1s">
                 <div class="col-sm-12 m-0">
                     <div class="tab_list_part">
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
-
-
-                          
-
-
-                            <li class="nav-item" style="margin-bottom: 20px;" v-for="service in getServices ">
+                            <li class="nav-item" style="margin-bottom: 20px;" v-for="service in getServices">
                                 <a class="nav-link" id="pills-content11-tab" data-toggle="pill" :href="'#pills-home'+service.id"
                                     role="tab" aria-selected="false">
 
@@ -32,15 +24,8 @@
                                     <div class="log_name">
                                         {{service.name}}
                                     </div>
-
                                 </a>
-
                             </li>
-
-                           
-                     
-                       
-                            
                         </ul>
                     </div>
                 </div>
@@ -48,18 +33,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="tab-content" id="pills-tabContent">
-
-
-
-
-                
-                        
-                     
-
-
-                        
-
-                        <div v-for="servicedetails in getServices" class="tab-pane fade" :id="'pills-home'+servicedetails.id" role="tabpanel">
+                        <div v-for="servicedetails in getServices" class="tab-pane fade show active" :id="'pills-home'+servicedetails.id" role="tabpanel">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="panel_content text-center">
@@ -74,7 +48,7 @@
                                             <li class="sub_panel" v-for="details in servicedetails.details"><i class="fas fa-check"></i>
                                                 {{details}}
                                             </li>
-                                          
+
                                         </ul>
                                     </div>
                                 </div>
@@ -98,18 +72,18 @@ export default {
         }
     },
     mounted(){
-        
+
         return this.$store.dispatch("allService");
-        
-        
-    
+
+
+
     },
     computed:{
         getServices(){
              return this.$store.getters.getService;
         }
     },
-    
+
 
 }
 </script>
