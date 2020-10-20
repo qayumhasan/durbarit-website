@@ -35,7 +35,7 @@ class PartnerController extends Controller
             $partner_id =Str::random(6);
             $partner_img = $request->file('image');
             $imagename = $partner_id . '.' . $partner_img->getClientOriginalExtension();
-            Image::make($partner_img)->resize(600, 400)->save(base_path('public/images/partner/' . $imagename), 50);
+            Image::make($partner_img)->resize(120, 70)->save(base_path('public/images/partner/' . $imagename), 50);
             $partner->image = $imagename;
         }
         $partner->save();
@@ -65,7 +65,7 @@ class PartnerController extends Controller
             $partner_id =Str::random(6);
             $partner_img = $request->file('image');
             $imagename = $partner_id . '.' . $partner_img->getClientOriginalExtension();
-            Image::make($partner_img)->resize(600, 400)->save(base_path('public/images/partner/' . $imagename), 50);
+            Image::make($partner_img)->resize(120, 70)->save(base_path('public/images/partner/' . $imagename), 50);
             $partner->image = $imagename;
         }
 
