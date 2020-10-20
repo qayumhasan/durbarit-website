@@ -46,7 +46,7 @@
                     :src="'public/images/logo/' + logo.flogo"
                     class="w-100"
                     alt="no-logo"
-                    style="width: 250px !important; height: auto"
+
                   />
                 </a>
                 <p>
@@ -109,14 +109,14 @@
                   </p>
                   <div class="email_form">
                     <div class="input-group mb-2 mr-sm-2">
-                     
+
                       <input @keyup.enter="createsub"
                         type="email" v-model="email"
                         class="form-control"
                         id="inlineFormInputGroupUsername2"
                         placeholder="Email"
                       />
-                
+
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <a href="#">
@@ -197,12 +197,14 @@ export default {
           email: this.email,
         })
         .then(function (response) {
+
           console.log(response);
-          
+
+
         })
-        
+
     },
-    
+
   },
 };
 </script>
@@ -214,11 +216,14 @@ export default {
   background-color: #1a1a1a;
   position: relative;
 }
-
-.carousel_img_icon img {
-  width: 130px !important;
+.carousel_img_icon img[data-v-0c82e210] {
+    width: 130px !important;
+    height: 58px;
 }
+.carousel_img_icon {
 
+    text-align: center;
+}
 .slider_icon {
   background-color: #fff;
   padding: 30px;
@@ -233,7 +238,7 @@ export default {
   box-shadow: 4px 10px 34px rgba(0, 0, 0, 0.4);
 }
 
-/* 
+/*
 .slider_icon:before {
     content: '';
     position: absolute;
@@ -426,5 +431,9 @@ export default {
 
 .input-group-text i.fas.fa-envelope {
   color: #26abe2cf;
+}
+.footer_logo img {
+    width: 160px !important;
+    height: 62px;
 }
 </style>

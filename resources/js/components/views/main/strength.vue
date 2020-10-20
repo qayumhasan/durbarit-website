@@ -70,13 +70,13 @@
 
 
 
-                        <div class="card" v-for="choose in getChoose">
+                        <div class="card" v-for="(choose,key,index) in getChoose">
                             <div class="card-header str_card" :id="'headingOne'+choose.id">
                                 <a href="#" data-toggle="collapse" :data-target="'#collapseOne'+choose.id" aria-expanded="true"
                                     :aria-controls="'collapseOne'+choose.id" class=""> {{choose.title}}
                                 </a>
                             </div>
-                            <div :id="'collapseOne'+choose.id" class="collapse show" aria-labelledby="'headingOne'+choose.id"
+                            <div :id="'collapseOne'+choose.id" :class="[(key == 0 ? 'collapse show':'collapse')]" aria-labelledby="'headingOne'+choose.id"
                                 data-parent="#accordion" style="">
                                 <div class="card-body">
                                     <p>{{choose.details}}</p>

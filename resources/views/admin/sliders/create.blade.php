@@ -39,7 +39,7 @@
                     <label for="inputEmail3" class="col-sm-3 col-form-label text-right">Slider Image:</label>
                     <div class="col-sm-6">
                         <input type="file" name="image" required>
-                        <p>(270px*270px)</p>
+                        <p>(2560px*1700px)</p>
                     </div>
                 </div>
                 <div class="form-group row">

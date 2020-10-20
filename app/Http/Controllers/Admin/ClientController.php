@@ -38,7 +38,7 @@ class ClientController extends Controller
             $client_id =Str::random(6);
             $client_img = $request->file('image');
             $imagename = $client_id . '.' . $client_img->getClientOriginalExtension();
-            Image::make($client_img)->resize(600, 400)->save(base_path('public/images/client/' . $imagename), 50);
+            Image::make($client_img)->resize(180, 180)->save(base_path('public/images/client/' . $imagename), 50);
             $client->image = $imagename;
         }
         $client->save();
@@ -74,7 +74,7 @@ class ClientController extends Controller
             $client_id =Str::random(6);
             $client_img = $request->file('image');
             $imagename = $client_id . '.' . $client_img->getClientOriginalExtension();
-            Image::make($client_img)->resize(600, 400)->save(base_path('public/images/client/' . $imagename), 50);
+            Image::make($client_img)->resize(180, 180)->save(base_path('public/images/client/' . $imagename), 50);
             $client->image = $imagename;
         }
 

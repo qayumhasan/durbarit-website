@@ -20,6 +20,7 @@ use App\ContactInformation;
 
 use App\Http\Resources\ServiceResources;
 use App\Page;
+use App\Project;
 use App\Subscriber;
 use App\Whychoseus;
 
@@ -115,6 +116,19 @@ class FrontendController extends ApiController
         $sub->status = 1;
         $sub->save();
         return $sub;
+    }
+
+    public function categores()
+    {
+       $data= Category::all();
+       return $this->showAll($data);
+       
+    }
+
+    public function projects()
+    {
+        $data = Project::where('status',1)->get();
+        return $this->showAll($data);
     }
 
     

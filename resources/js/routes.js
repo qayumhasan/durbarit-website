@@ -15,11 +15,13 @@ export const routes = [
     },
     {
         path: '/teams',
-        component: require('./components/views/teams/team').default
+        component: require('./components/views/teams/team').default,
+        name: "teams",
     },
     {
         path: '/products',
-        component: require('./components/views/products/products').default
+        component: require('./components/views/products/products').default,
+        name:"products"
     },
     {
         path: '/products/:id',
@@ -28,10 +30,12 @@ export const routes = [
     },
     {
         path: '/career',
-        component: require('./components/views/career/career').default
+        component: require('./components/views/career/career').default,
+        name: "career",
     },
     {
         path: '/contact-us',
-        component: require('./components/views/contact/contact-us').default
+        component: require('./components/views/contact/contact-us').default,
+        name: "contact-us",
     },
   ]
