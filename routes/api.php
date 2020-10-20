@@ -47,12 +47,16 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
   Route::prefix('about-us')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@aboutUs');
   });
+
+
   Route::prefix('choose-us')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@chooseus');
   });
+
   Route::prefix('clientsay')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@clientSay');
   });
+
 
   Route::prefix('team')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@team');
@@ -64,3 +68,17 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
   // Route::prefix('product')->namespace('Frontend')->group(function () {
   //   Route::get('/','FrontendController@product');
   // });
+
+  Route::prefix('contact')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@contact');
+  });
+
+  Route::prefix('pages')->namespace('Frontend')->group(function () {
+    Route::get('/','FrontendController@pages');
+  });
+
+  Route::prefix('subscribers')->namespace('Frontend')->group(function () {
+    Route::post('/create','FrontendController@NewsLetter');
+  });
+
+

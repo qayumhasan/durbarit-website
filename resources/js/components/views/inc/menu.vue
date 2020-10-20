@@ -9,8 +9,7 @@
 
                         <div class="wow backInUp main_logo">
                             <a href="index.html">
-                                <img src="public/frontend/images/logo.png" alt="logo-image">
-                              
+                                <img :src="'public/images/logo/'+logo.flogo" alt="logo-image" width="70px">
                               
                             </a>
                         </div>
@@ -132,7 +131,7 @@
                 <div class="col-6">
                     <div class="mobile_menu_logo">
                         <a href="index.html">
-                             <img class="img-fluid" src="public/frontend/images/logo.png" alt="logo-image">
+                             <img class="img-fluid" :src="'public/images/logo/'+logo.flogo" alt="logo-image">
                            
                         </a>
                     </div>
@@ -147,3 +146,20 @@
     </section>
     </div>
 </template>
+
+<script>
+export default {
+    name:'MenuComponent',
+    mounted(){
+        this.$store.dispatch("allLogo");
+    },
+    computed:{
+        logo(){
+             return this.$store.getters.getlogo;
+        }
+    },
+    methods:{
+       
+    }
+}
+</script>

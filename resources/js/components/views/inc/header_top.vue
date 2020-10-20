@@ -6,8 +6,8 @@
                 <div class="col-sm-7 text-right">
                     <div class="header_top_info wow animate__animated animate__fadeIn animate__delay-0.7s">
                         <ul>
-                            <li><a href="#"><i class="fas fa-envelope"></i> info@durbarit.com</a></li>
-                            <li><a href="#"><i class="fas fa-phone-volume"></i> +8801730595104 </a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i> {{getContact.email}}</a></li>
+                            <li><a href="#"><i class="fas fa-phone-volume"></i> {{getContact.phone}} </a></li>
                         </ul>
                     </div>
                 </div>
@@ -30,19 +30,12 @@
                 <div class="col-sm-12">
                     <div class="header_top_info">
                         <ul>
-                            <li><a href="#"><i class="fas fa-envelope"></i> info@creativesystemltd.com</a></li>
-                            <li><a href="#"><i class="fas fa-phone-volume"></i> +8801710726035 </a></li>
+                            <li><a href="#"><i class="fas fa-envelope"></i> {{getContact.email}}</a></li>
+                            <li><a href="#"><i class="fas fa-phone-volume"></i> {{getContact.phone}} </a></li>
                         </ul>
                     </div>
                 </div>
-                <!--<div class="col-sm-5 text-right">-->
-                <!--    <div class="auth_button">-->
-                <!--        <ul>-->
-                <!--            <li><a href="auth_page.html">Login</a></li>-->
-                <!--            <li><a href="auth_page.html">Register </a></li>-->
-                <!--        </ul>-->
-                <!--    </div>-->
-                <!--</div>-->
+            
             </div>
         </div>
     </header>
@@ -52,5 +45,13 @@
 <script>
 export default {
     name:'HeaderArea',
+    mounted(){
+           this.$store.dispatch("allContact");
+    },
+    computed:{
+        getContact(){
+            return this.$store.getters.getContact;
+        }
+    }
 }
 </script>

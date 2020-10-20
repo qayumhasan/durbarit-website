@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Durbar-IT</title>
-    <link rel="icon" href="images/fav.png">
+    <link rel="icon" href="public/frontend/images/fav.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('public/frontend/')}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
@@ -38,10 +38,12 @@
     <script src="{{asset('public/frontend/js/owl.carousel.min.js')}}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset('public/frontend/js/wow.min.js')}}"></script>
+    
     <script src="{{asset('public/frontend/js/jquery-modal-video.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('public/frontend/js/mixitup.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('public/frontend/js/active.js')}}" type="text/javascript"></script>
     <script src="{{asset('public/frontend/js/custom.js')}}"></script>
+    
     
     <script>
         $('.openbtn').on('click', function() {

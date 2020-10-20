@@ -6,6 +6,10 @@ export default {
         services:[],
         chooseus:[],
         clientSay:[],
+        ourclients:[],
+        contact:[],
+        logo:[],
+        pages:[],
     },
 
     getters:{
@@ -23,11 +27,19 @@ export default {
         },
         getClientSay(state){
             return state.clientSay
+        },
+        getOurClient(state){
+            return state.ourclients
+        },
+        getContact(state){
+            return state.contact
+        },
+        getlogo(state){
+            return state.logo
+        },
+        getpage(state){
+            return state.pages
         }
-
-
-       
-
     },
 
     actions:{
@@ -64,9 +76,42 @@ export default {
             axios.get('/clientsay')
                 .then((response)=>{
                     context.commit('allClientSay',response.data.data)
-                    console.log(response.data.data);
+                    
                 })
         },
+        allOurClient(context){
+            axios.get('/partners')
+                .then((response)=>{
+                    
+                    context.commit('allOurClient',response.data.data)
+                    
+                })
+        },
+        allContact(context){
+            axios.get('/contact')
+                .then((response)=>{
+                    // console.log(response.data.data)
+                    context.commit('allContact',response.data.data)
+                    
+                })
+        },
+
+        allLogo(context){
+            axios.get('/logos')
+                .then((response)=>{
+                    context.commit('allLogo',response.data.data)
+                    
+                })
+        },
+        allPages(context){
+            axios.get('/pages')
+                .then((response)=>{
+                                console.log(response.data.data)
+                    context.commit('allPage',response.data.data)
+                    
+                })
+        },
+       
         
     },
     
@@ -87,6 +132,18 @@ export default {
         },
         allClientSay(state,data){
             return state.clientSay =data
+        },
+        allOurClient(state,data){
+            return state.ourclients =data
+        },
+        allContact(state,data){
+            return state.contact =data
+        },
+        allLogo(state,data){
+            return state.logo =data
+        },
+        allPage(state,data){
+            return state.pages =data
         },
 
     }
