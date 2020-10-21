@@ -81,7 +81,8 @@
                   <h5>Support</h5>
                   <ul>
                     <li v-for="(page, index) in getPages">
-                      <a href="#">- {{ page.title }} </a>
+                      <router-link :to="{ path: '/page/'+page.id}">- {{ page.title }} </router-link>
+                      
                     </li>
                   </ul>
                 </div>
@@ -91,13 +92,10 @@
                 <div class="support_footer">
                   <h5>Services</h5>
                   <ul>
-                    <li><a href="#">- Website Design</a></li>
-                    <li><a href="#">- Website Development</a></li>
-                    <li><a href="#">- Software Development</a></li>
-                    <li><a href="#">- Domain & Hosting</a></li>
-                    <li><a href="#">- Graphics Design</a></li>
-
-                    <li><a href="#">- Apps Development</a></li>
+                    
+                    <li v-for="(category,index) in getfooterPro" :key="index">
+                    <router-link :to="{ path: '/service/'+category.id}">- {{category.name}}</router-link>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -113,7 +111,7 @@
                       <input @keyup.enter="createsub"
                         type="email" v-model="email"
                         class="form-control"
-                        id="inlineFormInputGroupUsername2"
+                        id="email"
                         placeholder="Email"
                       />
 
@@ -157,6 +155,7 @@
 </template>
 <script>
 import { Carousel, Slide } from "vue-carousel";
+
 export default {
   name: "Footer",
   data(){
@@ -169,6 +168,7 @@ export default {
     this.$store.dispatch("allLogo");
     this.$store.dispatch("allAboutUs");
     this.$store.dispatch("allPages");
+    this.$store.dispatch("allProject");
   },
   computed: {
     getOurPartner() {
@@ -186,6 +186,9 @@ export default {
     getPages() {
       return this.$store.getters.getpage;
     },
+    getfooterPro() {
+      return this.$store.getters.getproject;
+    },
   },
   components: {
     Carousel,
@@ -193,19 +196,28 @@ export default {
   },
   methods: {
     createsub() {
+      var v = this;
+      
       axios.post("/subscribers/create", {
           email: this.email,
+          
         })
         .then(function (response) {
-
           console.log(response);
+          v.$toast.success('Subscriber created successfully');
+          
 
 
+        })
+        .catch(function (error) {
+          v.$router.push('/')
+         console.log(error);
         })
 
     },
 
   },
+
 };
 </script>
 

@@ -19,11 +19,46 @@ Vue.use(VueCarousel);
 
 import VueMeta from 'vue-meta'
 Vue.use(VueMeta)
-
+Vue.prototype.$eventBus = new Vue();
 // using filter
 Vue.filter('sortlength',function (text,length,suffix) {
     return text.substring(0,length)+suffix;
 })
+
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+
+import VueIziToast from 'vue-izitoast';
+import 'izitoast/dist/css/iziToast.css';
+Vue.use(VueIziToast);
+
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
+
+axios.interceptors.request.use(function (config) {
+    
+    NProgress.start();
+    
+    return config;
+  }, function (error) {
+      console.log(error)
+    return Promise.reject(error);
+  });
+
+  axios.interceptors.response.use(function (response) {
+    NProgress.done();
+    
+    
+    return response;
+  }, function (error) {
+    console.log(error)
+    return Promise.reject(error);
+  });
+
+
+
+
 
 
 // support router
@@ -34,7 +69,7 @@ import {routes} from './routes';
 
 
 Vue.component('main-component', require('./components/master-component').default);
-Vue.component('pulse-loader', require('vue-spinner/src/PulseLoader.vue'));
+
 const router = new VueRouter({
     // mode: 'history',
     routes, // short for `routes: routes`
@@ -44,7 +79,9 @@ const router = new VueRouter({
 
 
 
-Vue.prototype.$eventBus = new Vue();
+
+
+
 // support vuex
 
 import Vuex from 'vuex'
@@ -53,8 +90,8 @@ import storeData from "./store/index"
 const store = new Vuex.Store(
     storeData
 )
-import VueIziToast from 'vue-izitoast';
-Vue.use(VueIziToast);
+
+
 
 
 

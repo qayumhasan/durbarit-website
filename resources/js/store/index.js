@@ -56,7 +56,10 @@ export default {
         allSlider(context){
             axios.get('/slider')
                 .then((response)=>{
+                    
                     context.commit('allsliders',response.data.data)
+                    
+                    
                     
                 })
         },
@@ -114,7 +117,7 @@ export default {
         allPages(context){
             axios.get('/pages')
                 .then((response)=>{
-                             
+                    // console.log(response.data.data) 
                     context.commit('allPage',response.data.data)
                     
                 })
@@ -130,7 +133,7 @@ export default {
         allProjectDetails(context){
             axios.get('/projects')
                 .then((response)=>{
-                                console.log(response.data.data)
+                                
                     context.commit('allProjectDetails',response.data.data)
                     
                 })

@@ -94,4 +94,12 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
     Route::get('/','FrontendController@projects');
   });
 
+  Route::prefix('projectsdetails')->namespace('Frontend')->group(function () {
+    Route::get('/{id}','FrontendController@projectsDetails');
+  });
+
+  Route::prefix('single/page')->namespace('Frontend')->group(function () {
+    Route::get('/{id}','FrontendController@singlePage');
+  });
+
 

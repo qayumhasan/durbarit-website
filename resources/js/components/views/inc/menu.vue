@@ -1,127 +1,11 @@
 <template>
-  <div>
-    <section id="main_menu_section" class="navbar_header">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="main_nav">
-              <div class="wow backInUp main_logo">
-                <a href="index.html">
-                  <img
-                    :src="'public/images/logo/' + logo.flogo"
-                    alt="logo-image"
-                  />
-                </a>
-              </div>
-              <div class="main_menu">
-                <nav class="main_menu_list">
-                  <ul>
-                    <li class="active">
-                      <router-link to="/">Home</router-link>
-                    </li>
-                    <li>
-                      <a href="#service">Services</a>
-                      <div class="drop_menu">
-                        <ul>
-                          <li>
-                            <a href="#"
-                              ><i class="fas fa-circle"></i> App Development</a
-                            >
-                          </li>
-                          <li>
-                            <a href="#"
-                              ><i class="fas fa-circle"></i> Web Development</a
-                            >
-                          </li>
-                          <li>
-                            <a href="#"
-                              ><i class="fas fa-circle"></i> Digital
-                              Marketing</a
-                            >
-                          </li>
-                          <li>
-                            <a href="#"><i class="fas fa-circle"></i> SEO</a>
-                          </li>
-                          <li>
-                            <a href="#"
-                              ><i class="fas fa-circle"></i> Services1</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li>
-                      <a href="#work">Portfolio</a>
-                    </li>
+    <div>
+        <section id="main_menu_section" class="navbar_header">
+        <div class="container">
+            <div class="row">
 
-                    <li class="active">
-                      <a href="#">Mega Menu</a>
-                      <div class="mega_menu">
-                        <div class="row">
-                          <div class="col-sm-4">
-                            <div class="mega_list">
-                              <ul>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-
-
-                          <div class="col-sm-4">
-                            <div class="mega_list">
-                              <ul>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col2</a
-                                  >
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
+                <div class="col-sm-12 ">
+                    <div class="main_nav">
 
                         <div class="wow backInUp main_logo">
                             <a href="index.html">
@@ -229,131 +113,53 @@
                                         <router-link :to="{ name: 'contact-us' }">Contact Us</router-link>
                                     </li>
 
-
-                          <div class="col-sm-4">
-                            <div class="mega_list">
-                              <ul>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col3
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col3
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col3
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col3
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#"
-                                    ><i class="fas fa-circle"></i> mega col3
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
+                                </ul>
+                            </nav>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <router-link to="teams">Our Team</router-link>
-                    </li>
-                    <li>
-                      <router-link to="products">Products</router-link>
-                    </li>
-                    <li>
-                      <router-link to="career">Career</router-link>
-                    </li>
-
-                    <li>
-                      <router-link to="contact-us">Contact Us</router-link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="clear"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+
     </section>
     <!--- mobile menu part -->
-
+  
     <section id="main_mobile" class="mob_navbar_header">
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <div class="mobile_menu_logo">
-              <a href="index.html">
-                <img
-                  class="img-fluid"
-                  :src="'public/images/logo/' + logo.flogo"
-                  alt="logo-image"
-                />
-              </a>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="mobile_menu_logo">
+                        <a href="index.html">
+                             <img class="img-fluid" :src="'public/images/logo/'+logo.flogo" alt="logo-image">
+                           
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mobile_menu_button text-right">
+                        <button class="openbtn"><i class="fas fa-bars"></i></button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-6">
-            <div class="mobile_menu_button text-right">
-              <button class="openbtn"><i class="fas fa-bars"></i></button>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
-  </div>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "MenuComponent",
-  mounted() {
-    this.$store.dispatch("allLogo");
-  },
-  computed: {
-    logo() {
-      return this.$store.getters.getlogo;
+    name:'MenuComponent',
+    mounted(){
+        this.$store.dispatch("allLogo");
     },
-  },
-  methods: {},
-};
+    computed:{
+        logo(){
+             return this.$store.getters.getlogo;
+        }
+    },
+    methods:{
+       
+    }
+}
 </script>
-<style>
-.main_logo img {
-  width: 160px;
-  height: 55px;
-}
-.main_logo {
-  float: left;
-  width: 20%;
-  position: relative;
-  top: 12px;
-}
-.mobile_menu_logo img {
-  width: 100px;
-  height: 50px;
-}
-.mobile_menu_logo {
-  position: relative;
-  top: 10px;
-}
-@media (max-width: 575.98px) {
-  .mobile_menu_logo img {
-    width: 100px;
-    height: 60px;
-  }
-  .testimonial_container
-    button.VueCarousel-navigation-button.VueCarousel-navigation-prev {
-    left: 349px;
-  }
-}
-</style>
