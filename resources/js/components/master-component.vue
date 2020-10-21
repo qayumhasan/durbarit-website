@@ -7,10 +7,14 @@
 
     <Menu/>
 
+   
 
+    <Preloader></Preloader>
     
+    <div>
+        <router-view></router-view>
+    </div>
 
-    <router-view></router-view>
     <Footer/>
     </div>
 </template>
@@ -19,14 +23,36 @@
 import Header from '../components/views/inc/header_top';
 import Menu from '../components/views/inc/menu';
 import Footer from '../components/views/inc/footer';
+import Preloader from '../components/views/inc/preloader';
 
 export default {
     name:'Master',
+    data(){
+        return{
+            // loading:true,
+            
+        }
+    },
 
     components:{
         Header,
         Menu,
         Footer,
+        Preloader,
+        
+    },
+    mounted(){
+
+        // this.eventBus.$on('loadingSataus',payload=>{
+        //     this.loading = payload;
+        // })
+        
+   
+        
+    },
+    computed:{
+
+        
         
     },
     metaInfo(){

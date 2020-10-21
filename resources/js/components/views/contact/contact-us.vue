@@ -158,6 +158,10 @@ export default {
           axios.post('/contactmessage',contactms)
           .then(response => {
 
+
+
+              this.$toast.success('Subscriber created successfully');
+
               this.$router.push('/')
             }).catch(error => {
               if (error.response.status === 422) {

@@ -38,4 +38,18 @@ export const routes = [
         component: require('./components/views/contact/contact-us').default,
         name: "contact-us",
     },
+    {
+        path: '/service/:id',
+        component: require('./components/views/project/project').default,
+        
+        
+    },
+    {
+        path: '/page/:id',
+        component: require('./components/views/pages/page').default,
+        
+        
+    },
   ]
+
+  
