@@ -27,8 +27,7 @@
                                 <ul class="list-inline pt-2 social">
                                     <li class="list-inline-item"><a :href="employee.facebook" target="_blank"><i
                                                 class="fab fa-facebook-f"></i></a></li>
-                                    <li class="list-inline-item"><a :href="employee.twitter" target="_blank"><i
-                                                class="fab fa-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a :href="employee.twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                     <li class="list-inline-item"><a :href="employee.linkedin" target="_blank"><i
                                                 class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
@@ -54,7 +53,7 @@
         </div>
 
     </section>
-    <!--- team part end -->
+
     </div>
 </template>
 <script>
@@ -77,3 +76,8 @@ export default {
     }
 }
 </script>
+<style media="screen">
+  li.list-inline-item a i {
+    color: #26abe2;
+}
+</style>

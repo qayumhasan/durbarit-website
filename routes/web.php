@@ -49,12 +49,6 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
    Route::post('/reset_password_without_token','AdminController@validatePasswordRequest')->name('admin.validate.password');
 });
 
-
-
-
-
-
-
 Route::resource('admin/slider', Admin\SliderController::class);
 Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::prefix('service')->group(function(){
@@ -158,6 +152,8 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
     Route::post('/update','UserController@update')->name('admin.user.update');
     Route::get('/status/{type}/{id}','UserController@status')->name('admin.user.status');
     Route::get('/delete/{type}/{id}','UserController@delete')->name('admin.user.delete');
+
+    Route::get('/profile/{id}','UserController@profile')->name('');
   });
 
   Route::prefix('about/us')->group(function(){
@@ -179,7 +175,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 // category
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::get(md5('/category/create'),'CategoryController@create')->name('admin.category.create');
   Route::post('/category/submit','CategoryController@store')->name('admin.category.store');
   Route::get(md5('/category/index'),'CategoryController@index')->name('admin.category.index');
@@ -188,7 +184,7 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::post('/category/update/{id}','CategoryController@update')->name('admin.category.update');
 });
 // whychoseus
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::get(md5('/whychoseus/create'),'WhyChoseUsController@create')->name('admin.whychoseus.create');
   Route::post('/whychoseus/submit','WhyChoseUsController@store')->name('admin.whychoseus.store');
   Route::get(md5('/whychoseus/index'),'WhyChoseUsController@index')->name('admin.whychoseus.index');
@@ -197,19 +193,19 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::post('/whychoseus/update/{id}','WhyChoseUsController@update')->name('admin.whychoseus.update');
 });
 // ContactInformation
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::get('/contactinformation/edit','ContactInformationController@edit')->name('admin.contactinformation');
   Route::post('/contactinformation/update/{id}','ContactInformationController@update')->name('admin.contactinformation.update');
 });
 
 
 // seo
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::get('/seo/edit','SeoController@edit')->name('admin.seo.edit');
   Route::post('/seo/update/{id}','SeoController@update')->name('admin.seo.update');
 });
 
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::get(md5('/product/create'),'ProductController@create')->name('admin.product.create');
   Route::post(md5('/product/create/submit'),'ProductController@store')->name('admin.product.store');
    Route::get(md5('/product/index'),'ProductController@index')->name('admin.product.index');
@@ -219,12 +215,13 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
   Route::post('/product/update/{id}','ProductController@update')->name('admin.product.update');
 });
 
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::get(md5('/contactmessage/index'),'ContactMessageController@index')->name('admin.contactmessage.index');
   Route::get(md5('/contactmessage/compose'),'ContactMessageController@create')->name('admin.compose.create');
+  Route::get('/contactmessage/read/{id}','ContactMessageController@read')->name('admin.compose.read');
 });
 
-Route::prefix('admin')->namespace('Admin')->group(function(){
+Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(function(){
   Route::get(md5('/social/index'),'SocialController@index')->name('admin.social.index');
   Route::post(md5('/social/index'),'SocialController@update')->name('admin.social.update');
 

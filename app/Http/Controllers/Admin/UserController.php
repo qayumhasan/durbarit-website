@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Image;
 use Carbon\Carbon;
+use Auth;
 
 class UserController extends Controller
 {
@@ -23,14 +24,14 @@ class UserController extends Controller
 
     public function create()
     {
-        
+
         return view('admin.users.create');
     }
 
     public function store(Request $request)
     {
-        
-        
+
+
         $user = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -38,11 +39,11 @@ class UserController extends Controller
         ]);
 
         if($request->type == "Admin"){
-            $notification= $this->createAdmin($request); 
+            $notification= $this->createAdmin($request);
         }elseif($request->type == "User"){
            $notification= $this->createUser($request);
         }
-        
+
          return redirect()->route('admin.user.index')->with($notification);
     }
 
@@ -70,12 +71,12 @@ class UserController extends Controller
             'alert-type'=>'success'
              );
 
-        
+
     }
 
     public function createAdmin($request)
     {
-        
+
         $admin = new Admin();
         $admin->name = $request->name;
         $admin->username = $request->username;
@@ -101,9 +102,9 @@ class UserController extends Controller
 
     public function edit ($type,$id)
     {
-        
+
         if($type == 'user'){
-            $user = User::findOrFail($id);    
+            $user = User::findOrFail($id);
         }elseif($type == 'admin'){
             $user = Admin::findOrFail($id);
         }
@@ -112,7 +113,7 @@ class UserController extends Controller
 
     public function update (Request $request)
     {
-        
+
         $user = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -142,7 +143,7 @@ class UserController extends Controller
             if($user->image != 'user.jpg'){
                 unlink(base_path('public/images/user/'.$user->image));
             }
-            
+
             $user_id =Str::random(6);
             $user_img = $request->file('image');
             $imagename = $user_id . '.' . $user_img->getClientOriginalExtension();
@@ -156,12 +157,12 @@ class UserController extends Controller
             'alert-type'=>'success'
              );
 
-        
+
     }
 
     public function updateAdmin($id,$request)
     {
-        
+
         $admin = Admin::findOrFail($id);
         $admin->name = $request->name;
         $admin->username = $request->username;
@@ -171,11 +172,11 @@ class UserController extends Controller
         $admin->created_at = Carbon::now();
 
         if ($request->hasFile('image')) {
-            
+
             if($admin->image != 'admin.jpg'){
-                unlink(base_path('public/images/user/'.$admin->image));
+              //  unlink(base_path('public/images/user/'.$admin->image));
             }
-            
+
             $user_id =Str::random(6);
             $user_img = $request->file('image');
             $imagename = $user_id . '.' . $user_img->getClientOriginalExtension();
@@ -200,9 +201,9 @@ class UserController extends Controller
                 $admin->save();
             }else{
                 $admin->status =0;
-                $admin->save();   
+                $admin->save();
             }
-    
+
             $notification=array(
                 'messege'=>' Admin Status Changed Successfully.',
                 'alert-type'=>'success'
@@ -216,23 +217,23 @@ class UserController extends Controller
                 $user->save();
             }else{
                 $user->status =0;
-                $user->save();   
+                $user->save();
             }
-    
+
             $notification=array(
                 'messege'=>' User Status Changed Successfully.',
                 'alert-type'=>'success'
                  );
              return redirect()->back()->with($notification);
         }
-       
+
     }
 
     public function delete($type,$id)
     {
 
         if($type == 'user'){
-            $user = User::findOrFail($id);   
+            $user = User::findOrFail($id);
             if($user->image != 'user.jpg'){
                 unlink(base_path('public/images/user/'.$user->image));
             }
@@ -241,7 +242,7 @@ class UserController extends Controller
                 'messege'=>' User Deleted Successfully.',
                 'alert-type'=>'success'
                  );
-             return redirect()->route('admin.user.index')->with($notification); 
+             return redirect()->route('admin.user.index')->with($notification);
         }elseif($type == 'admin'){
             $admin = Admin::findOrFail($id);
             if($admin->image != 'admin.jpg'){
@@ -254,6 +255,14 @@ class UserController extends Controller
                  );
              return redirect()->route('admin.user.index')->with($notification);
         }
-        
-    } 
+
+    }
+
+    public function profile($id){
+      $data=Admin::where('id',$id)->first();
+      return view('admin.users.userprofile',compact('data'));
+    }
+
+
+
 }

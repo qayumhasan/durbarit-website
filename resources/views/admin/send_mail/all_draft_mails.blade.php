@@ -5,10 +5,11 @@
             <div class="mailbox">
                 <div class="mailbox-header">
                     <div class="row">
+
                         <div class="col-sm-4">
-                            <div class="inbox-avatar"><img src="{{asset('public/adminpanel/assets/images/admin.jpg')}}" class="img-circle border-green" alt="img">
+                            <div class="inbox-avatar"><img src="{{asset('public/images/user/'.Auth::user()->image)}}" class="img-circle border-green" alt="img">
                                 <div class="inbox-avatar-text">
-                                    <div class="avatar-name">JH Ripon</div>
+                                    <div class="avatar-name">{{Auth::user()->name}}</div>
                                     <div><small>Mailbox</small></div>
                                 </div>
                             </div>
@@ -19,17 +20,17 @@
                                     <a href="{{route('admin.compose.create')}}" class="btn btn-blue"><i class="far fa-edit"></i> Compose Email</a>
                                 </div>
                                 <div class="btn-group ml-1">
-                                    <a href="#" onclick="
-                                            event.preventDefault();
-                                            document.getElementById('draftDeleteForm').submit();
-                                        " class="btn btn-danger"><span class="fa fa-trash"></span> Delete
+                                    <a href="#" onclick="event.preventDefault();document.getElementById('draftDeleteForm').submit();
+                                        "class="btn btn-danger"><span class="fa fa-trash"></span> Delete
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="row">
+
                     <div class="col-md-3 pr-md-0">
                         <div class="p-0 inbox-nav">
                             <div class="mailbox-sideber">
@@ -45,6 +46,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-9 border border-right-0 border-top-0 border-bottom-0 pl-md-0">
                         <div class="p-0 inbox-mail">
                             <div class="mailbox-content">
@@ -58,7 +60,7 @@
                                             <label for="mailid2"></label>
                                         </div>
                                     </div>
-                                <a href="" class="inbox_item unread">
+                                 <a href="{{url('admin/contactmessage/read/'.$draft->id)}}" class="inbox_item unread">
                                         <div class="inbox-avatar">
                                             <div class="inbox-avatar-text">
                                             <div class="avatar-name"></div>
@@ -71,10 +73,16 @@
                                                 </small>
                                             </div>
                                             </div>
+
                                                 <div class="inbox-date d-none d-lg-block">
+                                                  @if($draft->is_seen==0)
+                                                    <span class="btn btn-danger">NotSeen</span>
+                                                  @elseif($draft->is_seen==1)
+                                                      <span class="btn btn-success">Seen</span>
+                                                  @endif
                                                     <div><small>Writter At: {{$draft->created_at}}</small></div>
                                                 </div>
-                                            </div>
+                                        </div>
                                         </a>
                                     </div>
                                 @endforeach

@@ -1,16 +1,16 @@
 <template>
-    <div>
-        <section id="main_menu_section" class="navbar_header">
-        <div class="container">
-            <div class="row">
 
-                <div class="col-sm-12 ">
-                    <div class="main_nav">
+  <div>
+    <section id="main_menu_section" class="navbar_header">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="main_nav">
 
                         <div class="wow backInUp main_logo">
                             <a href="index.html">
                                 <img :src="'public/images/logo/'+logo.flogo" alt="logo-image" width="70px">
-                              
+
                             </a>
                         </div>
                         <div class="main_menu">
@@ -35,7 +35,7 @@
                                     <li>
                                         <a href="#work">Portfolio</a>
                                     </li>
-                                   
+
                                     <li class="active"><a href="#">Mega Menu</a>
                                         <div class="mega_menu">
                                             <div class="row">
@@ -99,7 +99,7 @@
 
                                     </li>
                                     <li>
-                                        
+
                                         <router-link :to="{ name: 'teams' }">Our Team</router-link>
                                     </li>
                                      <li>
@@ -108,10 +108,11 @@
                                       <li>
                                         <router-link :to="{ name: 'career' }">Career</router-link>
                                     </li>
-                                   
+
                                     <li>
                                         <router-link :to="{ name: 'contact-us' }">Contact Us</router-link>
                                     </li>
+
 
                                 </ul>
                             </nav>
@@ -119,6 +120,7 @@
                         <div class="clear"></div>
                     </div>
                 </div>
+
             </div>
         </div>
 

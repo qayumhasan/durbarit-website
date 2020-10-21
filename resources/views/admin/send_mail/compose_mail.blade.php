@@ -5,14 +5,15 @@
             <div class="mailbox">
                 <div class="mailbox-header">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="inbox-avatar"><img src="{{asset('public/adminpanel/assets/images/admin.jpg')}}" class="img-circle border-green" alt="img">
-                                <div class="inbox-avatar-text">
-                                    <div class="avatar-name">JH Ripon</div>
-                                    <div><small>Mailbox</small></div>
-                                </div>
-                            </div>
-                        </div>
+
+                      <div class="col-sm-4">
+                          <div class="inbox-avatar"><img src="{{asset('public/images/user/'.Auth::user()->image)}}" class="img-circle border-green" alt="img">
+                              <div class="inbox-avatar-text">
+                                  <div class="avatar-name">{{Auth::user()->name}}</div>
+                                  <div><small>Mailbox</small></div>
+                              </div>
+                          </div>
+                      </div>
                     </div>
                 </div>
                 <div class="row">

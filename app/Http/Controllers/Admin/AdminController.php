@@ -27,7 +27,7 @@ class AdminController extends Controller
      }
 
 
-     
+
      /**
      * Login Atempate.
      *
@@ -36,20 +36,27 @@ class AdminController extends Controller
 
      public function login(Request $request)
      {
-         
+
         $data = request()->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
-           
+
             $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-            
+
             if(Auth::guard('admin')->attempt(array($fieldType => $request['username'], 'password' => $request['password'])))
             {
-                return redirect()->intended(route('admin.home'));
+                $notification=array(
+                  'messege'=>'You Are Log In',
+                  'alert-type'=>'success'
+                   );
+                return redirect()->intended(route('admin.home'))->with($notification);
             }else{
-                return redirect()->back()
-                    ->with('error','Email-Address And Password Are Wrong.');
+              $notification=array(
+                'messege'=>'Oppos! Admin/Password Is worng',
+                'alert-type'=>'error'
+                 );
+                return redirect()->back()->with($notification);
             }
      }
 
@@ -101,7 +108,7 @@ class AdminController extends Controller
 
     public function logout(Request $request)
     {
-        
+
         Auth::guard('admin')->logout();
 
         return redirect()->route('admin.login.page');
@@ -131,7 +138,7 @@ class AdminController extends Controller
 
      public function validatePasswordRequest(Request $request)
      {
-       
+
             $user = Admin::where('email',$request->email)->first();
 
             //Check if the user exists
@@ -163,34 +170,34 @@ class AdminController extends Controller
                     'alert-type'=>'success'
                      );
                  return redirect()->back()->with($notification);
-                
+
             } else {
                 $notification=array(
                     'messege'=>' A Network Error occurred. Please try again.',
                     'alert-type'=>'success'
                      );
                  return redirect()->back()->with($notification);
-                
+
             }
      }
 
 
-     
+
     /**
      * send email.
      */
 
     private function sendResetEmail($email, $token)
     {
-        
+
         $user = Admin::where('email',$email)->select('name','email')->first();
-        
+
         $link = config('base_url') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
         $user->notify(new sendEmail($link));
         // Notification::send($users, new InvoicePaid($invoice));
-        
+
             try {
-            //Here send the link with CURL with an external email API 
+            //Here send the link with CURL with an external email API
                 return true;
             } catch (\Exception $e) {
                 return false;
