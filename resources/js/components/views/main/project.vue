@@ -34,7 +34,7 @@
                 </div>
                 <div class="img-content">
                   <h2>{{projectdetails.title}}</h2>
-                  <a href="projectdetails.link">Live Now</a>
+                  <a :href="'//'+projectdetails.link" target="_blank">Live Now</a>
                 </div>
               </div>
 

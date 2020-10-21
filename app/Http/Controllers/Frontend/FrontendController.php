@@ -109,13 +109,13 @@ class FrontendController extends ApiController
     public function NewsLetter(Request $request)
     {
         $request->validate([
-            'email'=>'required|email'
+            'email'=>'required|email|unique:subscribers'
         ]);
         $sub= new Subscriber;
         $sub->email = $request->email;
         $sub->status = 1;
         $sub->save();
-        return $sub;
+        return $this->showOne($sub);
     }
 
     public function categores()
@@ -129,6 +129,18 @@ class FrontendController extends ApiController
     {
         $data = Project::where('status',1)->get();
         return $this->showAll($data);
+    }
+
+    public function projectsDetails($id)
+    {
+        $data = Project::where('cat_id',$id)->get();
+        return $this->showAll($data);
+    }
+
+    public function singlePage($id)
+    {
+        $data = Page::findOrFail($id);
+        return $this->showOne($data);
     }
 
     

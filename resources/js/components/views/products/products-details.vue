@@ -83,7 +83,9 @@
                                     <h3>feature:</h3>
                                     <hr>
                                     <ul class="point">
-                                        <li><i class="fas fa-check"></i> Free technical support</li>
+
+
+                                        <li v-for="(feature,index) in products.feature" :key="index"><i class="fas fa-check"></i> {{feature}}</li>
 
                                     </ul>
                                 </div>
@@ -159,8 +161,8 @@
 
                                     <select class="form-control" id="exampleFormControlSelect1">
                                       
-                                        <option>Reguler</option>
-                                        <option>Premium</option>
+                                        <option @change="premium=false">Reguler</option>
+                                        <option @change="regular=false">Premium</option>
 
                                     </select>
                                 </div>
@@ -171,8 +173,19 @@
                             <div class="clear"></div>
                         </div>
 
-                        <ul class="point">
+                        <ul class="point" v-if="regular">
                             <li><i class="fas fa-check-circle"></i> Free technical support</li>
+                            <li><i class="fas fa-check-circle"></i> Future product updates</li>
+                            <li><i class="fas fa-check-circle"></i> Quality checked by DurbarIT</li>
+                            <li><i class="fas fa-check-circle"></i> Lowest price guarantee</li>
+                            <li class=""><i class="fas fa-check-circle"></i> 3 months support included <br> <span
+                                    class="ml-4 small"><a
+                                        href="https://thesoftking.com/item/hoteleon-complete-hotel-booking-system/376/support">What
+                                        does support include?</a></span></li>
+                        </ul>
+
+                        <ul class="point" v-if="premium">
+                            <li><i class="fas fa-check-circle"></i> t5  ttyyyghgjilfdsjil</li>
                             <li><i class="fas fa-check-circle"></i> Future product updates</li>
                             <li><i class="fas fa-check-circle"></i> Quality checked by DurbarIT</li>
                             <li><i class="fas fa-check-circle"></i> Lowest price guarantee</li>
@@ -249,7 +262,7 @@
                                                 <h5>Tags</h5>
                                                 <ul>
 
-                                                    <li><a>{{products.meta_tag}}</a></li>
+                                                    <li v-for="(tag,index) in products.meta_tag" :key="index"><a>{{tag}}</a></li>
                                                 </ul>
                                             </div>
 
@@ -272,8 +285,13 @@ export default {
     name:'Product-details',
     data(){
       return{
-        products:[]
+        products:[],
+        regular:true,
+        premium:false,
       }
+    },
+      created(){
+      this.allproduct();
     },
     methods:{
       allproduct(){
@@ -282,11 +300,21 @@ export default {
         axios.get('/product/'+id)
         .then(({data}) => (this.products = data))
         .catch()
-      }
+      },
+      changePremium(e){
+          alert('ok')
+          this.regular=false
+          this.premium=true
+      },
+      changeRegular(e){
+          alert('ok')
+          this.regular=true
+          this.premium=false
+      },
+      
+      
     },
-    created(){
-      this.allproduct();
-    }
+  
 
 
 }

@@ -25,11 +25,14 @@
 
 <body>
 
+
     <div id="app">
+   
     
        
 
         <main-component></main-component>
+       
         
     </div>
     <!--- footer part end -->
