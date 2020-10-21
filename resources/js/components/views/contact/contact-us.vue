@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/vue-toasted"></script>
 <template>
     <div>
         <!--- contact part start -->
@@ -76,7 +77,7 @@
                                 </ul>
                             </div>
                             <div class="social_icon_contact mt-4">
-                              
+
                                 <ul>
                                     <li><a :href="allsocial.facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a :href="allsocial.twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -156,7 +157,7 @@ export default {
             //console.log(contactms)
           axios.post('/contactmessage',contactms)
           .then(response => {
-              alert('Message sent!');
+
               this.$router.push('/')
             }).catch(error => {
               if (error.response.status === 422) {
@@ -174,4 +175,7 @@ export default {
 
 
 }
+
+
+
 </script>

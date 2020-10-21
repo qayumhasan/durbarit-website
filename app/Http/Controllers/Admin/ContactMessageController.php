@@ -84,4 +84,12 @@ class ContactMessageController extends Controller
     {
         //
     }
+
+    public function read($id){
+      $update=ContactMessage::where('id',$id)->update([
+        'is_seen'=>1,
+      ]);
+      $mail=ContactMessage::where('id',$id)->first();
+      return view('admin.send_mail.mail_details',compact('mail'));
+    }
 }
