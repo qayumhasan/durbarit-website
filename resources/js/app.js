@@ -14,7 +14,7 @@ Vue.filter('striphtml', function (value) {
     return text;
   });
 
-  import VueCarousel from 'vue-carousel';
+import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
 
 import VueMeta from 'vue-meta'
@@ -24,6 +24,7 @@ Vue.prototype.$eventBus = new Vue();
 Vue.filter('sortlength',function (text,length,suffix) {
     return text.substring(0,length)+suffix;
 })
+
 
 import Vuelidate from 'vuelidate'
 Vue.use(Vuelidate)
@@ -68,16 +69,17 @@ import {routes} from './routes';
 
 
 
-Vue.component('main-component', require('./components/master-component').default);
+
 
 const router = new VueRouter({
+    
+    routes, 
     // mode: 'history',
-    routes, // short for `routes: routes`
     
 })
 
 
-
+Vue.component('main-component', require('./components/master-component').default);
 
 
 
@@ -90,6 +92,11 @@ import storeData from "./store/index"
 const store = new Vuex.Store(
     storeData
 )
+
+router.beforeEach((to, from, next) => {
+  window.axios.defaults.headers.common['Authorization'] =localStorage.getItem('token'); 
+  next()
+})
 
 
 

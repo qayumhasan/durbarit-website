@@ -26,9 +26,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 
-window.axios.defaults.baseURL ='http://localhost/durbarit21/api';
+window.axios.defaults.baseURL ='http://localhost/durbarit24/api';
 
-window.axios.defaults.headers.common['Authorization'] ='Qayum hasan';
+window.axios.defaults.headers.common['Authorization'] =localStorage.getItem('token');
 window.axios.defaults.headers.get['Accepts'] ='application/json';
 
 /**
@@ -47,3 +47,4 @@ window.axios.defaults.headers.get['Accepts'] ='application/json';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+

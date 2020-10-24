@@ -112,8 +112,15 @@
                         type="email" v-model="email"
                         class="form-control"
                         id="email"
+                        name="email"
                         placeholder="Email"
+                        
                       />
+
+                      <span>
+                        {{errors.get('email')}}
+                      </span>
+                      
 
                       <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -155,12 +162,26 @@
 </template>
 <script>
 import { Carousel, Slide } from "vue-carousel";
+class Errors{
+    constructor(){
+      this.errors={}
+    }
+    get(field){
+      if(this.errors[field]){
+        return this.errors[field][0];
+      }
+    }
+    record(errors){
+      this.errors=errors.errors;
+    }
+}
 
 export default {
   name: "Footer",
   data(){
     return{
       email:'',
+      errors:new Errors()
     }
   },
   mounted() {
@@ -206,12 +227,12 @@ export default {
           console.log(response);
           v.$toast.success('Subscriber created successfully');
           
-
+          v.email = null
 
         })
         .catch(function (error) {
-          v.$router.push('/')
-         console.log(error);
+          console.log(error)
+         this.errors.record(error.data)
         })
 
     },

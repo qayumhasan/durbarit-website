@@ -1,6 +1,6 @@
 <template>
     <div>
-<MobileMenu/>
+
 
     <!--- header part end -->
 
@@ -40,7 +40,7 @@ import Strength from './strength'
 import Video from './video'
 import Ourwork from './project'
 import ClientSay from './clientsay'
-import MobileMenu from '../inc/mobile_menu';
+
 export default {
     name:'main-component',
     components:{
@@ -51,7 +51,7 @@ export default {
         Video,
         Ourwork,
         ClientSay,
-        MobileMenu
+        
     },
      mounted() {
       

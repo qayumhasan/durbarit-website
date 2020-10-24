@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff6600" />
     <title>Durbar-IT</title>
     <link rel="icon" href="public/frontend/images/fav.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -19,8 +20,7 @@
     <link rel="stylesheet" href="{{asset('public/frontend/css/auth.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/mixitup.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
-    
-
+    <link rel="stylesheet" href="{{asset('public/frontend/css/user.css')}}">
 </head>
 
 <body>
@@ -54,6 +54,9 @@
             $('#mySidebar').toggleClass('menu_show');
         });
         $('.closebtn').on('click', function() {
+            $('#mySidebar').toggleClass('menu_show');
+        });
+        $('.closemenu').on('click', function() {
             $('#mySidebar').toggleClass('menu_show');
         });
         //modal video
