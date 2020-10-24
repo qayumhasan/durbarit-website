@@ -29,6 +29,7 @@
         "mixitup": "^3.3.1",
         "node-sass": "^4.14.1",
         "nprogress": "^0.2.0",
+        "vee-validate": "^4.0.0-beta.13",
         "vue-carousel": "^0.18.0",
         "vue-izitoast": "^1.2.1",
         "vue-meta": "^2.4.0",

@@ -50,6 +50,18 @@ export const routes = [
         
         
     },
+    {
+        path: '/login',
+        component: require('./components/views/auth/auth').default,
+        name: "login",
+    },
+    {
+        path: '/deshboard',
+        component: require('./components/views/deshboard/deshboard').default,
+        name: "deshboard",
+    },
   ]
+
+ 
 
   

@@ -1,9 +1,12 @@
 <template>
+
+    
+
     <section id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn">&times;</a>
         <div class="mobile_menu_content">
             <ul>
-                <li> <router-link to="/">Home</router-link></li>
+                <li> <router-link class="closemenu"  to="/">Home</router-link></li>
               
                 <li><a href="#">Price</a></li>
                 <li>
@@ -20,10 +23,10 @@
                         </div>
                     </div>
                 </li>
-                <li> <router-link :to="{ name: 'teams' }">Our Team</router-link></li>
-                <li><router-link to="products">Products</router-link></li>
-                <li><router-link :to="{ name: 'career' }">Career</router-link></li>
-                <li><router-link :to="{ name: 'contact-us' }">Contact Us</router-link></li>
+                <li> <router-link class="closemenu" :to="{ name: 'teams' }">Our Team</router-link></li>
+                <li><router-link class="closemenu" to="products">Products</router-link></li>
+                <li><router-link class="closemenu" :to="{ name: 'career' }">Career</router-link></li>
+                <li><router-link class="closemenu" :to="{ name: 'contact-us' }">Contact Us</router-link></li>
                 <li><a href="login.html"><i class="fas fa-user"></i> Login</a></li>
                 <li><a href="signup.html"><i class="fas fa-sign-in-alt"></i> Sign Up</a></li>
             </ul>
@@ -31,8 +34,17 @@
     </section>
 </template>
 <script>
+
 export default {
     name:'MobileMenuComponent',
+
+    methods:{
+       alertMenu(){
+           alert('ok')
+       }
+    }
+
+
 
 }
 </script>

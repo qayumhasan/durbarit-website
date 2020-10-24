@@ -8,10 +8,10 @@
             <div class="main_nav">
 
                         <div class="wow backInUp main_logo">
-                            <a href="index.html">
+                        <router-link to="/">
                                 <img :src="'public/images/logo/'+logo.flogo" alt="logo-image" width="70px">
 
-                            </a>
+                        </router-link>
                         </div>
                         <div class="main_menu">
                             <nav class="main_menu_list">
@@ -132,10 +132,10 @@
             <div class="row">
                 <div class="col-6">
                     <div class="mobile_menu_logo">
-                        <a href="index.html">
+                        <router-link to="/">
                              <img class="img-fluid" :src="'public/images/logo/'+logo.flogo" alt="logo-image">
                            
-                        </a>
+                        </router-link>
                     </div>
                 </div>
                 <div class="col-6">
@@ -146,12 +146,17 @@
             </div>
         </div>
     </section>
+    <MobileMenu/>
     </div>
 </template>
 
 <script>
+import MobileMenu from '../inc/mobile_menu';
 export default {
     name:'MenuComponent',
+    components:{
+        MobileMenu
+    },
     mounted(){
         this.$store.dispatch("allLogo");
     },
@@ -160,8 +165,5 @@ export default {
              return this.$store.getters.getlogo;
         }
     },
-    methods:{
-       
-    }
 }
 </script>

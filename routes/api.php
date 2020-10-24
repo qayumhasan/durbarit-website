@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+  return $request->user();
+});
+
 //Route::apiResource('/category','Api\CategoryController');
 Route::apiResource('/whychoseus','Admin\WhyChoseUsController');
 Route::apiResource('/companyinformation','Api\ContactInformationController');
@@ -100,6 +104,14 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
 
   Route::prefix('single/page')->namespace('Frontend')->group(function () {
     Route::get('/{id}','FrontendController@singlePage');
+  });
+
+  Route::prefix('login')->namespace('Frontend')->group(function () {
+    Route::post('/','AuthController@login');
+  });
+
+  Route::prefix('logout')->namespace('Frontend')->group(function () {
+    Route::get('/','AuthController@logout');
   });
 
 
