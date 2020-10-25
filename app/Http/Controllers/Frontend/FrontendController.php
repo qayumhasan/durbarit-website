@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\AboutUs;
+use App\AddToCart;
 use App\Http\Controllers\ApiController;
 use App\Logo;
 use Illuminate\Http\Request;
@@ -23,6 +24,8 @@ use App\Page;
 use App\Project;
 use App\Subscriber;
 use App\Whychoseus;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends ApiController
 {
@@ -141,6 +144,52 @@ class FrontendController extends ApiController
     {
         $data = Page::findOrFail($id);
         return $this->showOne($data);
+    }
+
+    public function addToCart(Request $request)
+    {
+        $product = Product::findOrFail($request->product_id);
+        $cartdata = new AddToCart();
+        $cartdata->user_ip = \Request::ip();
+        $cartdata->product_id = $request->product_id;
+        $cartdata->package_id = $request->package_id;
+        if($request->package_id == 1){
+            $price = $product->reqular_price;
+        }elseif($request->package_id == 2){
+            $price = $product->premium_price;
+        }else{
+            $price = $product->reqular_price;
+        }
+        $cartdata->price = $price;
+        $cartdata->sku = $product->sku;
+        $cartdata->extr_price = $request->extr_price;
+        $cartdata->image = $product->image;
+        $cartdata->created_at = Carbon::now();
+
+        $cartdata->save();
+    }
+
+    public function totalQty()
+    {
+        $ip =\Request::ip();
+        $cart = AddToCart::where('user_ip',$ip)->get();
+       
+        return $cart->count();
+
+    }
+
+    public function getCartData()
+    {
+        $ip =\Request::ip();
+        $auth =Auth::
+        ();
+        if($auth){
+           return $cart = AddToCart::where('user_ip',$ip)->get();
+        }else{
+            return response()->json([
+                'error'=>'Sorry !You are not autheticated User!'
+            ]);
+        }
     }
 
     

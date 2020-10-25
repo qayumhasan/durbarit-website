@@ -12,6 +12,8 @@ export default {
         pages:[],
         categores:[],
         projects:[],
+        qty:[],
+        cartData:[],
     },
 
     getters:{
@@ -47,10 +49,50 @@ export default {
         },
         getprojectdetails(state){
             return state.projects
+        },
+        getqty(state){
+            return state.qty
+        },
+        getCartData(state){
+            return state.cartData
         }
     },
 
     actions:{
+
+        totalCartdata(context){
+            axios.get('/total/quantity')
+                .then((response)=>{
+                    
+                    context.commit('allQuentity',response.data)
+                    
+                    
+                    
+                })
+        },
+
+        
+        addtocart(context,cart){
+            return new Promise((resolve,reject)=>{
+                axios.post('/add/to/cart',{
+                    product_id:cart.producId,
+                    package_id:cart.packageId,
+                    extr_price:cart.extraPrice,
+                })
+                    .then((response)=>{
+                        
+                        console.log(response);
+                        resolve(response);
+                        
+                        
+                        
+                    })
+                    .catch((error)=>{
+                        reject(error);
+                    })
+            })
+           
+        },
      
 
         allSlider(context){
@@ -138,6 +180,14 @@ export default {
                     
                 })
         },
+        allCartData(context){
+            axios.get('/cart/data')
+                .then((response)=>{
+                                
+                    context.commit('allCartData',response.data)
+                    
+                })
+        },
        
         
     },
@@ -177,6 +227,12 @@ export default {
         },
         allProjectDetails(state,data){
             return state.projects =data
+        },
+        allQuentity(state,data){
+            return state.qty =data
+        },
+        allCartData(state,data){
+            return state.cartData =data
         },
 
     }

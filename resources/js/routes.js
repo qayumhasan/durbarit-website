@@ -60,6 +60,11 @@ export const routes = [
         component: require('./components/views/deshboard/deshboard').default,
         name: "deshboard",
     },
+    {
+        path: '/cart',
+        component: require('./components/views/shipping/cart').default,
+        name: "cart",
+    },
   ]
 
  

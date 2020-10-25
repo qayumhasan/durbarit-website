@@ -112,11 +112,15 @@
                                     <li>
                                         <router-link :to="{ name: 'contact-us' }">Contact Us</router-link>
                                     </li>
+                                    <li>
+                                        <router-link :to="{name:'cart'}"><i class="fas fa-cart-arrow-down"></i> {{totaldata}}</router-link>
+                                    </li>
 
 
                                 </ul>
                             </nav>
                         </div>
+                        
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -154,16 +158,41 @@
 import MobileMenu from '../inc/mobile_menu';
 export default {
     name:'MenuComponent',
+    data(){
+        return{
+            totalqty:'',
+        }
+    },
+   
+    
+    
+    mounted(){
+        this.$store.dispatch("allLogo");
+        this.$store.dispatch("totalCartdata");
+        this.$eventBus.$on('totalQty', (payload) => {
+                    this.totalqty = payload 
+                    }) 
+        
+               
+    },
+    computed:{
+       
+        logo(){
+             return this.$store.getters.getlogo;
+        },
+        totalCartData(){
+             return this.$store.getters.getqty;
+        },
+        totaldata(){
+            return this.totalCartData + this.totalqty;
+            },
+        
+    },
+   
     components:{
         MobileMenu
     },
-    mounted(){
-        this.$store.dispatch("allLogo");
-    },
-    computed:{
-        logo(){
-             return this.$store.getters.getlogo;
-        }
-    },
+    
+     
 }
 </script>

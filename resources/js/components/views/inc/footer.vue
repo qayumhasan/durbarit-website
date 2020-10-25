@@ -225,8 +225,11 @@ export default {
         })
         .then(function (response) {
           console.log(response);
-          v.$toast.success('Subscriber created successfully');
           
+           v.$iziToast.success({
+                    position:'topRight',
+                    message: 'Subscriber created successfully!'
+                });
           v.email = null
 
         })

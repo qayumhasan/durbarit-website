@@ -114,4 +114,14 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
     Route::get('/','AuthController@logout');
   });
 
+  Route::namespace('Frontend')->group(function () {
+    Route::post('/add/to/cart','FrontendController@addToCart');
+  });
+  Route::namespace('Frontend')->group(function () {
+    Route::get('/total/quantity','FrontendController@totalQty');
+  });
+  Route::namespace('Frontend')->group(function () {
+    Route::get('/cart/data','FrontendController@getCartData');
+  });
+
 
