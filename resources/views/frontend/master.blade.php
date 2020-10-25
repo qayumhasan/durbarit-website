@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('public/frontend/css/mixitup.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/user.css')}}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/cart.css')}}">
 </head>
 
 <body>

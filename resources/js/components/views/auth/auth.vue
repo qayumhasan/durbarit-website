@@ -84,15 +84,9 @@ export default {
                 .then((response)=>{
                     // console.log(response.data.refresh_token)
                     localStorage.setItem("token",response.data.refresh_token)
-                    
+                    var loggdedIn =localStorage.getItem('token') || null;
                     this.$router.push('/deshboard');
-                    this.$eventBus.$emit('checkuser', yes)
-                    
-                    
-
-                    
-                    
-                    
+                    this.$eventBus.$emit('checkuser', 'yes')
                 })
                 
         }

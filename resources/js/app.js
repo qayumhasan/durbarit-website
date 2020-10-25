@@ -7,6 +7,8 @@ require('./bootstrap');
 window.Vue = require('vue');
 Vue.config.productionTip = false;
 
+import iziToast from 'izitoast';
+
 Vue.filter('striphtml', function (value) {
     var div = document.createElement("div");
     div.innerHTML = value;
@@ -20,6 +22,7 @@ Vue.use(VueCarousel);
 import VueMeta from 'vue-meta'
 Vue.use(VueMeta)
 Vue.prototype.$eventBus = new Vue();
+Vue.prototype.$iziToast = iziToast;
 // using filter
 Vue.filter('sortlength',function (text,length,suffix) {
     return text.substring(0,length)+suffix;

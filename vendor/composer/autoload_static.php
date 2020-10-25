@@ -594,6 +594,7 @@ class ComposerStaticInitdf453bd97a560f1c4c3ce4cf7726529f
 
     public static $classMap = array (
         'App\\AboutUs' => __DIR__ . '/../..' . '/app/AboutUs.php',
+        'App\\AddToCart' => __DIR__ . '/../..' . '/app/AddToCart.php',
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Career' => __DIR__ . '/../..' . '/app/Career.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',

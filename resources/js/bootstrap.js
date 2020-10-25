@@ -26,7 +26,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 
-window.axios.defaults.baseURL ='http://localhost/durbarit24/api';
+window.axios.defaults.baseURL ='http://localhost/durbarit25/api';
 
 window.axios.defaults.headers.common['Authorization'] =localStorage.getItem('token');
 window.axios.defaults.headers.get['Accepts'] ='application/json';

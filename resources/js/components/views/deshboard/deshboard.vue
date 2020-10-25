@@ -414,6 +414,7 @@ export default {
              window.axios.defaults.headers.common['Authorization'] ='Bearer ' +localStorage.getItem('token'); 
             localStorage.removeItem("token");
             this.$router.push('/login');
+            this.$eventBus.$emit('checkuser', 'no')
 
             //   axios.get('/logout')
             //     .then((response)=>{

@@ -159,25 +159,23 @@
                             <div class="select_option">
                                 <div class="form-group">
 
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                      
-                                        <option @change="premium=false">Reguler</option>
-                                        <option @change="regular=false">Premium</option>
+                                    <select class="form-control" id="sfslf" @change="onChange($event)" >
+                                        <option selected value="1">Reguler</option>
+                                        <option value="2">Premium</option>
 
                                     </select>
                                 </div>
                             </div>
                             <div class="price_part">
-                                <span>{{products.reqular_price}} ৳</span>
+                                <span v-if="regular">{{products.reqular_price}} ৳</span>
+                                <span v-if="premium">{{products.premium_price}} ৳</span>
                             </div>
                             <div class="clear"></div>
                         </div>
 
                         <ul class="point" v-if="regular">
-                            <li><i class="fas fa-check-circle"></i> Free technical support</li>
-                            <li><i class="fas fa-check-circle"></i> Future product updates</li>
-                            <li><i class="fas fa-check-circle"></i> Quality checked by DurbarIT</li>
-                            <li><i class="fas fa-check-circle"></i> Lowest price guarantee</li>
+
+                            <li v-for="(regular,index) in products.reqular_price_feture" :key="index"><i class="fas fa-check-circle"></i>{{regular}}</li>
                             <li class=""><i class="fas fa-check-circle"></i> 3 months support included <br> <span
                                     class="ml-4 small"><a
                                         href="https://thesoftking.com/item/hoteleon-complete-hotel-booking-system/376/support">What
@@ -185,10 +183,8 @@
                         </ul>
 
                         <ul class="point" v-if="premium">
-                            <li><i class="fas fa-check-circle"></i> t5  ttyyyghgjilfdsjil</li>
-                            <li><i class="fas fa-check-circle"></i> Future product updates</li>
-                            <li><i class="fas fa-check-circle"></i> Quality checked by DurbarIT</li>
-                            <li><i class="fas fa-check-circle"></i> Lowest price guarantee</li>
+                            
+                            <li v-for="(premium,index) in products.premium_price_feture" :key="index"><i class="fas fa-check-circle"></i>{{premium}}</li>
                             <li class=""><i class="fas fa-check-circle"></i> 3 months support included <br> <span
                                     class="ml-4 small"><a
                                         href="https://thesoftking.com/item/hoteleon-complete-hotel-booking-system/376/support">What
@@ -196,16 +192,17 @@
                         </ul>
 
                         <div class="mt-4">
-                            <input type="checkbox" id="exSupport" name="exSupport" value="12">
+                            <input type="checkbox" id="exSupport" v-model="extrprce" name="exSupport"  @click="check($event)" value="5000">
                             <label for="exSupport">Extend support to 6 months</label>
-                            <span class="float-right font-weight-bold"><span class="supPrice">1000 ৳</span></span>
+                            <span class="float-right font-weight-bold"><span class="supPrice">5000 ৳</span></span>
                         </div>
                         <div class="cart text-center">
+                            
 
                             <div class="row mt-2">
                                 <div class="col-sm-12 block">
-                                    <button type="button" id="purchase-now" class=" cart_btn margin-top-30"> <i
-                                            class="fas fa-shopping-cart"></i> Add to Cart</button>
+                                    <button @click="addToCart()" type="button" id="purchase-now" class=" cart_btn margin-top-30"> <i
+                                            class="fas fa-shopping-cart"></i> Add to Cart ({{totalqty}})</button>
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -288,6 +285,10 @@ export default {
         products:[],
         regular:true,
         premium:false,
+        package_id: 1,
+        extraprce:'',
+        extrprce:'',
+        totalqty:0,
       }
     },
       created(){
@@ -296,21 +297,48 @@ export default {
     methods:{
       allproduct(){
         let id=this.$route.params.id
-        console.log(id)
         axios.get('/product/'+id)
         .then(({data}) => (this.products = data))
         .catch()
       },
-      changePremium(e){
-          alert('ok')
-          this.regular=false
-          this.premium=true
+
+      addToCart(){
+          
+          this.$store.dispatch("addtocart",{
+              producId:this.products.id,
+              packageId:this.package_id,
+              extraPrice:this.extraprce,
+          })
+          .then(res=>{
+
+              this.totalqty = ++this.totalqty;
+              this.$iziToast.success({
+                    position:'topRight',
+                    message: 'Product Add to cart successfully!'
+                });
+              this.$eventBus.$emit('totalQty', this.totalqty)
+            //   this.$router.push('/products/'+this.products.id);
+          })
       },
-      changeRegular(e){
-          alert('ok')
-          this.regular=true
-          this.premium=false
-      },
+    
+      onChange(event) {  
+            if(event.target.value == 1){
+                this.regular = true;
+                this.premium = false;
+            }else if(event.target.value == 2){
+                this.regular = false;
+                this.premium = true;
+            }
+            this.package_id =event.target.value;
+        },
+        check(e){
+            if(e.target.checked){
+                
+                this.extraprce =e.target.value
+            }else{
+                 this.extraprce = 0
+            }
+        }
       
       
     },
