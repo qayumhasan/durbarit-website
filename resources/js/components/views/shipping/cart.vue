@@ -30,6 +30,7 @@
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
+                                                        
                                                         <th scope="col">Image</th>
                                                         <th scope="col">Product Name</th>
                                                         <th scope="col">Product Type</th>
@@ -40,25 +41,28 @@
                                                 <tbody>
 
 
-                                                    <tr>
+
+
+                                                
+
+                                                    <tr v-for="(cart,index) in getcartdata" :key="index">
 
                                                         <td>
                                                             <div class="pro_img">
-                                                                <img src="images/Mobile-Marketing.png" alt="image">
+                                                                <img :src="'public/uploads/product/' + cart.image" alt="image">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="pro_name">
-                                                                <h5>Lorem ipsum dolor sit amet.</h5>
+                                                                <h5>{{cart.product.product_name}}</h5>
                                                             </div>
                                                         </td>
-                                                        <td>2</td>
-                                                        <td><span class="price_bold"><b>58$</b></span></td>
-                                                        <td><span><a href="#"><i
-                                                                        class="fas fa-trash-alt"></i></a></span></td>
+                                                        <td v-if="cart.package_id == 1">Regular</td>
+                                                        <td v-if="cart.package_id == 2">Premium</td>
+                                                        <td><span class="price_bold"><b>{{cart.price}}</b></span></td>
+                                                        <td><span><button @click="removeElement(index,cart.id)"><i
+                                                                        class="fas fa-trash-alt"></i></button></span></td>
                                                     </tr>
-                                                   
-
                                                 </tbody>
                                             </table>
                                            
@@ -94,15 +98,13 @@
                                         <div class="right-content">
                                             <div class="total without-coupon" style="font-size: 18px;">
                                                 <span class="title"><b>Total Amount</b></span>
-                                                <span class="total-price"><b>US$59</b></span>
+                                                <span class="total-price"><b>৳ {{totalPrice}}</b></span>
                                             </div>
                                             <div class="mt-3">
                                                 <p class="text-info">You have to login before purchase!</p>
                                             </div>
-                                            <a href="auth_page.html"
-                                                class="btn btn-info float-right">Login</a>
-                                            <a href="auth_page.html" class="btn btn-dark"
-                                                style="margin-right:10px;">Register</a>
+                                            <router-link to="/checkout" class="btn btn-dark"
+                                                style="margin-right:10px;">Checkout</router-link>
 
                                         </div>
                                     </div>
@@ -126,5 +128,39 @@ export default {
 
          this.$store.dispatch("allCartData");
     },
+    computed:{
+        getcartdata(){
+            return this.$store.getters.getCartData;
+        },
+        totalPrice(){
+            var total =0;
+            for(var i =0; i<this.getcartdata.length; i++){
+                var item = this.getcartdata[i];
+                var price =Number(item.price);
+                total = price+total;
+            }
+            return total;
+        }
+
+    },
+    methods:{
+        removeElement: function (index,id) {
+            
+                this.getcartdata.splice(index, 1);
+
+                this.$store.dispatch("cartDataDelete",id)
+                .then(res=>{
+
+                     
+                    this.$iziToast.success({
+                    position:'topRight',
+                    message: 'Product Deleted successfully!'
+                });
+                this.$eventBus.$emit('totalQty',res.data)
+                
+                })
+
+            }
+    }
 }
 </script>

@@ -181,18 +181,31 @@ class FrontendController extends ApiController
     public function getCartData()
     {
         $ip =\Request::ip();
-        $auth =Auth::
-        ();
-        if($auth){
-           return $cart = AddToCart::where('user_ip',$ip)->get();
-        }else{
-            return response()->json([
-                'error'=>'Sorry !You are not autheticated User!'
-            ]);
-        }
+        return $cart = AddToCart::where('user_ip',$ip)->with('product')->get();
+     
     }
 
+    public function cartDataDelete($id)
+    {
+     
+        $cart = AddToCart::findOrFail($id);
+        $cart->delete();
+        $ip =\Request::ip();
+        return $cart = AddToCart::where('user_ip',$ip)->with('product')->get()->count();
+     
+    }
     
+    public function totalPrice()
+    {
+        $ip =\Request::ip();
+        $cart = AddToCart::where('user_ip',$ip)->with('product')->get();
+        $total = 0;
+        foreach($cart as $row){
+            $total +=$row->price;
+        }
+        return $total;
+     
+    }
 
 
 }

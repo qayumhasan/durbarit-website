@@ -14,7 +14,7 @@ class AuthController extends Controller
         $http = new \GuzzleHttp\Client;
 
         try {
-            $response = $http->post('http://localhost/durbarit24/oauth/token', [
+            $response = $http->post('http://localhost/durbarit272/oauth/token', [
                 'form_params' => [
                     'grant_type' => 'password',
                     'client_id' => 2,

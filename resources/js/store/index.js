@@ -188,6 +188,15 @@ export default {
                     
                 })
         },
+        cartDataDelete(context,id){
+            return new Promise((resolve,reject)=>{
+            axios.get('/cart/data/delete/'+id)
+                .then((response)=>{
+                              
+                    resolve(response);
+                })
+            })
+        },
        
         
     },

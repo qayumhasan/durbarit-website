@@ -65,6 +65,11 @@ export const routes = [
         component: require('./components/views/shipping/cart').default,
         name: "cart",
     },
+    {
+        path: '/checkout',
+        component: require('./components/views/shipping/checkout').default,
+        name: "checkout",
+    },
   ]
 
  
