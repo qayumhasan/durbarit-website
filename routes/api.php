@@ -123,5 +123,11 @@ Route::prefix('logos')->namespace('Frontend')->group(function () {
   Route::namespace('Frontend')->group(function () {
     Route::get('/cart/data','FrontendController@getCartData');
   });
+  Route::namespace('Frontend')->group(function () {
+    Route::get('/cart/data/delete/{id}','FrontendController@cartDataDelete');
+  });
+  Route::namespace('Frontend')->group(function () {
+    Route::get('/cart/total','FrontendController@totalPrice');
+  });
 
 

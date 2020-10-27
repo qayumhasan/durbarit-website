@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class AddToCart extends Model
 {
-    public function getCartCountAttribute($value)
-{
-    return count($value);
-}
+    public function product()
+    {
+        return $this->hasOne('App\Product','id','product_id');
+    }
+
 }
