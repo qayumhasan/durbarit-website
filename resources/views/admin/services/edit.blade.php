@@ -32,6 +32,7 @@
                     <div class="col-sm-6">
                         
                         <input type="text" name="details" value="{{$service->details}}" class="form-control" data-role="tagsinput">
+                        
                     </div>
                 </div>
                

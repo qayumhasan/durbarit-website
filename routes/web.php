@@ -1,32 +1,6 @@
 <?php
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('frontend.master');
-
-
-});
-
-// Route::get('/{vue_capture?}', function () {
-//     return view('frontend.master');
-// })->where('vue_capture','[\/\w\.-]*');
-
-
-// Route::get('/{vue?}', function () {
-//    return view('layouts.app');
-// })->where('vue', '[\/\w\.-]*');
-
 
 
 
@@ -226,3 +200,21 @@ Route::prefix('admin')->middleware('auth:admin')->namespace('Admin')->group(func
   Route::post(md5('/social/index'),'SocialController@update')->name('admin.social.update');
 
 });
+
+
+
+Route::get('/','Frontend\FrontendController@index');
+Route::get('/product','Frontend\FrontendController@product');
+Route::get('/product/details/{id}','Frontend\FrontendController@productdetails');
+Route::get('/carrer','Frontend\FrontendController@carrer');
+Route::get('/contact','Frontend\FrontendController@contact');
+Route::get('/team','Frontend\FrontendController@team');
+Route::get('/customer/login','Frontend\FrontendController@loginpage');
+Route::get('/page/{id}','Frontend\FrontendController@page');
+Route::get('/service/{id}','Frontend\FrontendController@servicepage');
+Route::post('/subscriber/website','Frontend\FrontendController@subcrive');
+Route::get('/about-us','Frontend\FrontendController@about');
+Route::post('/contact/insert','Frontend\FrontendController@contactinsert');
+// cart controller
+Route::get('/cart','Frontend\CartController@cart');
+

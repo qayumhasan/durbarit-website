@@ -32,7 +32,7 @@
                             <th >Details</th>
                             <th >Image</th>
                             <th>Status</th>
-                            <th style="width: 10%;">manage</th>
+                            <th>manage</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +47,7 @@
                             <td> {!!Str::limit($row->details,80)!!} </td>
 
                             <td>
-                                <img src="{{asset('public/images/services/')}}/{{$row->image}}" alt="" width="25%">
+                                <img src="{{asset('public/images/services/')}}/{{$row->image}}" alt="" height="40px">
                             </td>
                             @if($row->status == 1)
                                 <td class="center"><span class="btn btn-success">Active</span></td>

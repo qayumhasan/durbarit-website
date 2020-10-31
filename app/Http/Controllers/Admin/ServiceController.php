@@ -34,7 +34,7 @@ class ServiceController extends Controller
             $service_id =Str::random(6);
             $service_img = $request->file('image');
             $imagename = $service_id . '.' . $service_img->getClientOriginalExtension();
-            Image::make($service_img)->resize(90, 70)->save(base_path('public/images/services/' . $imagename), 50);
+            Image::make($service_img)->resize(600, 500)->save(base_path('public/images/services/' . $imagename), 50);
             $service->image = $imagename;
         }
         $service->save();
@@ -63,7 +63,7 @@ class ServiceController extends Controller
             $service_id =Str::random(6);
             $service_img = $request->file('image');
             $imagename = $service_id . '.' . $service_img->getClientOriginalExtension();
-            Image::make($service_img)->resize(90, 70)->save(base_path('public/images/services/' . $imagename), 50);
+            Image::make($service_img)->resize(600, 500)->save(base_path('public/images/services/' . $imagename), 50);
             $service->image = $imagename;
         }
         $service->save();

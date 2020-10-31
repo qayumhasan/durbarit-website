@@ -45,7 +45,7 @@
                             </td>
                             
                             <td> {{$row->title}} </td>
-                            <td> {!!Str::limit($row->description,150)!!}  </td>
+                            <td> {!!Str::limit($row->description,50)!!}  </td>
                             <td> {{$row->meta_tag}} </td>
                             <td> {{$row->meta_description}} </td>
 

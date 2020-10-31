@@ -12,187 +12,130 @@ use App\Service;
 use App\Partner;
 use App\Category;
 use App\Client;
-
 use App\Team;
 use App\Career;
 use App\Product;
-
 use App\ContactInformation;
-
 use App\Http\Resources\ServiceResources;
 use App\Page;
 use App\Project;
+use App\ContactMessage;
 use App\Subscriber;
 use App\Whychoseus;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-
 class FrontendController extends ApiController
 {
-    public function slider()
-    {
-        $slider =Slider::select(['id','heading','paragraph','image','link'])->get();
-
-        return $this->showAll($slider);
-    }
-
-    public function searvices()
-    {
-        return $services =ServiceResources::collection(Service::select(['id','name','image','details'])->get());
-        // return $this->showAll($services);
-    }
-
-    public function partners()
-    {
-        $partners = Partner::select(['id','image','link'])->get();
-        return $this->showAll($partners);
-    }
-
-    public function logos()
-    {
-        $logos = Logo::where('id',1)->select(['id','flogo'])->first();
-        return $this->showOne($logos);
-    }
-
-
-    public function categoris(){
-      $categoris=Category::get();
-        return $this->showAll($categoris);
-    }
-
-    public function aboutUs()
-    {
-        $about = AboutUs::where('id',1)->first();
-        return $this->showOne($about);
-    }
-
-    public function chooseus()
-    {
-
-        $data=Whychoseus::all();
-        return $this->showAll($data);
-    }
-
-    public function clientSay()
-    {
-
-        $data =Client::all();
-        return $this->showAll($data);
-    }
-
-
-    public function team(){
-      $team=Team::where('status',1)->get();
-      return $this->showAll($team);
-    }
-
-    public function career(){
-        $career=Career::where('status',1)->get();
-        return $this->showAll($career);
-    }
-
-    // public function product(){
-    //     $product=Product::where('status',1)->get();
-    //     return $this->showAll($product);
-    // }
-
-
-    public function contact()
-    {
-        $data = ContactInformation::findOrFail(1);
-        return $this->showOne($data);
-    }
-
-    public function pages()
-    {
-        $data = Page::all();
-        return $this->showAll($data);
-    }
-
-    public function NewsLetter(Request $request)
-    {
-        $request->validate([
-            'email'=>'required|email|unique:subscribers'
-        ]);
-        $sub= new Subscriber;
-        $sub->email = $request->email;
-        $sub->status = 1;
-        $sub->save();
-        return $this->showOne($sub);
-    }
-
-    public function categores()
-    {
-       $data= Category::all();
-       return $this->showAll($data);
-       
-    }
-
-    public function projects()
-    {
-        $data = Project::where('status',1)->get();
-        return $this->showAll($data);
-    }
-
-    public function projectsDetails($id)
-    {
-        $data = Project::where('cat_id',$id)->get();
-        return $this->showAll($data);
-    }
-
-    public function singlePage($id)
-    {
-        $data = Page::findOrFail($id);
-        return $this->showOne($data);
-    }
-
-    public function addToCart(Request $request)
-    {
-        $product = Product::findOrFail($request->product_id);
-        $cartdata = new AddToCart();
-        $cartdata->user_ip = \Request::ip();
-        $cartdata->product_id = $request->product_id;
-        $cartdata->package_id = $request->package_id;
-        if($request->package_id == 1){
-            $price = $product->reqular_price;
-        }elseif($request->package_id == 2){
-            $price = $product->premium_price;
-        }else{
-            $price = $product->reqular_price;
+   
+        public function index(){
+            $whyschochus=Whychoseus::get();
+            $teatimonial=Client::where('status',1)->orderBy('id','DESC')->get();
+            $aboutus=AboutUs::first();
+            $slider=Slider::where('status',1)->latest()->get();
+            return view('frontend.home.index',compact('slider','aboutus','whyschochus','teatimonial'));
         }
-        $cartdata->price = $price;
-        $cartdata->sku = $product->sku;
-        $cartdata->extr_price = $request->extr_price;
-        $cartdata->image = $product->image;
-        $cartdata->created_at = Carbon::now();
-
-        $cartdata->save();
-    }
-
-    public function totalQty()
-    {
-        $ip =\Request::ip();
-        $cart = AddToCart::where('user_ip',$ip)->get();
-       
-        return $cart->count();
-
-    }
-
-    public function getCartData()
-    {
-        $ip =\Request::ip();
-        $auth =Auth::
-        ();
-        if($auth){
-           return $cart = AddToCart::where('user_ip',$ip)->get();
-        }else{
-            return response()->json([
-                'error'=>'Sorry !You are not autheticated User!'
-            ]);
+        public function product(){
+            $product=Product::where('status',1)->latest()->get();
+            return view('frontend.product.productpage',compact('product'));
         }
-    }
 
+        public function productdetails($id){
+            $product=Product::where('id',$id)->first();
+            return view('frontend.product.productdetails',compact('product'));
+        }
+        public function carrer(){
+            $carrer=Career::where('status',1)->latest()->get();
+            return view('frontend.carrer.carrerpage',compact('carrer'));
+        }
+
+        public function contact(){
+            return view('frontend.contact.contactpage');
+        }
+
+        public function team(){
+            $team=Team::where('status',1)->get();
+            return view('frontend.team.teampage',compact('team'));
+        }
+        public function loginpage(){
+            return view('frontend.auth.login');
+        }
+
+        
+
+        public function page($id){
+            $pagedetails=Page::where('id',$id)->firstOrFail();
+            return view('frontend.pages.page',compact('pagedetails'));
+        }
+        public function servicepage($id){
+            //return $id;
+            $serviclle=Service::where('id',$id)->first();
+            return view('frontend.service.servicepage',compact('serviclle'));
+        }
+
+        public function subcrive(Request $request){
+            $check=Subscriber::where('email',$request->email)->first();
+
+            if($check){
+                $notification=array(
+                    'messege'=>'You Allready Subcrive our website',
+                    'alert-type'=>'info'
+                    );
+                return redirect()->back()->with($notification);
+            }else{
+                $insert=Subscriber::insert([
+                    'email'=>$request['email'],
+                    'created_at'=>Carbon::now()->toDateTimeString(),
+                ]);
+                if($insert){
+                        $notification=array(
+                            'messege'=>'Success',
+                            'alert-type'=>'success'
+                            );
+                        return redirect()->back()->with($notification);
+                    }else{
+                        $notification=array(
+                            'messege'=>'Faild',
+                            'alert-type'=>'error'
+                            );
+                        return redirect()->back()->with($notification);
+                    }
+            }
+            
+                
+        }
+        public function about(){
+            return "about page";
+        }
+
+        public function contactinsert(Request $request){
+
+        
+           $contact=ContactMessage::InsertGetId([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'phone'=>$request->phone,
+                'message'=>$request->message,
+                'created_at'=>Carbon::now()->toDateTimeString(),
+           ]);
     
+            if ($contact){
+                $notification = array(
+                    'messege' => 'Message Send success',
+                    'alert-type' => 'success'
+                      );
+                      return Redirect()->back()->with($notification);
+                 }else{
+                      $notification = array(
+                          'messege' => 'Message SendFaild',
+                          'alert-type' => 'error'
+                      );
+                      return Redirect()->back()->with($notification);
+                  }
+
+
+
+        }
+
 
 
 }

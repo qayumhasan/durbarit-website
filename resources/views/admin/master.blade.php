@@ -38,9 +38,9 @@
 	</head>
 	<body id="page-top">
 		<!-- preloader -->
-		<div class="preloader">
+		<!-- <div class="preloader">
 			<img src="{{asset('public/assets/images/preloader.gif')}}" alt="">
-		</div>
+		</div> -->
 		<!-- wrapper -->
 		<div class="wrapper" id="app">
         @include('admin.include.header_top')
